@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://7eeaw5n1gmp8"]
+
+[ext_resource type="Texture2D" uid="uid://dilliwlxcenw7" path="res://PapersPleaseClone/Sprites/Test/CarimboVerde.png" id="1_6ox8i"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/carimbo.gd" id="1_qybj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7uh5"]
+size = Vector2(25.6, 11.2)
+
+[node name="Carimbo" type="Node2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_qybj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6ox8i")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Carimbo"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.33514e-06, 5.6)
+shape = SubResource("RectangleShape2D_b7uh5")
+debug_color = Color(0, 0.643137, 0.313726, 0.419608)
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
