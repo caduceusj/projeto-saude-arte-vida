@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqerfrumugn3l"]
+
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/MiniGameVestuario.gd" id="1_6y8v1"]
+[ext_resource type="Texture2D" uid="uid://dky20o8e77bf4" path="res://PapersPleaseClone/Sprites/Test/MesaDeCarimbo.png" id="2_foiye"]
+[ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="3_1t24y"]
+[ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="4_xyx7j"]
+[ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="5_uji6q"]
+[ext_resource type="PackedScene" uid="uid://c7n1kh0jult01" path="res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn" id="7_mpba8"]
+[ext_resource type="Texture2D" uid="uid://d13f82mjlgqwc" path="res://PapersPleaseClone/Sprites/Test/placeholderMédico.png" id="8_1dali"]
+
+[node name="vestuario" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6y8v1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1288.0
+offset_bottom = 728.0
+mouse_filter = 2
+color = Color(0, 0.584314, 0.415686, 1)
+
+[node name="Rubrica" type="Node" parent="."]
+
+[node name="ColorRect" parent="Rubrica" instance=ExtResource("5_uji6q")]
+offset_left = 128.0
+offset_top = 576.0
+offset_right = 312.0
+offset_bottom = 656.0
+
+[node name="Carimbos" type="Node" parent="."]
+
+[node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
+position = Vector2(976, 592)
+scale = Vector2(4, 4)
+
+[node name="posicaoVerde" type="Node2D" parent="Carimbos"]
+position = Vector2(792, 592)
+scale = Vector2(4, 4)
+
+[node name="Mesa" type="Sprite2D" parent="Carimbos"]
+position = Vector2(880, 624)
+scale = Vector2(4, 4)
+texture = ExtResource("2_foiye")
+
+[node name="CarimboReprovado" parent="Carimbos" instance=ExtResource("3_1t24y")]
+position = Vector2(976, 592)
+
+[node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_xyx7j")]
+position = Vector2(792, 592)
+
+[node name="Timer" type="Node" parent="."]
+
+[node name="BarraProgresso" parent="Timer" instance=ExtResource("7_mpba8")]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 2
+
+[node name="Enfermeiro" type="Node" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Enfermeiro"]
+offset_right = 480.0
+offset_bottom = 416.0
+
+[node name="ColorRect" type="ColorRect" parent="Enfermeiro/MarginContainer"]
+layout_mode = 2
+color = Color(0.352941, 0.227451, 0.192157, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Enfermeiro"]
+position = Vector2(232, 216)
+scale = Vector2(10, 10)
+texture = ExtResource("8_1dali")
+hframes = 6
+
+[node name="Feedback" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Feedback"]
+offset_left = 504.0
+offset_top = 128.0
+offset_right = 733.0
+offset_bottom = 200.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="area_entered" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_exited"]
+
+[editable path="Rubrica/ColorRect"]

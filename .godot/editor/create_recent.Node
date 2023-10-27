@@ -1,4 +1,9 @@
-Timer
+ColorRect
+Node
 Label
+MarginContainer
+Sprite2D
+TextureRect
+Timer
 Container
 ProgressBar

@@ -1,3 +1,6 @@
-res://PapersPleaseClone/Cenas/Test/Test.tscn
 res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn
-res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.gd
+res://PapersPleaseClone/Cenas/Test/Test.tscn
+res://PapersPleaseClone/Cenas/Fases/ChecagemDeVestuario/vestuario.tscn
+res://PapersPleaseClone/Scripts/MiniGameVestuario.gd
+res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn
+res://PapersPleaseClone/Scripts/carimbo.gd

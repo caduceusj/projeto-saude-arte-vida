@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7n1kh0jult01"]
+[gd_scene load_steps=4 format=3 uid="uid://c7n1kh0jult01"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/barra_progresso.gd" id="1_nrfuj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1hv1"]
+bg_color = Color(0.901961, 0.203922, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m7h5"]
+bg_color = Color(0, 0.615686, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 
 [node name="BarraProgresso" type="Control"]
 layout_mode = 3
@@ -13,18 +29,20 @@ script = ExtResource("1_nrfuj")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 2
-offset_left = 320.0
-offset_top = 5.0
-offset_right = 960.0
-offset_bottom = 40.0
+offset_left = 576.0
+offset_top = 16.0
+offset_right = 1216.0
+offset_bottom = 51.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g1hv1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6m7h5")
 show_percentage = false
 
 [node name="LabelTempo" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1225.0
-offset_top = 5.0
-offset_right = 1275.0
-offset_bottom = 55.0
+offset_left = 523.0
+offset_top = 12.0
+offset_right = 573.0
+offset_bottom = 62.0
 theme_type_variation = &"HeaderLarge"
 text = "100"
 horizontal_alignment = 1

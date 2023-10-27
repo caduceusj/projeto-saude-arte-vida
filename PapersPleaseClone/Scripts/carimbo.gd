@@ -21,9 +21,9 @@ func _input(event):
 		if event.pressed:
 			mouse_offset = position - get_global_mouse_position()
 			if(tipo == "verde"):
-				position = get_node("/root/Test/Aba do Player/Carimbos/posicaoVerde").position
+				position = get_node("/root/vestuario/Carimbos/posicaoVerde").position
 			else:
-				position = get_node("/root/Test/Aba do Player/Carimbos/posicaoVermelho").position
+				position = get_node("/root/vestuario/Carimbos/posicaoVermelho").position
 			selected = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
