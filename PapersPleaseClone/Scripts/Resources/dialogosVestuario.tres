@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cwi73dgovtcog"]
+
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/miniDialogos.gd" id="1_apnxc"]
+
+[resource]
+script = ExtResource("1_apnxc")

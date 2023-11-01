@@ -1,7 +1,9 @@
-ColorRect
-Node
-Label
 MarginContainer
+Label
+Panel
+Node
+AnimationPlayer
+ColorRect
 Sprite2D
 TextureRect
 Timer
