@@ -1,10 +1,13 @@
+CheckButton
+CheckBox
+VBoxContainer
+Sprite2D
 MarginContainer
 Label
 Panel
 Node
 AnimationPlayer
 ColorRect
-Sprite2D
 TextureRect
 Timer
 Container

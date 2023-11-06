@@ -1,11 +1,7 @@
-res://PapersPleaseClone/Cenas/Test/Test.tscn
-res://PapersPleaseClone/Scripts/miniDialogos.gd
-res://PapersPleaseClone/Scripts/Resources/dialogosVestuario.tres
-res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn
-res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn
-res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn
-res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn
-res://PapersPleaseClone/Cenas/Fases/ChecagemDeVestuario/vestuario.tscn
 res://PapersPleaseClone/Cenas/Livro/livro.tscn
+res://PapersPleaseClone/Scripts/miniDialogos.gd
 res://PapersPleaseClone/Scripts/livro.gd
-res://PapersPleaseClone/Scripts/carimbo.gd
+res://PapersPleaseClone/Sprites/Test/theme.tres
+res://PapersPleaseClone/Tema/theme.tres
+res://PapersPleaseClone/Cenas/Test/Test.tscn
+res://PapersPleaseClone/Cenas/Tablet/tablet.tscn
