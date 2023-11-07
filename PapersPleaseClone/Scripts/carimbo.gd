@@ -7,10 +7,10 @@ var mouse_offset = Vector2(0, 0)
 
 func _process(delta):
 	if selected:
-		scale = Vector2(6,6)
+		scale = Vector2(1.5,1.5)
 		followMouse()
 	else:
-		scale = Vector2(5,5)
+		scale = Vector2(1,1)
 		
 
 func followMouse():
@@ -21,9 +21,9 @@ func _input(event):
 		if event.pressed:
 			mouse_offset = position - get_global_mouse_position()
 			if(tipo == "verde"):
-				position = get_node("/root/vestuario/Carimbos/posicaoVerde").position
+				position = get_node("/root/Game/Carimbos/posicaoVerde").position
 			else:
-				position = get_node("/root/vestuario/Carimbos/posicaoVermelho").position
+				position = get_node("/root/Game/Carimbos/posicaoVermelho").position
 			selected = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):

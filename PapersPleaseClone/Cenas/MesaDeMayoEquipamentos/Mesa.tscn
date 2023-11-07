@@ -1,0 +1,80 @@
+[gd_scene load_steps=15 format=3 uid="uid://781kgbmp678"]
+
+[ext_resource type="Texture2D" uid="uid://bfmwt414rxafy" path="res://PapersPleaseClone/Sprites/Equipamentos/mesaDeMayo.png" id="1_cfgci"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Mesa/Mesa.gd" id="1_g4jo7"]
+[ext_resource type="Texture2D" uid="uid://dgrseo4ll875a" path="res://PapersPleaseClone/Sprites/Equipamentos/pincaAnatomica.png" id="2_1uoiu"]
+[ext_resource type="Texture2D" uid="uid://dd4vmdbqgxxo" path="res://PapersPleaseClone/Sprites/Equipamentos/pincaAntisepssiaDaPele.png" id="3_84dg7"]
+[ext_resource type="Texture2D" uid="uid://bcl07skf2sl8c" path="res://PapersPleaseClone/Sprites/Equipamentos/tesouraDeMayo.png" id="4_y5iic"]
+[ext_resource type="Texture2D" uid="uid://c2vetq1hvklwj" path="res://PapersPleaseClone/Sprites/Equipamentos/cateterfr.png" id="5_x46wi"]
+[ext_resource type="Texture2D" uid="uid://beogt1kdcw0x4" path="res://PapersPleaseClone/Sprites/Equipamentos/IntrodutoreBizel.png" id="6_lt76s"]
+[ext_resource type="Texture2D" uid="uid://bqqhx3w4s80us" path="res://PapersPleaseClone/Sprites/Equipamentos/equipoParaoSoro.png" id="7_5xpmc"]
+[ext_resource type="Texture2D" uid="uid://chxnjto86loc3" path="res://PapersPleaseClone/Sprites/Equipamentos/curativoTransparente.png" id="8_gnmcv"]
+[ext_resource type="Texture2D" uid="uid://inbg00i8itbd" path="res://PapersPleaseClone/Sprites/Equipamentos/compressaEsteril.png" id="9_tmp2d"]
+[ext_resource type="Texture2D" uid="uid://cxvumk0f3fhtn" path="res://PapersPleaseClone/Sprites/Equipamentos/Garrote.png" id="10_mpkq7"]
+[ext_resource type="Texture2D" uid="uid://c81vngee4js31" path="res://PapersPleaseClone/Sprites/Equipamentos/clorexedinaAlcoolica.png" id="11_x48da"]
+[ext_resource type="Texture2D" uid="uid://b0vepnjksmx02" path="res://PapersPleaseClone/Sprites/Equipamentos/soroFisiologico.png" id="12_xstsh"]
+[ext_resource type="Texture2D" uid="uid://deoc3yh8aqiex" path="res://PapersPleaseClone/Sprites/Equipamentos/Seringa.png" id="13_xerxx"]
+
+[node name="Table" type="Node2D"]
+script = ExtResource("1_g4jo7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -128.0
+offset_top = -56.0
+offset_right = 128.0
+offset_bottom = 56.0
+texture = ExtResource("1_cfgci")
+metadata/_edit_use_anchors_ = true
+
+[node name="Equipamentos" type="Node2D" parent="."]
+position = Vector2(22, 18)
+
+[node name="Sprite1" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(1, 8)
+texture = ExtResource("2_1uoiu")
+
+[node name="Sprite2" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(40, 7)
+texture = ExtResource("3_84dg7")
+
+[node name="Sprite3" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(74, 6)
+texture = ExtResource("4_y5iic")
+
+[node name="Sprite4" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(0, -42)
+texture = ExtResource("5_x46wi")
+
+[node name="Sprite5" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(35, -39)
+texture = ExtResource("6_lt76s")
+
+[node name="Sprite6" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(74, -41)
+texture = ExtResource("7_5xpmc")
+
+[node name="Sprite7" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-122, -43)
+texture = ExtResource("8_gnmcv")
+
+[node name="Sprite8" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-86, -42)
+texture = ExtResource("9_tmp2d")
+
+[node name="Sprite9" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-53, -42)
+texture = ExtResource("10_mpkq7")
+
+[node name="Sprite10" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-113, 6)
+texture = ExtResource("11_x48da")
+
+[node name="Sprite11" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-74, 6)
+texture = ExtResource("12_xstsh")
+
+[node name="Sprite12" type="Sprite2D" parent="Equipamentos"]
+position = Vector2(-40, 8)
+texture = ExtResource("13_xerxx")
+
+[connection signal="tableChange" from="." to="." method="_on_table_change"]

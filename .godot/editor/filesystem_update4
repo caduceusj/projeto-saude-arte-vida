@@ -1,6 +1,6 @@
-res://PapersPleaseClone/Cenas/Test/Test.tscn
+res://PapersPleaseClone/Cenas/Fases/Game/game.tscn
 res://PapersPleaseClone/Scripts/miniDialogos.gd
-res://PapersPleaseClone/Scripts/Resources/dialogosVestuario.tres
-res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn
-res://PapersPleaseClone/Cenas/Fases/ChecagemDeVestuario/vestuario.tscn
-res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn
+res://PapersPleaseClone/Scripts/Mesa/Mesa.gd
+res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn
+res://PapersPleaseClone/Scripts/Game/game.gd
+res://PapersPleaseClone/Scripts/transparent.gdshader

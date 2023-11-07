@@ -1,0 +1,315 @@
+[gd_scene load_steps=12 format=3 uid="uid://wvbylvj2pljv"]
+
+[ext_resource type="Texture2D" uid="uid://ka5p5flik1j8" path="res://PapersPleaseClone/Sprites/Proporcoes/Template.png" id="1_mw18v"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_vx1kd"]
+[ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="2_pnqrn"]
+[ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="3_5s1rh"]
+[ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="4_6ik1m"]
+[ext_resource type="PackedScene" uid="uid://781kgbmp678" path="res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn" id="6_u75iw"]
+[ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
+
+[sub_resource type="Animation" id="Animation_jucco"]
+resource_name = "EnfermeiroEntra"
+length = 5.0
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enfermeiro/Enfermeiro2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(544, -0.25, 0, 0.25, 0, 368, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enfermeiro/Enfermeiro2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 110, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.89, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 1, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enfermeiro/Enfermeiro2:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enfermeiro/Enfermeiro2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(144, -0.25, 0, 0.25, 0, 144, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-56, -0.25, 0, 0, -3.60007, 72, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4, 5)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4.05, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v23sp"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enfermeiro/Enfermeiro2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(544, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enfermeiro/Enfermeiro2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(80, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enfermeiro/Enfermeiro2:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enfermeiro/Enfermeiro2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(144, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-56, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqca8"]
+_data = {
+"EnfermeiroEntra": SubResource("Animation_jucco"),
+"RESET": SubResource("Animation_v23sp")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xlunc"]
+blend_mode = 2
+
+[node name="Game" type="Control" node_paths=PackedStringArray("table")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_vx1kd")
+table = NodePath("Enfermeiro/ColorRect2/TableContainer")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 233.0
+offset_top = 4.0
+offset_right = 273.0
+offset_bottom = 27.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wqca8")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 288.0
+mouse_filter = 2
+texture = ExtResource("1_mw18v")
+
+[node name="Rubrica" type="Node" parent="."]
+
+[node name="ColorRect" parent="Rubrica" instance=ExtResource("2_pnqrn")]
+offset_left = 128.0
+offset_top = 240.0
+offset_right = 384.0
+offset_bottom = 368.0
+scale = Vector2(0.25, 0.25)
+
+[node name="Area2D" parent="Rubrica/ColorRect" index="0"]
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" parent="Rubrica/ColorRect/Area2D" index="0"]
+position = Vector2(512, 256)
+scale = Vector2(0.25, 0.25)
+
+[node name="Carimbos" type="Node" parent="."]
+
+[node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
+position = Vector2(96, 256)
+
+[node name="posicaoVerde" type="Node2D" parent="Carimbos"]
+position = Vector2(48, 256)
+
+[node name="CarimboReprovado" parent="Carimbos" instance=ExtResource("3_5s1rh")]
+position = Vector2(96, 256)
+scale = Vector2(1, 1)
+
+[node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_6ik1m")]
+position = Vector2(48, 256)
+scale = Vector2(1, 1)
+
+[node name="Enfermeiro" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Enfermeiro"]
+clip_children = 2
+light_mask = 2
+visibility_layer = 2
+z_as_relative = false
+offset_left = 224.0
+offset_right = 512.0
+offset_bottom = 144.0
+color = Color(0.270588, 0.611765, 0.470588, 1)
+
+[node name="Enfermeiro2" type="Sprite2D" parent="Enfermeiro"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(544, 80)
+texture = ExtResource("7_3qxxc")
+hframes = 2
+frame = 1
+
+[node name="ColorRect2" type="ColorRect" parent="Enfermeiro"]
+light_mask = 4
+visibility_layer = 4
+clip_contents = true
+offset_left = 224.0
+offset_top = 144.0
+offset_right = 512.0
+offset_bottom = 288.0
+color = Color(0.4, 0.223529, 0.192157, 1)
+
+[node name="TableContainer" parent="Enfermeiro/ColorRect2" instance=ExtResource("6_u75iw")]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+light_mask = 2
+visibility_layer = 2
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_xlunc")
+position = Vector2(144, -56)
+
+[connection signal="area_entered" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_exited"]
+
+[editable path="Rubrica/ColorRect"]
