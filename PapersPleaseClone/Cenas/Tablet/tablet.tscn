@@ -11,29 +11,74 @@ script = ExtResource("1_mvqgj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nx4ou")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(160, 184)
 offset_left = -80.0
 offset_top = -96.0
 offset_right = 80.0
-offset_bottom = 96.0
+offset_bottom = 88.0
 theme = ExtResource("3_w5nvd")
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
-text = "Ferramenta 1"
+theme = ExtResource("3_w5nvd")
 
-[node name="CheckBox2" type="CheckBox" parent="VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Ferramenta 2"
+text = "Compressa estéril"
 
-[node name="CheckBox3" type="CheckBox" parent="VBoxContainer"]
+[node name="CheckBox2" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Ferramenta 3"
+text = "Gaze"
 
-[node name="CheckBox4" type="CheckBox" parent="VBoxContainer"]
+[node name="CheckBox3" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Ferramenta 4"
+text = "Garrote"
 
-[node name="CheckBox5" type="CheckBox" parent="VBoxContainer"]
+[node name="CheckBox4" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Ferramenta 5"
+text = "Clorexidina alcoólica 0,5%"
+
+[node name="CheckBox5" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pinça anatômica"
+
+[node name="CheckBox6" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tesoura de Mayo"
+
+[node name="CheckBox7" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pinça para antissepsia da pele"
+
+[node name="CheckBox8" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Introdutor e bizel"
+
+[node name="CheckBox9" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Cateter de 1,9 Fr"
+
+[node name="CheckBox10" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Fita métrica estéril"
+
+[node name="CheckBox11" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Campo cirúrgico estéril"
+
+[node name="CheckBox12" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Curativo transparente de poliuretano estéril"
+
+[node name="CheckBox13" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Seringa de 10 ml"
+
+[node name="CheckBox14" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Soro fisiológico"
+
+[node name="CheckBox15" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Equipo para o soro"

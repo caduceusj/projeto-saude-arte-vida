@@ -1,6 +1,7 @@
+VBoxContainer
+ScrollContainer
 CheckButton
 CheckBox
-VBoxContainer
 Sprite2D
 MarginContainer
 Label
