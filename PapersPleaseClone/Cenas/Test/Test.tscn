@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqkhf1xycouqw"]
+
+[ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="1_bosvo"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Test.gd" id="1_l0g1m"]
+[ext_resource type="Texture2D" uid="uid://dky20o8e77bf4" path="res://PapersPleaseClone/Sprites/Test/MesaDeCarimbo.png" id="1_lek0v"]
+[ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="2_usmqc"]
+[ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="5_52rju"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -345.0
+offset_top = -362.0
+offset_right = -345.0
+offset_bottom = -362.0
+script = ExtResource("1_l0g1m")
+
+[node name="Aba do Player" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Aba do Player"]
+offset_left = -342.0
+offset_top = -44.0
+offset_right = 938.0
+offset_bottom = 372.0
+mouse_filter = 2
+color = Color(0, 0.466667, 0.329412, 1)
+
+[node name="Panel" type="Panel" parent="Aba do Player"]
+offset_left = -326.0
+offset_top = -28.0
+offset_right = 922.0
+offset_bottom = 356.0
+mouse_filter = 2
+
+[node name="Equipamentos" type="Node" parent="Aba do Player"]
+
+[node name="EquipamentosNecessarios" type="Label" parent="Aba do Player/Equipamentos"]
+offset_left = 562.0
+offset_top = 60.0
+offset_right = 876.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 24
+text = "Equipamentos Necessários"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Aba do Player/Equipamentos"]
+offset_left = 554.0
+offset_top = 116.0
+offset_right = 874.0
+offset_bottom = 220.0
+
+[node name="Green" type="ColorRect" parent="Aba do Player/Equipamentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 1, 0, 1)
+
+[node name="Red" type="ColorRect" parent="Aba do Player/Equipamentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(1, 0, 0, 1)
+
+[node name="Blue" type="ColorRect" parent="Aba do Player/Equipamentos/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 1, 1)
+
+[node name="Rubrica" type="Node" parent="Aba do Player"]
+
+[node name="ColorRect" parent="Aba do Player/Rubrica" instance=ExtResource("5_52rju")]
+offset_left = -246.0
+offset_top = 220.0
+offset_right = -62.0
+offset_bottom = 300.0
+
+[node name="Carimbos" type="Node" parent="Aba do Player"]
+
+[node name="posicaoVermelho" type="Node2D" parent="Aba do Player/Carimbos"]
+position = Vector2(386, 140)
+scale = Vector2(4, 4)
+
+[node name="posicaoVerde" type="Node2D" parent="Aba do Player/Carimbos"]
+position = Vector2(210, 140)
+scale = Vector2(4, 4)
+
+[node name="Mesa" type="Sprite2D" parent="Aba do Player/Carimbos"]
+position = Vector2(298, 172)
+scale = Vector2(4, 4)
+texture = ExtResource("1_lek0v")
+
+[node name="CarimboReprovado" parent="Aba do Player/Carimbos" instance=ExtResource("2_usmqc")]
+position = Vector2(386, 140)
+
+[node name="CarimboAprovado" parent="Aba do Player/Carimbos" instance=ExtResource("1_bosvo")]
+position = Vector2(210, 140)
+
+[connection signal="area_entered" from="Aba do Player/Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="Aba do Player/Rubrica/ColorRect"]
