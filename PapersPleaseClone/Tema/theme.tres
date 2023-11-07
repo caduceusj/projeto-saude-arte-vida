@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=12 format=3 uid="uid://mopumyhyv17t"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://mopumyhyv17t"]
 
 [ext_resource type="FontFile" uid="uid://b6kkhv7gocpho" path="res://PapersPleaseClone/Fonte/Peepo.ttf" id="1_ad2a2"]
 
@@ -71,6 +71,24 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yey7l"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qjb4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kal5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3ou1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp5at"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijdbd"]
+bg_color = Color(0, 0, 0, 1)
+
 [resource]
 default_font = ExtResource("1_ad2a2")
 CheckBox/colors/font_color = Color(0, 0, 0, 1)
@@ -83,7 +101,6 @@ CheckBox/colors/font_pressed_color = Color(0, 0, 0, 1)
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 4
 CheckBox/constants/outline_size = 0
-CheckBox/font_sizes/font_size = 10
 CheckBox/icons/checked = SubResource("ImageTexture_yhtxx")
 CheckBox/icons/checked_disabled = SubResource("ImageTexture_yhtxx")
 CheckBox/icons/radio_checked = SubResource("ImageTexture_se7o6")
@@ -98,3 +115,9 @@ CheckBox/styles/hover = SubResource("StyleBoxEmpty_2uw5n")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxEmpty_2uw5n")
 CheckBox/styles/normal = SubResource("StyleBoxEmpty_2uw5n")
 CheckBox/styles/pressed = SubResource("StyleBoxEmpty_2uw5n")
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_yey7l")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_2qjb4")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_7kal5")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_p3ou1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_qp5at")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ijdbd")
