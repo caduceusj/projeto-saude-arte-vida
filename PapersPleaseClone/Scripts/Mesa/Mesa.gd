@@ -3,6 +3,8 @@ extends Node2D
 
 @onready var aleatorizar : RandomNumberGenerator
 
+
+
 signal tableChange
 var equipAux
 var equipAux2
@@ -13,13 +15,13 @@ var utensiliosMedicosBase = ["cateterfr", "clorexedinaAlcoolica", "compressaEste
 
 func inicializarMesa():
 	aleatorizar = RandomNumberGenerator.new()
-	adequado = aleatorizar.randi_range(0,2)
+	adequado = 1#aleatorizar.randi_range(0,2)
 	print(adequado)
 	if(adequado == 1):
 		print("enter")
-		for x in utensiliosMedicos.size()-1:
+		for x in utensiliosMedicos.size():
 			equipAux = aleatorizar.randi_range(0, utensiliosMedicos.size()-1)
-			get_node("Equipamentos/Sprite"+str(x+1)).texture = load("res://PapersPleaseClone/Sprites/Equipamentos/"+utensiliosMedicos[equipAux]+".png")
+			get_node("Equipamentos/Sprite"+str(+1)).texture = load("res://PapersPleaseClone/Sprites/Equipamentos/"+utensiliosMedicos[equipAux]+".png")
 			utensiliosMedicos.remove_at(equipAux)
 	elif(adequado == 0 or adequado == 2):
 		var variacao = aleatorizar.randi_range(0,1)
@@ -29,7 +31,7 @@ func inicializarMesa():
 				get_node("Equipamentos/Sprite"+str(x+1)).texture = load("res://PapersPleaseClone/Sprites/Equipamentos/"+utensiliosMedicos[equipAux]+".png")
 				utensiliosMedicos.remove_at(equipAux)
 		elif(variacao == 1):
-			for x in utensiliosMedicos.size()-1:
+			for x in utensiliosMedicos.size()-2:
 				equipAux = aleatorizar.randi_range(0, utensiliosMedicos.size()-2)
 				get_node("Equipamentos/Sprite"+str(x+1)).texture = load("res://PapersPleaseClone/Sprites/Equipamentos/"+utensiliosMedicos[equipAux]+".png")
 			get_node("Equipamentos/Sprite12").texture = load("res://PapersPleaseClone/Sprites/Equipamentos/"+utensiliosMedicos[0]+".png")

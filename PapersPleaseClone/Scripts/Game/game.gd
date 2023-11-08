@@ -4,7 +4,7 @@ extends Control
 @onready var rubrica = $Rubrica/ColorRect
 @export var dialogos : Resource
 @export var table : Node2D
-
+@export var Tablet : Node2D
 
 
 var aleatorizar = RandomNumberGenerator
@@ -37,7 +37,9 @@ func _input(event):
 			$AnimationPlayer.play_backwards("EnfermeiroEntra")
 			await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
+			Tablet._resetCheckBox()
 			$AnimationPlayer.play("EnfermeiroEntra")
+			
 		elif(corDoCarimbo == "vermelho"):
 			if(table.adequado != 1):
 				$Label.text = "Acertou"
@@ -46,7 +48,9 @@ func _input(event):
 			$AnimationPlayer.play_backwards("EnfermeiroEntra")
 			await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
+			Tablet._resetCheckBox()
 			$AnimationPlayer.play("EnfermeiroEntra")
+			
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("Carimbo")):

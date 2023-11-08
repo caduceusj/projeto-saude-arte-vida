@@ -23,62 +23,77 @@ theme = ExtResource("3_w5nvd")
 layout_mode = 2
 theme = ExtResource("3_w5nvd")
 
-[node name="CheckBox" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox1" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Compressa estéril"
 
 [node name="CheckBox2" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Gaze"
 
 [node name="CheckBox3" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Garrote"
 
 [node name="CheckBox4" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Clorexidina alcoólica 0,5%"
 
 [node name="CheckBox5" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Pinça anatômica"
 
 [node name="CheckBox6" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Tesoura de Mayo"
 
 [node name="CheckBox7" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Pinça para antissepsia da pele"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Pinça Foster"
 
 [node name="CheckBox8" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Introdutor e bizel"
 
 [node name="CheckBox9" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Cateter de 1,9 Fr"
 
 [node name="CheckBox10" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Fita métrica estéril"
 
 [node name="CheckBox11" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Campo cirúrgico estéril"
 
 [node name="CheckBox12" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Curativo transparente de poliuretano estéril"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Película Esteril"
 
 [node name="CheckBox13" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Seringa de 10 ml"
 
 [node name="CheckBox14" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Soro fisiológico"
 
 [node name="CheckBox15" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Equipo para o soro"
