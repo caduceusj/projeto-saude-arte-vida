@@ -7,3 +7,8 @@ res://PapersPleaseClone/Cenas/Tablet/tablet.tscn
 res://PapersPleaseClone/Scripts/Mesa/Mesa.gd
 res://PapersPleaseClone/Scripts/tablet.gd
 res://PapersPleaseClone/Scripts/Game/game.gd
+res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn
+res://PapersPleaseClone/Scripts/carimbo.gd
+res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn
+res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn
+res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn

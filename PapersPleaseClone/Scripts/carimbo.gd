@@ -20,6 +20,7 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and selected == true:
 		if event.pressed:
 			mouse_offset = position - get_global_mouse_position()
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			if(tipo == "verde"):
 				position = get_node("/root/Game/Carimbos/posicaoVerde").position
 			else:
@@ -29,5 +30,6 @@ func _input(event):
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and selected == false:
 		if event.pressed:
+			Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 			mouse_offset = position - get_global_mouse_position()
 			selected = true

@@ -12,3 +12,4 @@ func _resetCheckBox():
 	for x in $ScrollContainer/VBoxContainer.get_child_count():
 		get_node("ScrollContainer/VBoxContainer/CheckBox"+str(x+1)).set_pressed_no_signal(false)
 
+

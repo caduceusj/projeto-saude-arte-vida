@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var rubrica = $Rubrica/ColorRect
+@onready var rubrica = $Rubrica/Rubrica
 @export var dialogos : Resource
 @export var table : Node2D
 @export var Tablet : Node2D
@@ -41,10 +41,10 @@ func _input(event):
 			$AnimationPlayer.play("EnfermeiroEntra")
 			
 		elif(corDoCarimbo == "vermelho"):
-			if(table.adequado != 1):
-				$Label.text = "Acertou"
-			else:
+			if(table.adequado == 1):
 				$Label.text = "Errou"
+			else:
+				$Label.text = "Acertou"
 			$AnimationPlayer.play_backwards("EnfermeiroEntra")
 			await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")

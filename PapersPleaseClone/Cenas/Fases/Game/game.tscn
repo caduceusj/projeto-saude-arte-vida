@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wvbylvj2pljv"]
+[gd_scene load_steps=14 format=3 uid="uid://wvbylvj2pljv"]
 
 [ext_resource type="Texture2D" uid="uid://ka5p5flik1j8" path="res://PapersPleaseClone/Sprites/Proporcoes/Template.png" id="1_mw18v"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_vx1kd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://781kgbmp678" path="res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn" id="6_u75iw"]
 [ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
 [ext_resource type="PackedScene" uid="uid://dc17vkmtoeein" path="res://PapersPleaseClone/Cenas/Tablet/tablet.tscn" id="8_b63u0"]
+[ext_resource type="PackedScene" uid="uid://c7n1kh0jult01" path="res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn" id="9_r3u6m"]
 
 [sub_resource type="Animation" id="Animation_jucco"]
 resource_name = "EnfermeiroEntra"
@@ -225,10 +226,10 @@ Tablet = NodePath("Tablet/Tablet")
 [node name="Label" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 233.0
-offset_top = 4.0
-offset_right = 273.0
-offset_bottom = 27.0
+offset_left = 232.0
+offset_top = 32.0
+offset_right = 272.0
+offset_bottom = 55.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -244,35 +245,8 @@ texture = ExtResource("1_mw18v")
 
 [node name="Rubrica" type="Node" parent="."]
 
-[node name="ColorRect" parent="Rubrica" instance=ExtResource("2_pnqrn")]
-offset_left = 128.0
-offset_top = 240.0
-offset_right = 384.0
-offset_bottom = 368.0
-scale = Vector2(0.25, 0.25)
-
-[node name="Area2D" parent="Rubrica/ColorRect" index="0"]
-scale = Vector2(0.25, 0.25)
-
-[node name="CollisionShape2D" parent="Rubrica/ColorRect/Area2D" index="0"]
-position = Vector2(512, 256)
-scale = Vector2(0.25, 0.25)
-
-[node name="Carimbos" type="Node" parent="."]
-
-[node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
-position = Vector2(96, 256)
-
-[node name="posicaoVerde" type="Node2D" parent="Carimbos"]
-position = Vector2(48, 256)
-
-[node name="CarimboReprovado" parent="Carimbos" instance=ExtResource("3_5s1rh")]
-position = Vector2(96, 256)
-scale = Vector2(1, 1)
-
-[node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_6ik1m")]
-position = Vector2(48, 256)
-scale = Vector2(1, 1)
+[node name="Rubrica" parent="Rubrica" instance=ExtResource("2_pnqrn")]
+position = Vector2(160, 256)
 
 [node name="Enfermeiro" type="Node" parent="."]
 
@@ -316,7 +290,48 @@ position = Vector2(144, -56)
 [node name="Tablet" parent="Tablet" instance=ExtResource("8_b63u0")]
 position = Vector2(112, 112)
 
-[connection signal="area_entered" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Rubrica/ColorRect/Area2D" to="." method="_on_area_2d_area_exited"]
+[node name="Carimbos" type="Node" parent="."]
 
-[editable path="Rubrica/ColorRect"]
+[node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
+position = Vector2(96, 248)
+
+[node name="posicaoVerde" type="Node2D" parent="Carimbos"]
+position = Vector2(48, 248)
+
+[node name="CarimboReprovado" parent="Carimbos" instance=ExtResource("3_5s1rh")]
+position = Vector2(96, 248)
+scale = Vector2(1, 1)
+
+[node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_6ik1m")]
+position = Vector2(48, 248)
+scale = Vector2(1, 1)
+
+[node name="Bordas2" type="StaticBody2D" parent="Carimbos"]
+
+[node name="Bordas" type="CollisionPolygon2D" parent="Carimbos/Bordas2"]
+build_mode = 1
+polygon = PackedVector2Array(0, 288, 0, 208, 224, 208, 224, 288, 232, 288, 232, 200, -8, 200, -8, 296, 224, 296, 224, 288)
+
+[node name="BarraProgresso" parent="." instance=ExtResource("9_r3u6m")]
+z_index = 1
+layout_mode = 1
+offset_left = 224.0
+offset_right = 224.0
+
+[node name="ProgressBar" parent="BarraProgresso" index="0"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 288.0
+offset_bottom = 18.0
+
+[node name="LabelTempo" parent="BarraProgresso" index="1"]
+offset_left = 120.0
+offset_top = 0.0
+offset_right = 170.0
+offset_bottom = 50.0
+
+[connection signal="area_entered" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_exited"]
+
+[editable path="Rubrica/Rubrica"]
+[editable path="BarraProgresso"]
