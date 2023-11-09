@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc17vkmtoeein"]
+[gd_scene load_steps=18 format=3 uid="uid://dc17vkmtoeein"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/tablet.gd" id="1_mvqgj"]
 [ext_resource type="Texture2D" uid="uid://bcojbqeh5xb8w" path="res://PapersPleaseClone/Sprites/Test/livro.png" id="2_nx4ou"]
 [ext_resource type="Theme" uid="uid://mopumyhyv17t" path="res://PapersPleaseClone/Tema/theme.tres" id="3_w5nvd"]
+[ext_resource type="Texture2D" uid="uid://inbg00i8itbd" path="res://PapersPleaseClone/Sprites/Equipamentos/compressaEsteril.png" id="4_3dl4j"]
+[ext_resource type="Texture2D" uid="uid://cxvumk0f3fhtn" path="res://PapersPleaseClone/Sprites/Equipamentos/Garrote.png" id="5_b8k1a"]
+[ext_resource type="Texture2D" uid="uid://c81vngee4js31" path="res://PapersPleaseClone/Sprites/Equipamentos/clorexedinaAlcoolica.png" id="6_ef1in"]
+[ext_resource type="Texture2D" uid="uid://bcl07skf2sl8c" path="res://PapersPleaseClone/Sprites/Equipamentos/tesouraDeMayo.png" id="6_v4jli"]
+[ext_resource type="Texture2D" uid="uid://dd4vmdbqgxxo" path="res://PapersPleaseClone/Sprites/Equipamentos/pincaAntisepssiaDaPele.png" id="7_2g7t7"]
+[ext_resource type="Texture2D" uid="uid://dgrseo4ll875a" path="res://PapersPleaseClone/Sprites/Equipamentos/pincaAnatomica.png" id="7_tnmvq"]
+[ext_resource type="Texture2D" uid="uid://beogt1kdcw0x4" path="res://PapersPleaseClone/Sprites/Equipamentos/IntrodutoreBizel.png" id="10_ot5j1"]
+[ext_resource type="Texture2D" uid="uid://c2vetq1hvklwj" path="res://PapersPleaseClone/Sprites/Equipamentos/cateterfr.png" id="11_sbpdy"]
+[ext_resource type="Texture2D" uid="uid://clmgqp5wfanyi" path="res://PapersPleaseClone/Sprites/Equipamentos/fitaMetricaEsteril.png" id="12_al2w5"]
+[ext_resource type="Texture2D" uid="uid://bw4vptiaoudmv" path="res://PapersPleaseClone/Sprites/Equipamentos/campoCirugico.png" id="13_2ovrt"]
+[ext_resource type="Texture2D" uid="uid://chxnjto86loc3" path="res://PapersPleaseClone/Sprites/Equipamentos/curativoTransparente.png" id="14_x0yjj"]
+[ext_resource type="Texture2D" uid="uid://deoc3yh8aqiex" path="res://PapersPleaseClone/Sprites/Equipamentos/Seringa.png" id="15_01jbj"]
+[ext_resource type="Texture2D" uid="uid://b0vepnjksmx02" path="res://PapersPleaseClone/Sprites/Equipamentos/soroFisiologico.png" id="16_5msjj"]
+[ext_resource type="Texture2D" uid="uid://bqqhx3w4s80us" path="res://PapersPleaseClone/Sprites/Equipamentos/equipoParaoSoro.png" id="17_ba1oq"]
 
 [node name="Tablet" type="Node2D"]
 position = Vector2(256, 144)
@@ -11,7 +25,7 @@ script = ExtResource("1_mvqgj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nx4ou")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="ScrollContainerCheckBox" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(160, 184)
 offset_left = -80.0
 offset_top = -96.0
@@ -19,81 +33,263 @@ offset_right = 80.0
 offset_bottom = 88.0
 theme = ExtResource("3_w5nvd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerCheckBox"]
 layout_mode = 2
 theme = ExtResource("3_w5nvd")
 
-[node name="CheckBox1" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox1" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Compressa estéril"
+text = "Compressa estéril gaze"
 
-[node name="CheckBox2" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "Gaze"
-
-[node name="CheckBox3" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox2" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Garrote"
 
-[node name="CheckBox4" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox3" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Clorexidina alcoólica 0,5%"
 
-[node name="CheckBox5" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox4" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Pinça anatômica"
 
-[node name="CheckBox6" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox5" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Tesoura de Mayo"
 
-[node name="CheckBox7" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox6" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Pinça Foster"
 
-[node name="CheckBox8" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox7" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Introdutor e bizel"
 
-[node name="CheckBox9" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox8" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Cateter de 1,9 Fr"
 
-[node name="CheckBox10" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox9" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Fita métrica estéril"
 
-[node name="CheckBox11" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox10" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Campo cirúrgico estéril"
 
-[node name="CheckBox12" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox11" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Película Esteril"
 
-[node name="CheckBox13" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox12" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Seringa de 10 ml"
 
-[node name="CheckBox14" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox13" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Soro fisiológico"
 
-[node name="CheckBox15" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+[node name="CheckBox14" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Equipo para o soro"
+
+[node name="ScrollContainerConteudo" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(160, 184)
+offset_left = -80.0
+offset_top = -96.0
+offset_right = 80.0
+offset_bottom = 88.0
+theme = ExtResource("3_w5nvd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerConteudo"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Label" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Compressa estéril gaze"
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4_3dl4j")
+
+[node name="Label2" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Garrote
+"
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_b8k1a")
+
+[node name="Label3" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Clorexidina alcoólica 0,5%"
+
+[node name="TextureRect3" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_ef1in")
+
+[node name="Label4" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pinça anatômica"
+
+[node name="TextureRect4" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_tnmvq")
+
+[node name="Label5" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tesoura de Mayo"
+
+[node name="TextureRect5" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("6_v4jli")
+
+[node name="Label6" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pinça Foster"
+
+[node name="TextureRect6" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("7_2g7t7")
+
+[node name="Label7" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Introdutor e bizel"
+
+[node name="TextureRect7" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("10_ot5j1")
+
+[node name="Label8" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Cateter de 1,9 Fr"
+
+[node name="TextureRect8" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("11_sbpdy")
+
+[node name="Label9" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Fita métrica estéril"
+
+[node name="TextureRect9" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("12_al2w5")
+
+[node name="Label10" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Campo cirúrgico estéril"
+
+[node name="TextureRect10" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("13_2ovrt")
+expand_mode = 3
+
+[node name="Label11" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Película Esteril"
+
+[node name="TextureRect11" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("14_x0yjj")
+
+[node name="Label12" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Seringa de 10 ml"
+
+[node name="TextureRect12" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("15_01jbj")
+
+[node name="Label13" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Soro fisiológico"
+
+[node name="TextureRect13" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("16_5msjj")
+
+[node name="Label14" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Equipo para o soro"
+
+[node name="TextureRect14" type="TextureRect" parent="ScrollContainerConteudo/VBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("17_ba1oq")
+
+[node name="TextureButtonDireita" type="TextureButton" parent="."]
+offset_left = 40.0
+offset_top = -96.0
+offset_right = 80.0
+offset_bottom = -56.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
+[node name="TextureButtonEsquerda" type="TextureButton" parent="."]
+offset_left = -80.0
+offset_top = -96.0
+offset_right = -40.0
+offset_bottom = -56.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+
+[connection signal="pressed" from="TextureButtonDireita" to="." method="_on_texture_button_direita_pressed"]
+[connection signal="pressed" from="TextureButtonEsquerda" to="." method="_on_texture_button_esquerda_pressed"]

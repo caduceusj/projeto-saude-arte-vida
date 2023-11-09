@@ -1,9 +1,6 @@
-res://PapersPleaseClone/Cenas/Fases/Game/game.tscn
+res://PapersPleaseClone/Cenas/Tablet/tablet.tscn
 res://PapersPleaseClone/Scripts/miniDialogos.gd
 res://PapersPleaseClone/Tema/theme.tres
-res://PapersPleaseClone/Scripts/transparent.gdshader
-res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn
-res://PapersPleaseClone/Cenas/Tablet/tablet.tscn
-res://PapersPleaseClone/Scripts/Mesa/Mesa.gd
+res://PapersPleaseClone/Cenas/Test/Test.tscn
+res://PapersPleaseClone/Cenas/Fases/Game/game.tscn
 res://PapersPleaseClone/Scripts/tablet.gd
-res://PapersPleaseClone/Scripts/Game/game.gd

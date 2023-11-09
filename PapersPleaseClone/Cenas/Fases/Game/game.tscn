@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="3_5s1rh"]
 [ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="4_6ik1m"]
 [ext_resource type="PackedScene" uid="uid://781kgbmp678" path="res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn" id="6_u75iw"]
-[ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
+[ext_resource type="Texture2D" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
 [ext_resource type="PackedScene" uid="uid://dc17vkmtoeein" path="res://PapersPleaseClone/Cenas/Tablet/tablet.tscn" id="8_b63u0"]
 
 [sub_resource type="Animation" id="Animation_jucco"]
