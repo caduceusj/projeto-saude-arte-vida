@@ -1,6 +1,7 @@
 extends Control
 
-
+@onready var feedback = preload("res://PapersPleaseClone/Cenas/FeedbackPopUp/feedback.tscn")
+@onready var gameController = get_node("/root/GameController")
 @onready var rubrica = $Rubrica/Rubrica
 @export var dialogos : Resource
 @export var table : Node2D
@@ -18,6 +19,16 @@ var adequado = false
 var corDoCarimbo
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(gameController.mode == 0):
+		table = $Enfermeiro/ColorRect2/TableContainer
+	elif(gameController.mode == 1):
+		table = $Enfermeiro/ColorRect2/MesaVestes
+		$Enfermeiro/ColorRect2/MesaVestes.show()
+		$Enfermeiro/ColorRect2/TableContainer.hide()
+	elif(gameController.mode == 2):
+		table = $Enfermeiro/ColorRect2/TableContainer
+		$Enfermeiro/ColorRect2/TableContainer.show()
+		$Enfermeiro/ColorRect2/MesaVestes.hide()
 	table.emit_signal("tableChange")
 	$AnimationPlayer.play("EnfermeiroEntra")
 
@@ -31,9 +42,17 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and dentroRubrica:
 		if(corDoCarimbo == "verde"):
 			if(table.adequado == 1):
-				$Label.text = "Acertou"
+				var feedbackInstance = feedback.instantiate()
+				feedbackInstance.text = "Acertou"
+				feedbackInstance.position = Vector2(232, 32)
+				get_node("/root").add_child(feedbackInstance)
+				
 			else:
-				$Label.text = "Errou"
+				var feedbackInstance = feedback.instantiate()
+				feedbackInstance.text = table.missing
+				feedbackInstance.position = Vector2(232, 32)
+				get_node("/root").add_child(feedbackInstance)
+				
 			$AnimationPlayer.play_backwards("EnfermeiroEntra")
 			await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
@@ -42,9 +61,17 @@ func _input(event):
 			
 		elif(corDoCarimbo == "vermelho"):
 			if(table.adequado == 1):
-				$Label.text = "Errou"
+				var feedbackInstance = feedback.instantiate()
+				feedbackInstance.text = "Errou"
+				feedbackInstance.position = Vector2(232, 32)
+				get_node("/root").add_child(feedbackInstance)
+				
 			else:
-				$Label.text = "Acertou"
+				var feedbackInstance = feedback.instantiate()
+				feedbackInstance.text = "Acertou"
+				feedbackInstance.position = Vector2(232, 32)
+				get_node("/root").add_child(feedbackInstance)
+				
 			$AnimationPlayer.play_backwards("EnfermeiroEntra")
 			await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
@@ -62,3 +89,6 @@ func _on_area_2d_area_exited(area):
 	if(area.is_in_group("Carimbo")):
 		dentroRubrica = false
 		corDoCarimbo = null
+
+
+

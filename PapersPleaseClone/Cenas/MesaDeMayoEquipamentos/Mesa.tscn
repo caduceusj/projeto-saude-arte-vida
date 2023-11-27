@@ -84,7 +84,7 @@ position = Vector2(-50, 9)
 texture = ExtResource("13_xerxx")
 
 [node name="Sprite12" type="Sprite2D" parent="Equipamentos"]
-position = Vector2(-22, -14)
+position = Vector2(-22, 10)
 texture = ExtResource("15_2wdt0")
 
 [connection signal="tableChange" from="." to="." method="_on_table_change"]

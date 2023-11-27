@@ -15,6 +15,10 @@ run/main_scene="res://PapersPleaseClone/Cenas/Test/Test.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameController="*res://PapersPleaseClone/Scripts/Game/GameController.gd"
+
 [display]
 
 window/size/viewport_width=512

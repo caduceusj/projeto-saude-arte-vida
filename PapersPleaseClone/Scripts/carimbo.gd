@@ -2,7 +2,7 @@ extends Node2D
 
 var selected = false
 var mouse_offset = Vector2(0, 0)
-
+@export var tutorialScript : Control
 @export var tipo = "verde"
 
 func _process(delta):
@@ -26,6 +26,8 @@ func _input(event):
 			else:
 				position = get_node("/root/Game/Carimbos/posicaoVermelho").position
 			selected = false
+			if(tutorialScript):
+				tutorialScript.selected = false
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and selected == false:

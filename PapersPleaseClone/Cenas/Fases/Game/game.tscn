@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://wvbylvj2pljv"]
+[gd_scene load_steps=17 format=3 uid="uid://wvbylvj2pljv"]
 
 [ext_resource type="Texture2D" uid="uid://ka5p5flik1j8" path="res://PapersPleaseClone/Sprites/Proporcoes/Template.png" id="1_mw18v"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_vx1kd"]
 [ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="2_pnqrn"]
 [ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="3_5s1rh"]
 [ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="4_6ik1m"]
+[ext_resource type="PackedScene" uid="uid://fe4vigmq3msw" path="res://PapersPleaseClone/Cenas/MesaDeMayoVestuario/mesaVestes.tscn" id="6_5fmmh"]
 [ext_resource type="PackedScene" uid="uid://781kgbmp678" path="res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn" id="6_u75iw"]
 [ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
 [ext_resource type="PackedScene" uid="uid://dc17vkmtoeein" path="res://PapersPleaseClone/Cenas/Tablet/tablet.tscn" id="8_b63u0"]
@@ -72,39 +73,116 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
-tracks/5/type = "bezier"
+tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:x")
+tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(144, -0.25, 0, 0.25, 0, 144, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(4, 5)
+"times": PackedFloat32Array(4.01, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, -56), Vector2(144, 72)]
 }
-tracks/6/type = "bezier"
+tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:y")
+tracks/6/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-56, -0.25, 0, 0, -3.60007, 72, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(4, 5)
+"times": PackedFloat32Array(4.01, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, -56), Vector2(144, 72)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/7/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(4.05, 5),
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7fy31"]
+resource_name = "EnfermeiroTutorial"
+length = 10.0
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enfermeiro/Enfermeiro2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(544, -0.25, 0, 0.25, 0, 368, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enfermeiro/Enfermeiro2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 110, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.89, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enfermeiro/Enfermeiro2:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enfermeiro/Enfermeiro2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_v23sp"]
@@ -167,35 +245,49 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
 }
-tracks/5/type = "bezier"
+tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:x")
+tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(144, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(144, -56)]
 }
-tracks/6/type = "bezier"
+tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position:y")
+tracks/6/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-56, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(144, -56)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/7/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -205,11 +297,15 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wqca8"]
 _data = {
 "EnfermeiroEntra": SubResource("Animation_jucco"),
+"EnfermeiroTutorial": SubResource("Animation_7fy31"),
 "RESET": SubResource("Animation_v23sp")
 }
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xlunc"]
 blend_mode = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xooud"]
+size = Vector2(20, 73)
 
 [node name="Game" type="Control" node_paths=PackedStringArray("table", "Tablet")]
 layout_mode = 3
@@ -222,14 +318,6 @@ mouse_filter = 2
 script = ExtResource("1_vx1kd")
 table = NodePath("Enfermeiro/ColorRect2/TableContainer")
 Tablet = NodePath("Tablet/Tablet")
-
-[node name="Label" type="Label" parent="."]
-z_index = 1
-layout_mode = 0
-offset_left = 232.0
-offset_top = 32.0
-offset_right = 272.0
-offset_bottom = 55.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -285,12 +373,22 @@ z_as_relative = false
 material = SubResource("CanvasItemMaterial_xlunc")
 position = Vector2(144, -56)
 
+[node name="MesaVestes" parent="Enfermeiro/ColorRect2" instance=ExtResource("6_5fmmh")]
+modulate = Color(0.392157, 0.392157, 0.392157, 1)
+position = Vector2(144, -56)
+
 [node name="Tablet" type="Node" parent="."]
 
 [node name="Tablet" parent="Tablet" instance=ExtResource("8_b63u0")]
 position = Vector2(112, 112)
 
 [node name="Carimbos" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Carimbos"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carimbos/StaticBody2D"]
+position = Vector2(16, 244.5)
+shape = SubResource("RectangleShape2D_xooud")
 
 [node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
 position = Vector2(96, 248)
@@ -305,12 +403,6 @@ scale = Vector2(1, 1)
 [node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_6ik1m")]
 position = Vector2(48, 248)
 scale = Vector2(1, 1)
-
-[node name="Bordas2" type="StaticBody2D" parent="Carimbos"]
-
-[node name="Bordas" type="CollisionPolygon2D" parent="Carimbos/Bordas2"]
-build_mode = 1
-polygon = PackedVector2Array(0, 288, 0, 208, 224, 208, 224, 288, 232, 288, 232, 200, -8, 200, -8, 296, 224, 296, 224, 288)
 
 [node name="BarraProgresso" parent="." instance=ExtResource("9_r3u6m")]
 z_index = 1
@@ -332,6 +424,9 @@ offset_bottom = 50.0
 
 [connection signal="area_entered" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="tableChange" from="Enfermeiro/ColorRect2/MesaVestes" to="Enfermeiro/ColorRect2/MesaVestes" method="_on_table_change"]
 
 [editable path="Rubrica/Rubrica"]
+[editable path="Carimbos/CarimboReprovado"]
+[editable path="Carimbos/CarimboAprovado"]
 [editable path="BarraProgresso"]

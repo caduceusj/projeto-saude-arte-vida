@@ -1,13 +1,16 @@
-<<<<<<< HEAD
 res://PapersPleaseClone/Scripts
-res://PapersPleaseClone/Scripts/Mesa
-res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos
+res://PapersPleaseClone/Cenas/Tutorial
 res://PapersPleaseClone/Scripts/Game
+res://PapersPleaseClone/Cenas/FeedbackPopUp
+res://PapersPleaseClone/Cenas/Menu
+res://PapersPleaseClone/Scripts/Mesa
+res://PapersPleaseClone/Cenas/MesaDeMayoVestuario
+<<<<<<< HEAD
+res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos
 res://PapersPleaseClone/Cenas/Fases/Game
 res://PapersPleaseClone/Scripts/Resources
 =======
 res://PapersPleaseClone/Sprites/Test
-res://PapersPleaseClone/Scripts
 res://
 >>>>>>> daviduarte
 res://PapersPleaseClone/Cenas/BarraProgresso
