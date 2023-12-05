@@ -1,3 +1,4 @@
+AnimatedSprite2D
 TextureButton
 Panel
 Label
@@ -29,4 +30,3 @@ TextureRect
 Container
 GridContainer
 Timer
-ProgressBar

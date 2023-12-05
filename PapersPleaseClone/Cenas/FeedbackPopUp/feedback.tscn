@@ -89,8 +89,8 @@ theme_override_fonts/font = ExtResource("2_fpa87")
 text = "Bernalete Pastilha"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "PopUp"
-speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_cdscg")
 }
+autoplay = "PopUp"
+speed_scale = 0.5

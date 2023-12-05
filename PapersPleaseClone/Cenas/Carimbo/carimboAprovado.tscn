@@ -1,7 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://7eeaw5n1gmp8"]
+[gd_scene load_steps=12 format=3 uid="uid://7eeaw5n1gmp8"]
 
-[ext_resource type="Texture2D" uid="uid://dilliwlxcenw7" path="res://PapersPleaseClone/Sprites/Test/CarimboVerde.png" id="1_6ox8i"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/carimbo.gd" id="1_qybj0"]
+[ext_resource type="Texture2D" uid="uid://bma6u7wo1ayyh" path="res://PapersPleaseClone/Sprites/Carimbos/carimboVerde.png" id="2_cwiv0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3gm5"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8sun"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73m1s"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tv86p"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxixd"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd8pu"]
+atlas = ExtResource("2_cwiv0")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_skmt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3gm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8sun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73m1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tv86p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxixd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd8pu")
+}],
+"loop": false,
+"name": &"carimba",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_so067"]
 size = Vector2(25.6, 10.4)
@@ -14,8 +64,9 @@ position = Vector2(160, 0)
 scale = Vector2(5, 5)
 script = ExtResource("1_qybj0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6ox8i")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_skmt1")
+animation = &"carimba"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Carimbo"]]
 

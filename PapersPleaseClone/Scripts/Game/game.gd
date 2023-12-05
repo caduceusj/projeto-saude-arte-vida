@@ -7,6 +7,7 @@ extends Control
 @export var table : Node2D
 @export var Tablet : Node2D
 
+var antiDoubleTap = false
 
 var aleatorizar = RandomNumberGenerator
 
@@ -39,15 +40,18 @@ func _process(delta):
 
 func _input(event):
 
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and dentroRubrica:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and dentroRubrica and antiDoubleTap == false:
+		antiDoubleTap = true
 		if(corDoCarimbo == "verde"):
 			if(table.adequado == 1):
+				print("1")
 				var feedbackInstance = feedback.instantiate()
 				feedbackInstance.text = "Acertou"
 				feedbackInstance.position = Vector2(232, 32)
 				get_node("/root").add_child(feedbackInstance)
 				
 			else:
+				print("2")
 				var feedbackInstance = feedback.instantiate()
 				feedbackInstance.text = table.missing
 				feedbackInstance.position = Vector2(232, 32)
@@ -77,18 +81,19 @@ func _input(event):
 			table.emit_signal("tableChange")
 			Tablet._resetCheckBox()
 			$AnimationPlayer.play("EnfermeiroEntra")
-			
+		
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("Carimbo")):
 		dentroRubrica = true
 		corDoCarimbo = area.get_parent().tipo
-
+		antiDoubleTap = false
 
 func _on_area_2d_area_exited(area):
 	if(area.is_in_group("Carimbo")):
 		dentroRubrica = false
 		corDoCarimbo = null
+		antiDoubleTap = true
 
 
 

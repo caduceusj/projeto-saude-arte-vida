@@ -4,6 +4,8 @@ var selected = false
 var mouse_offset = Vector2(0, 0)
 @export var tutorialScript : Control
 @export var tipo = "verde"
+var tween
+
 
 func _process(delta):
 	if selected:
@@ -19,13 +21,18 @@ func followMouse():
 func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and selected == true:
 		if event.pressed:
+			
+			$Sprite2D.play("carimba")
+			await($Sprite2D.animation_finished)
 			mouse_offset = position - get_global_mouse_position()
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			if(tipo == "verde"):
-				position = get_node("/root/Game/Carimbos/posicaoVerde").position
+				tween = create_tween()
+				tween.tween_property(self, "position", Vector2(48, 248), 1.0).from(position)
 			else:
-				position = get_node("/root/Game/Carimbos/posicaoVermelho").position
+				tween = create_tween()
+				tween.tween_property(self, "position", Vector2(96,248), 1.0).from(position)
 			selected = false
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			if(tutorialScript):
 				tutorialScript.selected = false
 
