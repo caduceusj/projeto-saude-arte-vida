@@ -47,6 +47,7 @@ func _input(event):
 				print("1")
 				var feedbackInstance = feedback.instantiate()
 				feedbackInstance.text = "Acertou"
+				$HUD._alterarPontuacao(10)
 				feedbackInstance.position = Vector2(232, 32)
 				get_node("/root").add_child(feedbackInstance)
 				
@@ -73,6 +74,7 @@ func _input(event):
 			else:
 				var feedbackInstance = feedback.instantiate()
 				feedbackInstance.text = "Acertou"
+				$HUD._alterarPontuacao(10)
 				feedbackInstance.position = Vector2(232, 32)
 				get_node("/root").add_child(feedbackInstance)
 				

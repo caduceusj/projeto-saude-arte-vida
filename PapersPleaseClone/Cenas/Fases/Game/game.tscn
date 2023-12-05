@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wvbylvj2pljv"]
+[gd_scene load_steps=18 format=3 uid="uid://wvbylvj2pljv"]
 
 [ext_resource type="Texture2D" uid="uid://ka5p5flik1j8" path="res://PapersPleaseClone/Sprites/Proporcoes/Template.png" id="1_mw18v"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_vx1kd"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
 [ext_resource type="PackedScene" uid="uid://dc17vkmtoeein" path="res://PapersPleaseClone/Cenas/Tablet/tablet.tscn" id="8_b63u0"]
 [ext_resource type="PackedScene" uid="uid://c7n1kh0jult01" path="res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn" id="9_r3u6m"]
+[ext_resource type="PackedScene" uid="uid://be1lhds3klu1h" path="res://PapersPleaseClone/Cenas/Pontuacao/HUD.tscn" id="11_fxeli"]
 
 [sub_resource type="Animation" id="Animation_jucco"]
 resource_name = "EnfermeiroEntra"
@@ -421,6 +422,9 @@ offset_left = 120.0
 offset_top = 0.0
 offset_right = 170.0
 offset_bottom = 50.0
+
+[node name="HUD" parent="." instance=ExtResource("11_fxeli")]
+process_mode = 3
 
 [connection signal="area_entered" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_exited"]
