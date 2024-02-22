@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c7n1kh0jult01" path="res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn" id="9_r3u6m"]
 [ext_resource type="PackedScene" uid="uid://be1lhds3klu1h" path="res://PapersPleaseClone/Cenas/Pontuacao/HUD.tscn" id="11_fxeli"]
 
+
 [sub_resource type="Animation" id="Animation_jucco"]
 resource_name = "EnfermeiroEntra"
 length = 5.0

@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqkhf1xycouqw"]
 
 [ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="1_bosvo"]
-[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Test.gd" id="1_l0g1m"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_l0g1m"]
 [ext_resource type="Texture2D" uid="uid://dky20o8e77bf4" path="res://PapersPleaseClone/Sprites/Test/MesaDeCarimbo.png" id="1_lek0v"]
 [ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="2_usmqc"]
 [ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="5_52rju"]
+
 
 [node name="Test" type="Control"]
 layout_mode = 3

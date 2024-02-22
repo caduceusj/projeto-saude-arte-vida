@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bqqhx3w4s80us" path="res://PapersPleaseClone/Sprites/Equipamentos/equipoParaoSoro.png" id="17_ba1oq"]
 [ext_resource type="Texture2D" uid="uid://bdvn1xpowui12" path="res://PapersPleaseClone/Sprites/Tutorial/setaVazia.png" id="18_lp3c0"]
 
+
 [node name="Tablet" type="Node2D"]
 position = Vector2(256, 144)
 script = ExtResource("1_mvqgj")

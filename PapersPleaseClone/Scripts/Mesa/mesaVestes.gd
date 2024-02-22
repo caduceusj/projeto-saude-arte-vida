@@ -25,14 +25,14 @@ func inicializarMesa():
 			trajeAux = aleatorizar.randi_range(0, trajes.size()-1)
 			get_node("Roupas/Sprite"+str(x)).texture = load("res://PapersPleaseClone/Sprites/vestuarioTeste/"+trajes[trajeAux]+".png")
 			get_node("Roupas/Sprite"+str(x)).frame = 1
-			missing = "Roupas Sujas"
+			missing = "Roupas Rasgadas"
 			trajes.remove_at(trajeAux)
 	elif(adequado == 2):
 		for x in  trajes.size():
 			trajeAux = aleatorizar.randi_range(0, trajes.size()-1)
 			get_node("Roupas/Sprite"+str(x)).texture = load("res://PapersPleaseClone/Sprites/vestuarioTeste/"+trajes[trajeAux]+".png")
 			get_node("Roupas/Sprite"+str(x)).frame = 2
-			missing = "Roupas Rasgadas"
+			missing = "Roupas Sujas"
 			trajes.remove_at(trajeAux)
 	elif(adequado == 3):
 		for x in  trajes.size():

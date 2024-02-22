@@ -7,7 +7,7 @@ extends Control
 
 func _on_button_pressed():
 	gameController.mode = 0
-	get_tree().change_scene_to_file("res://PapersPleaseClone/Cenas/Fases/Game/game.tscn")
+	get_tree().change_scene_to_file("res://PapersPleaseClone/Cenas/Tutorial/tutorial.tscn")
 
 
 func _on_button_2_pressed():
