@@ -1,33 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctnn77jc27yix"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/miniGameMenu.gd" id="1_sxnux"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lo4hs"]
-bg_color = Color(0.0980392, 0.686275, 0.498039, 1)
+[ext_resource type="Texture2D" uid="uid://cgjtnqbpie1q5" path="res://PapersPleaseClone/Sprites/UI/menu.png" id="2_12n4b"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="2_su8nc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a0mv"]
-bg_color = Color(0, 0.505882, 0.533333, 1)
+bg_color = Color(0.2, 0.117647, 0.172549, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0, 0.780392, 0.792157, 1)
+border_color = Color(0.541176, 0.529412, 0.333333, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_653rm"]
-bg_color = Color(0, 0.505882, 0.533333, 1)
+bg_color = Color(0.109804, 0.054902, 0.0941176, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uiis"]
-bg_color = Color(0, 0.505882, 0.533333, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.541176, 0.529412, 0.333333, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -38,46 +33,72 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sxnux")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
+self_modulate = Color(0.74, 0.74, 0.74, 1)
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 288.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_lo4hs")
+texture = ExtResource("2_12n4b")
 
-[node name="Button" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 64.0
-offset_right = 336.0
-offset_bottom = 104.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -92.0
+offset_right = 92.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_su8nc")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a0mv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_653rm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3uiis")
-text = "Tutorial"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_653rm")
+text = "Tutorial "
 
-[node name="Button2" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 128.0
-offset_right = 336.0
-offset_bottom = 168.0
+[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_su8nc")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a0mv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_653rm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3uiis")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_653rm")
 text = "Kit de Vestes"
 
-[node name="Button3" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 192.0
-offset_right = 336.0
-offset_bottom = 232.0
-theme_override_font_sizes/font_size = 13
+[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_su8nc")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a0mv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_653rm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3uiis")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_653rm")
 text = "Kit de Equipamentos"
 
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Panel/Button3" to="." method="_on_button_3_pressed"]
+[node name="Button4" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_su8nc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_5a0mv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_653rm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_653rm")
+text = "Sair"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Button4" to="." method="_on_button_4_pressed"]

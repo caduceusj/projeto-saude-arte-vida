@@ -11,19 +11,28 @@ config_version=5
 [application]
 
 config/name="Saude Arte e Vida"
-run/main_scene="res://PapersPleaseClone/Cenas/Test/Test.tscn"
+run/main_scene="res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameController="*res://PapersPleaseClone/Scripts/Game/GameController.gd"
+Ost="*res://PapersPleaseClone/Cenas/Ost/ost.tscn"
 
 [display]
 
 window/size/viewport_width=512
 window/size/viewport_height=288
 window/stretch/mode="viewport"
+
+[input]
+
+mouse_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 

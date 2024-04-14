@@ -1,19 +1,51 @@
-[gd_scene load_steps=18 format=3 uid="uid://wvbylvj2pljv"]
+[gd_scene load_steps=26 format=3 uid="uid://wvbylvj2pljv"]
 
-[ext_resource type="Texture2D" uid="uid://ka5p5flik1j8" path="res://PapersPleaseClone/Sprites/Proporcoes/Template.png" id="1_mw18v"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Game/game.gd" id="1_vx1kd"]
 [ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="2_pnqrn"]
 [ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="3_5s1rh"]
+[ext_resource type="Texture2D" uid="uid://yig02ytui6q8" path="res://PapersPleaseClone/Sprites/Carimbos/rubrica.png" id="3_36wsf"]
+[ext_resource type="Texture2D" uid="uid://bsksb7tt0et1d" path="res://PapersPleaseClone/Sprites/UI/Background.png" id="3_be3r0"]
 [ext_resource type="PackedScene" uid="uid://7eeaw5n1gmp8" path="res://PapersPleaseClone/Cenas/Carimbo/carimboAprovado.tscn" id="4_6ik1m"]
+[ext_resource type="Texture2D" uid="uid://olxir7h4fcxm" path="res://PapersPleaseClone/Sprites/SpriteSheetMedica/Enfermeira-SheetVERSAO2.png" id="4_fabsk"]
+[ext_resource type="Texture2D" uid="uid://cwi4kxro6dtrn" path="res://PapersPleaseClone/Sprites/UI/chao.png" id="5_hpg8y"]
 [ext_resource type="PackedScene" uid="uid://fe4vigmq3msw" path="res://PapersPleaseClone/Cenas/MesaDeMayoVestuario/mesaVestes.tscn" id="6_5fmmh"]
 [ext_resource type="PackedScene" uid="uid://781kgbmp678" path="res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos/Mesa.tscn" id="6_u75iw"]
-[ext_resource type="Texture2D" uid="uid://du8cpa7ce0oi3" path="res://PapersPleaseClone/Sprites/Test/medicofeio.png" id="7_3qxxc"]
 [ext_resource type="PackedScene" uid="uid://dc17vkmtoeein" path="res://PapersPleaseClone/Cenas/Tablet/tablet.tscn" id="8_b63u0"]
-[ext_resource type="PackedScene" uid="uid://c7n1kh0jult01" path="res://PapersPleaseClone/Cenas/BarraProgresso/barra_progresso.tscn" id="9_r3u6m"]
+[ext_resource type="PackedScene" uid="uid://bfactlbvcmciq" path="res://PapersPleaseClone/Cenas/Tablet/tabletVestes.tscn" id="8_nd742"]
+[ext_resource type="Texture2D" uid="uid://baxq1cw3fp4cc" path="res://PapersPleaseClone/Sprites/Carimbos/Stand.png" id="10_q034e"]
 [ext_resource type="PackedScene" uid="uid://be1lhds3klu1h" path="res://PapersPleaseClone/Cenas/Pontuacao/HUD.tscn" id="11_fxeli"]
+[ext_resource type="Script" path="res://PapersPleaseClone/Scripts/barra_progresso.gd" id="12_7sdd2"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="13_y2j0q"]
+[ext_resource type="Texture2D" uid="uid://rx2bqpwv6v1u" path="res://PapersPleaseClone/Sprites/UI/mesaTablet.png" id="14_8p1k2"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xlunc"]
+blend_mode = 2
 
-[sub_resource type="Animation" id="Animation_jucco"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixnd4"]
+bg_color = Color(0.117647, 0.247059, 0.32549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av2m3"]
+bg_color = Color(0.141176, 0.466667, 0.670588, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Animation" id="Animation_d1njc"]
 resource_name = "EnfermeiroEntra"
 length = 5.0
 step = 0.01
@@ -46,10 +78,121 @@ tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.89, 3.9),
+"times": PackedFloat32Array(-0.01, 3.89, 3.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 1]
+"values": [6, 6, 2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Enfermeiro/Enfermeiro2:z_index")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Enfermeiro/Enfermeiro2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Enfermeiro/ColorRect2/TableContainer:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.01, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, -80), Vector2(144, 72)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.01, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(144, -80), Vector2(144, 72)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Enfermeiro/ColorRect2/MesaVestes:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Enfermeiro/ColorRect2/TableContainer:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.392157, 0.392157, 0.392157, 1), Color(0.392157, 0.392157, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jucco"]
+resource_name = "EnfermeiroEntraVestes"
+length = 5.0
+step = 0.01
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enfermeiro/Enfermeiro2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(544, -0.25, 0, 0.25, 0, 368, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enfermeiro/Enfermeiro2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 85, -0.25, 0, 0.25, 0, 80, -0.25, 0, 0.25, 0, 110, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7, 3, 4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(-0.01, 3.89, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [4, 4, 0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -157,10 +300,10 @@ tracks/2/path = NodePath("Enfermeiro/Enfermeiro2:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3.89, 3.9),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 3.86, 3.89, 3.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 1]
+"values": [4, 4, 1, 0]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -298,16 +441,11 @@ tracks/8/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wqca8"]
 _data = {
-"EnfermeiroEntra": SubResource("Animation_jucco"),
+"EnfermeiroEntra": SubResource("Animation_d1njc"),
+"EnfermeiroEntraVestes": SubResource("Animation_jucco"),
 "EnfermeiroTutorial": SubResource("Animation_7fy31"),
 "RESET": SubResource("Animation_v23sp")
 }
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xlunc"]
-blend_mode = 2
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xooud"]
-size = Vector2(20, 73)
 
 [node name="Game" type="Control" node_paths=PackedStringArray("table", "Tablet")]
 layout_mode = 3
@@ -321,26 +459,15 @@ script = ExtResource("1_vx1kd")
 table = NodePath("Enfermeiro/ColorRect2/TableContainer")
 Tablet = NodePath("Tablet/Tablet")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_wqca8")
-}
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 512.0
-offset_bottom = 288.0
-mouse_filter = 2
-texture = ExtResource("1_mw18v")
-
 [node name="Rubrica" type="Node" parent="."]
 
 [node name="Rubrica" parent="Rubrica" instance=ExtResource("2_pnqrn")]
-position = Vector2(160, 256)
+position = Vector2(160, 248)
+texture = ExtResource("3_36wsf")
 
 [node name="Enfermeiro" type="Node" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="Enfermeiro"]
+[node name="ColorRect" type="TextureRect" parent="Enfermeiro"]
 clip_children = 2
 light_mask = 2
 visibility_layer = 2
@@ -348,16 +475,16 @@ z_as_relative = false
 offset_left = 224.0
 offset_right = 512.0
 offset_bottom = 144.0
-color = Color(0.270588, 0.611765, 0.470588, 1)
+texture = ExtResource("3_be3r0")
 
 [node name="Enfermeiro2" type="Sprite2D" parent="Enfermeiro"]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(544, 80)
-texture = ExtResource("7_3qxxc")
-hframes = 2
+texture = ExtResource("4_fabsk")
+hframes = 8
 frame = 1
 
-[node name="ColorRect2" type="ColorRect" parent="Enfermeiro"]
+[node name="ColorRect2" type="TextureRect" parent="Enfermeiro"]
 light_mask = 4
 visibility_layer = 4
 clip_contents = true
@@ -365,7 +492,7 @@ offset_left = 224.0
 offset_top = 144.0
 offset_right = 512.0
 offset_bottom = 288.0
-color = Color(0.4, 0.223529, 0.192157, 1)
+texture = ExtResource("5_hpg8y")
 
 [node name="TableContainer" parent="Enfermeiro/ColorRect2" instance=ExtResource("6_u75iw")]
 modulate = Color(0.392157, 0.392157, 0.392157, 1)
@@ -381,57 +508,93 @@ position = Vector2(144, -56)
 
 [node name="Tablet" type="Node" parent="."]
 
+[node name="Tablet2" parent="Tablet" instance=ExtResource("8_nd742")]
+position = Vector2(112, 112)
+
 [node name="Tablet" parent="Tablet" instance=ExtResource("8_b63u0")]
 position = Vector2(112, 112)
 
 [node name="Carimbos" type="Node" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Carimbos"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Carimbos/StaticBody2D"]
-position = Vector2(16, 244.5)
-shape = SubResource("RectangleShape2D_xooud")
-
 [node name="posicaoVermelho" type="Node2D" parent="Carimbos"]
-position = Vector2(96, 248)
+position = Vector2(94, 230)
 
 [node name="posicaoVerde" type="Node2D" parent="Carimbos"]
-position = Vector2(48, 248)
+position = Vector2(54, 230)
+
+[node name="Sprite2D" type="Sprite2D" parent="Carimbos"]
+position = Vector2(74, 248)
+texture = ExtResource("10_q034e")
 
 [node name="CarimboReprovado" parent="Carimbos" instance=ExtResource("3_5s1rh")]
-position = Vector2(96, 248)
+position = Vector2(94, 229)
 scale = Vector2(1, 1)
 
 [node name="CarimboAprovado" parent="Carimbos" instance=ExtResource("4_6ik1m")]
-position = Vector2(48, 248)
+position = Vector2(54, 229)
 scale = Vector2(1, 1)
 
-[node name="BarraProgresso" parent="." instance=ExtResource("9_r3u6m")]
+[node name="BarraProgresso" type="Control" parent="."]
 z_index = 1
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 224.0
 offset_right = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_7sdd2")
 
-[node name="ProgressBar" parent="BarraProgresso" index="0"]
-offset_left = 0.0
-offset_top = 0.0
+[node name="ProgressBar" type="ProgressBar" parent="BarraProgresso"]
+layout_mode = 2
 offset_right = 288.0
 offset_bottom = 18.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ixnd4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_av2m3")
+show_percentage = false
 
-[node name="LabelTempo" parent="BarraProgresso" index="1"]
+[node name="LabelTempo" type="Label" parent="BarraProgresso"]
+layout_mode = 0
 offset_left = 120.0
-offset_top = 0.0
+offset_top = -2.0
 offset_right = 170.0
-offset_bottom = 50.0
+offset_bottom = 48.0
+theme_type_variation = &"HeaderLarge"
+theme_override_fonts/font = ExtResource("13_y2j0q")
+theme_override_font_sizes/font_size = 16
+text = "100"
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="BarraProgresso"]
+autostart = true
 
 [node name="HUD" parent="." instance=ExtResource("11_fxeli")]
 process_mode = 3
 
+[node name="BotaoPause" parent="HUD" index="1"]
+offset_left = 4.0
+offset_top = -5.0
+offset_right = 36.0
+offset_bottom = 27.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_8p1k2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wqca8")
+}
+
 [connection signal="area_entered" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Rubrica/Rubrica/Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="tableChange" from="Enfermeiro/ColorRect2/MesaVestes" to="Enfermeiro/ColorRect2/MesaVestes" method="_on_table_change"]
+[connection signal="timeout" from="BarraProgresso/Timer" to="BarraProgresso" method="_on_timer_timeout"]
 
 [editable path="Rubrica/Rubrica"]
 [editable path="Carimbos/CarimboReprovado"]
 [editable path="Carimbos/CarimboAprovado"]
-[editable path="BarraProgresso"]
+[editable path="HUD"]

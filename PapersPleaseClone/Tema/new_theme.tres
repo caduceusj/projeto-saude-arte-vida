@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bmjbdwq5rxvvl"]
+
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="1_lmsv0"]
+
+[resource]
+default_font = ExtResource("1_lmsv0")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_lmsv0")

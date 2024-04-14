@@ -23,15 +23,24 @@ func _ready():
 	if(gameController.mode == 0):
 		table = $Enfermeiro/ColorRect2/TableContainer
 	elif(gameController.mode == 1):
+		
 		table = $Enfermeiro/ColorRect2/MesaVestes
 		$Enfermeiro/ColorRect2/MesaVestes.show()
 		$Enfermeiro/ColorRect2/TableContainer.hide()
+		$Tablet/Tablet2.show()
+		$Tablet/Tablet.hide()
 	elif(gameController.mode == 2):
+		$Tablet/Tablet.show()
+		$Tablet/Tablet2.hide()
 		table = $Enfermeiro/ColorRect2/TableContainer
 		$Enfermeiro/ColorRect2/TableContainer.show()
 		$Enfermeiro/ColorRect2/MesaVestes.hide()
 	table.emit_signal("tableChange")
-	$AnimationPlayer.play("EnfermeiroEntra")
+	
+	if(gameController.mode == 1):
+		$AnimationPlayer.play("EnfermeiroEntraVestes")
+	else:
+		$AnimationPlayer.play("EnfermeiroEntra")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,12 +66,19 @@ func _input(event):
 				feedbackInstance.text = table.missing
 				feedbackInstance.position = Vector2(232, 32)
 				get_node("/root").add_child(feedbackInstance)
-				
-			$AnimationPlayer.play_backwards("EnfermeiroEntra")
-			await($AnimationPlayer.animation_finished)
+			
+			if(gameController.mode == 1):
+				$AnimationPlayer.play_backwards("EnfermeiroEntraVestes")
+				await($AnimationPlayer.animation_finished)
+			else:
+				$AnimationPlayer.play_backwards("EnfermeiroEntra")
+				await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
 			Tablet._resetCheckBox()
-			$AnimationPlayer.play("EnfermeiroEntra")
+			if(gameController.mode == 1):
+				$AnimationPlayer.play("EnfermeiroEntraVestes")
+			else:
+				$AnimationPlayer.play("EnfermeiroEntra")
 			
 		elif(corDoCarimbo == "vermelho"):
 			if(table.adequado == 1):
@@ -78,12 +94,18 @@ func _input(event):
 				feedbackInstance.position = Vector2(232, 32)
 				get_node("/root").add_child(feedbackInstance)
 				
-			$AnimationPlayer.play_backwards("EnfermeiroEntra")
-			await($AnimationPlayer.animation_finished)
+			if(gameController.mode == 1):
+				$AnimationPlayer.play_backwards("EnfermeiroEntraVestes")
+				await($AnimationPlayer.animation_finished)
+			else:
+				$AnimationPlayer.play_backwards("EnfermeiroEntra")
+				await($AnimationPlayer.animation_finished)
 			table.emit_signal("tableChange")
 			Tablet._resetCheckBox()
-			$AnimationPlayer.play("EnfermeiroEntra")
-		
+			if(gameController.mode == 1):
+				$AnimationPlayer.play("EnfermeiroEntraVestes")
+			else:
+				$AnimationPlayer.play("EnfermeiroEntra")
 
 func _on_area_2d_area_entered(area):
 	if(area.is_in_group("Carimbo")):

@@ -27,10 +27,10 @@ func _input(event):
 			mouse_offset = position - get_global_mouse_position()
 			if(tipo == "verde"):
 				tween = create_tween()
-				tween.tween_property(self, "position", Vector2(48, 248), 1.0).from(position)
+				tween.tween_property(self, "position", Vector2(54, 230), 1.0).from(position)
 			else:
 				tween = create_tween()
-				tween.tween_property(self, "position", Vector2(96,248), 1.0).from(position)
+				tween.tween_property(self, "position", Vector2(94,230), 1.0).from(position)
 			selected = false
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			if(tutorialScript):

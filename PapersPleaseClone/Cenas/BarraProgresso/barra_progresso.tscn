@@ -1,22 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7n1kh0jult01"]
+[gd_scene load_steps=5 format=3 uid="uid://c7n1kh0jult01"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/barra_progresso.gd" id="1_nrfuj"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="2_e8fn0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1hv1"]
 bg_color = Color(0.901961, 0.203922, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m7h5"]
 bg_color = Color(0, 0.615686, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="BarraProgresso" type="Control"]
 layout_mode = 3
@@ -42,9 +51,10 @@ layout_mode = 0
 offset_left = -2.0
 offset_top = 5.0
 offset_right = 48.0
-offset_bottom = 55.0
+offset_bottom = 40.0
 theme_type_variation = &"HeaderLarge"
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("2_e8fn0")
+theme_override_font_sizes/font_size = 16
 text = "100"
 horizontal_alignment = 1
 

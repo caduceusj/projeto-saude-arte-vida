@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkmi2ou285u18"]
+
+[ext_resource type="Script" path="res://Mozu/Scripts/Cifras/circleCifra.gd" id="1_26wmu"]
+[ext_resource type="Texture2D" uid="uid://c11kqpv1ycuhf" path="res://Mozu/Sprites/Placeholder/circleMouse.png" id="2_jn3ya"]
+
+[node name="CircleMouse" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_26wmu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_jn3ya")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = 32.0
+offset_right = 20.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 8
+
+[connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]

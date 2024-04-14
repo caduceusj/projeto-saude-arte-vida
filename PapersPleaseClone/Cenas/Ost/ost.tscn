@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d16it6ky0cf7w"]
+
+[ext_resource type="AudioStream" uid="uid://x3p83kv47gk4" path="res://PapersPleaseClone/Sons/MusicaHospitalar1.wav" id="1_4wies"]
+
+[node name="OST" type="AudioStreamPlayer"]
+stream = ExtResource("1_4wies")
+autoplay = true

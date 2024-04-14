@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://18epmae7pdtp"]
+
+[ext_resource type="Texture2D" uid="uid://fje82hdnb7yy" path="res://Mozu/Sprites/Placeholder/DragLeft.png" id="1_xy22r"]
+
+[resource]
+texture = ExtResource("1_xy22r")
+texture_margin_left = 1.0
+texture_margin_right = 15.0

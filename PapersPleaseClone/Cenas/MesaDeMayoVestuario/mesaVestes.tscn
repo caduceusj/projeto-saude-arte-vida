@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://fe4vigmq3msw"]
 
-[ext_resource type="Texture2D" uid="uid://bfmwt414rxafy" path="res://PapersPleaseClone/Sprites/Equipamentos/mesaDeMayo.png" id="1_jx2ow"]
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Mesa/mesaVestes.gd" id="1_t2alt"]
+[ext_resource type="Texture2D" uid="uid://cm0po851pyupa" path="res://PapersPleaseClone/Sprites/Equipamentos/Mesa de Mayo.png" id="2_1c2wi"]
 [ext_resource type="Texture2D" uid="uid://cfxmhwjhvdkcv" path="res://PapersPleaseClone/Sprites/vestuarioTeste/camisa.png" id="2_p27ad"]
 [ext_resource type="Texture2D" uid="uid://bhxa35wraost0" path="res://PapersPleaseClone/Sprites/vestuarioTeste/luvas.png" id="3_kos8q"]
 [ext_resource type="Texture2D" uid="uid://dt248xno384rd" path="res://PapersPleaseClone/Sprites/vestuarioTeste/mask.png" id="4_laxp0"]
@@ -12,11 +12,11 @@ position = Vector2(264, 136)
 script = ExtResource("1_t2alt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -128.0
-offset_top = -56.0
-offset_right = 128.0
-offset_bottom = 56.0
-texture = ExtResource("1_jx2ow")
+offset_left = -142.0
+offset_top = -68.0
+offset_right = 146.0
+offset_bottom = 76.0
+texture = ExtResource("2_1c2wi")
 metadata/_edit_use_anchors_ = true
 
 [node name="Roupas" type="Node2D" parent="."]

@@ -92,7 +92,9 @@ func _on_next_page_pressed():
 
 func _on_area_2d_area_entered(area):
 	dentroRubrica = true
+	print(area.get_parent().name)
 	corDoCarimbo = area.get_parent().tipo
+	
 
 func _on_area_2d_area_exited(area):
 	dentroRubrica = false

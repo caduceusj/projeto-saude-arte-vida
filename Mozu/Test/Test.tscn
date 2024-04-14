@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsllu0208v8x"]
+
+[ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="1_ia47k"]
+[ext_resource type="VideoStream" path="res://Mozu/VideoTest/EsfregaEmCima.ogv" id="1_urh00"]
+[ext_resource type="PackedScene" uid="uid://y8gv32rmlf6e" path="res://Mozu/Cenas/Cifras/drag_back_forth.tscn" id="3_thbya"]
+[ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="4_6gd8t"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 288.0
+stream = ExtResource("1_urh00")
+volume_db = -80.0
+autoplay = true
+expand = true
+loop = true
+
+[node name="Drag" parent="." instance=ExtResource("1_ia47k")]
+offset_left = 224.0
+offset_top = 112.0
+offset_right = 264.0
+offset_bottom = 152.0
+
+[node name="Click" parent="." instance=ExtResource("4_6gd8t")]
+offset_left = 184.0
+offset_top = 80.0
+offset_right = 184.0
+offset_bottom = 80.0
+
+[node name="Click2" parent="." instance=ExtResource("4_6gd8t")]
+offset_left = 128.0
+offset_top = 136.0
+offset_right = 128.0
+offset_bottom = 136.0
+
+[node name="Click3" parent="." instance=ExtResource("4_6gd8t")]
+offset_left = 200.0
+offset_top = 192.0
+offset_right = 200.0
+offset_bottom = 192.0
+
+[node name="DragBackForth" parent="." instance=ExtResource("3_thbya")]
+layout_mode = 1
+offset_left = 288.0
+offset_top = 192.0
+offset_right = 288.0
+offset_bottom = 192.0

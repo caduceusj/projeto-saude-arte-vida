@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://bebluii84t51r"]
+
+[ext_resource type="Texture2D" uid="uid://iiipsy4nihvw" path="res://Mozu/Sprites/Placeholder/Drag.png" id="1_2jb5h"]
+[ext_resource type="Texture2D" uid="uid://bwdpqaugofvim" path="res://Mozu/Sprites/Placeholder/DragHover.png" id="2_p1ytx"]
+[ext_resource type="Script" path="res://Mozu/Scripts/Cifras/GaugeFill.gd" id="3_shbdv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4oieh"]
+texture = ExtResource("1_2jb5h")
+texture_margin_left = 1.0
+texture_margin_right = 15.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8cp8"]
+texture = ExtResource("2_p1ytx")
+texture_margin_left = 1.0
+texture_margin_right = 15.0
+
+[sub_resource type="Animation" id="Animation_ys4ei"]
+resource_name = "Drag"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wkg4n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uvrjk"]
+_data = {
+"Drag": SubResource("Animation_ys4ei"),
+"RESET": SubResource("Animation_wkg4n")
+}
+
+[node name="Drag" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GaugeFill" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 16.0
+theme_override_styles/grabber = SubResource("StyleBoxTexture_4oieh")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_n8cp8")
+theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_4oieh")
+script = ExtResource("3_shbdv")
+
+[node name="Sprite2D" type="Sprite2D" parent="GaugeFill"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(144, 8)
+texture = ExtResource("2_p1ytx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GaugeFill"]
+libraries = {
+"": SubResource("AnimationLibrary_uvrjk")
+}

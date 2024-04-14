@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://wvg1k5bktw22" path="res://PapersPleaseClone/Cenas/Carimbo/carimboReprovado.tscn" id="2_usmqc"]
 [ext_resource type="PackedScene" uid="uid://ynnl2wqta2eg" path="res://PapersPleaseClone/Cenas/Carimbo/rubrica.tscn" id="5_52rju"]
 
-
 [node name="Test" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -67,10 +66,6 @@ color = Color(0, 0, 1, 1)
 [node name="Rubrica" type="Node" parent="Aba do Player"]
 
 [node name="ColorRect" parent="Aba do Player/Rubrica" instance=ExtResource("5_52rju")]
-offset_left = -246.0
-offset_top = 220.0
-offset_right = -62.0
-offset_bottom = 300.0
 
 [node name="Carimbos" type="Node" parent="Aba do Player"]
 

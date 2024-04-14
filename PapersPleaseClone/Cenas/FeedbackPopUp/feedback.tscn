@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy54xqh60opt1"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/Feedback.gd" id="1_x2own"]
-[ext_resource type="FontFile" uid="uid://b6kkhv7gocpho" path="res://PapersPleaseClone/Fonte/Peepo.ttf" id="2_fpa87"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="2_kmvtm"]
 
 [sub_resource type="Animation" id="Animation_o7geb"]
 resource_name = "PopUp"
@@ -85,12 +85,12 @@ script = ExtResource("1_x2own")
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("2_fpa87")
+theme_override_fonts/font = ExtResource("2_kmvtm")
 text = "Bernalete Pastilha"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "PopUp"
-speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_cdscg")
 }
+autoplay = "PopUp"
+speed_scale = 0.5

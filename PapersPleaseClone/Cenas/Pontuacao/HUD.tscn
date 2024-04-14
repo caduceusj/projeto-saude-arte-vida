@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://be1lhds3klu1h"]
+[gd_scene load_steps=6 format=3 uid="uid://be1lhds3klu1h"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/HUD.gd" id="1_j60ag"]
-[ext_resource type="Texture2D" uid="uid://d3fjlx8lx36ly" path="res://PapersPleaseClone/Sprites/Test/botao_menu.png" id="2_5ggol"]
+[ext_resource type="Texture2D" uid="uid://b3injqlfw34du" path="res://PapersPleaseClone/Sprites/UI/botaoPause.png" id="3_2nmab"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="3_k0svf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5ipl"]
+bg_color = Color(0.2, 0.117647, 0.172549, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jar7j"]
+bg_color = Color(0.541176, 0.529412, 0.333333, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_j60ag")
@@ -11,20 +26,32 @@ offset_left = 472.0
 offset_top = 16.0
 offset_right = 512.0
 offset_bottom = 47.0
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 
 [node name="BotaoPause" type="TextureButton" parent="."]
-offset_right = 32.0
-offset_bottom = 32.0
-texture_normal = ExtResource("2_5ggol")
-texture_pressed = ExtResource("2_5ggol")
-texture_hover = ExtResource("2_5ggol")
+offset_left = 5.0
+offset_top = -4.0
+offset_right = 37.0
+offset_bottom = 28.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_2nmab")
+texture_pressed = ExtResource("3_2nmab")
+texture_hover = ExtResource("3_2nmab")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 512.0
 offset_bottom = 288.0
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 88.0
+offset_right = 336.0
+offset_bottom = 184.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5ipl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 clip_contents = true
@@ -43,17 +70,70 @@ grow_vertical = 2
 
 [node name="LabelPause" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_k0svf")
 text = "Jogo Pausado"
 horizontal_alignment = 1
 
 [node name="Continuar" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_jar7j")
 text = "Continuar"
 
 [node name="Menu" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jar7j")
 text = "Retornar ao Menu"
 
+[node name="EndgameScreen" type="Panel" parent="."]
+visible = false
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 224.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g5ipl")
+
+[node name="Text" type="Label" parent="EndgameScreen"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 240.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_font_sizes/font_size = 24
+text = "Ótimo Trabalho !"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="EndgameScreen"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 248.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_k0svf")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Menu" type="Button" parent="EndgameScreen"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 192.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jar7j")
+text = "Retornar ao Menu"
+
+[connection signal="gameOver" from="." to="." method="_on_game_over"]
 [connection signal="pressed" from="BotaoPause" to="." method="_on_botao_pause_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="EndgameScreen/Menu" to="." method="_on_menu_pressed"]

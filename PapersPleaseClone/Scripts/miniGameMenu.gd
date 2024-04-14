@@ -18,3 +18,7 @@ func _on_button_2_pressed():
 func _on_button_3_pressed():
 	gameController.mode = 2
 	get_tree().change_scene_to_file("res://PapersPleaseClone/Cenas/Fases/Game/game.tscn")
+
+
+func _on_button_4_pressed():
+	get_tree().quit()

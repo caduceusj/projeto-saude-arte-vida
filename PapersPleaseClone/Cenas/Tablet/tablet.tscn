@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://dc17vkmtoeein"]
+[gd_scene load_steps=20 format=3 uid="uid://dc17vkmtoeein"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/tablet.gd" id="1_mvqgj"]
+[ext_resource type="Texture2D" uid="uid://de5qcfia7rvia" path="res://PapersPleaseClone/Sprites/Ipad/IPad.png" id="2_70fs1"]
 [ext_resource type="Texture2D" uid="uid://bcojbqeh5xb8w" path="res://PapersPleaseClone/Sprites/Test/livro.png" id="2_nx4ou"]
-[ext_resource type="Theme" uid="uid://mopumyhyv17t" path="res://PapersPleaseClone/Tema/theme.tres" id="3_w5nvd"]
+[ext_resource type="Theme" uid="uid://bmjbdwq5rxvvl" path="res://PapersPleaseClone/Tema/new_theme.tres" id="3_w5nvd"]
 [ext_resource type="Texture2D" uid="uid://inbg00i8itbd" path="res://PapersPleaseClone/Sprites/Equipamentos/compressaEsteril.png" id="4_3dl4j"]
 [ext_resource type="Texture2D" uid="uid://cxvumk0f3fhtn" path="res://PapersPleaseClone/Sprites/Equipamentos/Garrote.png" id="5_b8k1a"]
 [ext_resource type="Texture2D" uid="uid://c81vngee4js31" path="res://PapersPleaseClone/Sprites/Equipamentos/clorexedinaAlcoolica.png" id="6_ef1in"]
@@ -12,17 +13,21 @@
 [ext_resource type="Texture2D" uid="uid://beogt1kdcw0x4" path="res://PapersPleaseClone/Sprites/Equipamentos/IntrodutoreBizel.png" id="10_ot5j1"]
 [ext_resource type="Texture2D" uid="uid://c2vetq1hvklwj" path="res://PapersPleaseClone/Sprites/Equipamentos/cateterfr.png" id="11_sbpdy"]
 [ext_resource type="Texture2D" uid="uid://clmgqp5wfanyi" path="res://PapersPleaseClone/Sprites/Equipamentos/fitaMetricaEsteril.png" id="12_al2w5"]
-[ext_resource type="Texture2D" uid="uid://bw4vptiaoudmv" path="res://PapersPleaseClone/Sprites/Equipamentos/campoCirugico.png" id="13_2ovrt"]
+[ext_resource type="Texture2D" uid="uid://c8rvketghkxgs" path="res://PapersPleaseClone/Sprites/Equipamentos/campoIcon.png" id="14_utw7s"]
 [ext_resource type="Texture2D" uid="uid://chxnjto86loc3" path="res://PapersPleaseClone/Sprites/Equipamentos/curativoTransparente.png" id="14_x0yjj"]
 [ext_resource type="Texture2D" uid="uid://deoc3yh8aqiex" path="res://PapersPleaseClone/Sprites/Equipamentos/Seringa.png" id="15_01jbj"]
-[ext_resource type="Texture2D" uid="uid://b0vepnjksmx02" path="res://PapersPleaseClone/Sprites/Equipamentos/soroFisiologico.png" id="16_5msjj"]
+[ext_resource type="Texture2D" uid="uid://brui3cxfahk6w" path="res://PapersPleaseClone/Sprites/Equipamentos/soroFisiologico.png" id="16_5msjj"]
 [ext_resource type="Texture2D" uid="uid://bqqhx3w4s80us" path="res://PapersPleaseClone/Sprites/Equipamentos/equipoParaoSoro.png" id="17_ba1oq"]
-[ext_resource type="Texture2D" uid="uid://bdvn1xpowui12" path="res://PapersPleaseClone/Sprites/Tutorial/setaVazia.png" id="18_lp3c0"]
-
+[ext_resource type="Texture2D" uid="uid://twid3y24yhfd" path="res://PapersPleaseClone/Sprites/Tutorial/setaCheia.png" id="19_mj1e8"]
 
 [node name="Tablet" type="Node2D"]
 position = Vector2(256, 144)
+scale = Vector2(1, 0.909)
 script = ExtResource("1_mvqgj")
+
+[node name="Tablet" type="Sprite2D" parent="."]
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("2_70fs1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nx4ou")
@@ -41,71 +46,169 @@ theme = ExtResource("3_w5nvd")
 
 [node name="CheckBox1" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Compressa estéril gaze"
 
 [node name="CheckBox2" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Garrote"
 
 [node name="CheckBox3" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Clorexidina alcoólica 0,5%"
 
 [node name="CheckBox4" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Pinça anatômica"
 
 [node name="CheckBox5" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Tesoura de Mayo"
 
 [node name="CheckBox6" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Pinça Foster"
 
 [node name="CheckBox7" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Introdutor e bizel"
 
 [node name="CheckBox8" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Cateter de 1,9 Fr"
 
 [node name="CheckBox9" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Fita métrica estéril"
 
 [node name="CheckBox10" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Campo cirúrgico estéril"
 
 [node name="CheckBox11" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Película Esteril"
 
 [node name="CheckBox12" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Seringa de 10 ml"
 
 [node name="CheckBox13" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Soro fisiológico"
 
 [node name="CheckBox14" type="CheckBox" parent="ScrollContainerCheckBox/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_w5nvd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.188235, 0.188235, 1)
+theme_override_colors/font_hover_color = Color(0.988235, 0.784314, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Equipo para o soro"
 
@@ -119,7 +222,6 @@ theme = ExtResource("3_w5nvd")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainerConteudo"]
 layout_mode = 2
-size_flags_horizontal = 6
 theme = ExtResource("3_w5nvd")
 
 [node name="Label" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
@@ -231,7 +333,7 @@ text = "Campo cirúrgico estéril"
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("13_2ovrt")
+texture = ExtResource("14_utw7s")
 expand_mode = 3
 
 [node name="Label11" type="Label" parent="ScrollContainerConteudo/VBoxContainer"]
@@ -278,26 +380,30 @@ layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("17_ba1oq")
 
-[node name="TextureButtonDireita" type="TextureButton" parent="."]
-offset_left = 40.0
-offset_top = 56.0
-offset_right = 72.0
-offset_bottom = 88.0
-mouse_filter = 1
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("18_lp3c0")
-stretch_mode = 0
-
 [node name="TextureButtonEsquerda" type="TextureButton" parent="."]
-offset_left = -80.0
-offset_top = 56.0
-offset_right = -48.0
-offset_bottom = 88.0
+offset_left = -82.0
+offset_top = 80.308
+offset_right = -50.0
+offset_bottom = 112.308
 mouse_filter = 1
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("18_lp3c0")
+texture_normal = ExtResource("19_mj1e8")
+texture_pressed = ExtResource("19_mj1e8")
+texture_hover = ExtResource("19_mj1e8")
 stretch_mode = 0
 flip_h = true
 
-[connection signal="pressed" from="TextureButtonDireita" to="." method="_on_texture_button_direita_pressed"]
+[node name="TextureButtonDireita" type="TextureButton" parent="."]
+offset_left = 52.0
+offset_top = 80.308
+offset_right = 84.0
+offset_bottom = 112.308
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("19_mj1e8")
+texture_pressed = ExtResource("19_mj1e8")
+texture_hover = ExtResource("19_mj1e8")
+stretch_mode = 0
+
 [connection signal="pressed" from="TextureButtonEsquerda" to="." method="_on_texture_button_esquerda_pressed"]
+[connection signal="pressed" from="TextureButtonDireita" to="." method="_on_texture_button_direita_pressed"]
