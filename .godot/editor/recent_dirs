@@ -1,5 +1,10 @@
-res://Mozu/Scripts/esfregaEmCima
+res://Mozu/Sprites/EsfregaSabonete
 res://Mozu/Cenas/CenasDasMãos
+res://Mozu/Sprites/EsfregandoPontasDosDedos
+res://Mozu/Sprites/EnxugandoEmbaixo
+res://Mozu/Scripts/LavaMãos
+res://Mozu/Sprites/Enxugando
+res://Mozu/Scripts/esfregaEmCima
 C:/Users/joaoa/OneDrive/Área de Trabalho/PapersPleaseClone
 res://PapersPleaseClone/Cenas/Menu
 res://PapersPleaseClone/Cenas/Ost
@@ -15,8 +20,3 @@ res://PapersPleaseClone/Cenas/Pontuacao
 res://PapersPleaseClone/Sprites/Carimbos
 res://PapersPleaseClone/Cenas/Tutorial
 res://PapersPleaseClone/Cenas/FeedbackPopUp
-res://PapersPleaseClone/Scripts/Mesa
-res://PapersPleaseClone/Cenas/MesaDeMayoVestuario
-res://PapersPleaseClone/Cenas/MesaDeMayoEquipamentos
-res://PapersPleaseClone/Cenas/Fases/Game
-res://PapersPleaseClone/Scripts/Resources

@@ -23,6 +23,9 @@ func _process(delta):
 		score += distance/100
 		print("Score: ", score)
 
+	if(score >30):
+		queue_free()
+
 	last_mouse_pos = mouse_pos
 
 

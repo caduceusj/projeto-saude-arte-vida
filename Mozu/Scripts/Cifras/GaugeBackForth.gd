@@ -19,7 +19,7 @@ func _process(delta):
 		mouse_filter = Control.MOUSE_FILTER_IGNORE
 		$AnimationPlayer.play("DragVanish")
 		await($AnimationPlayer.animation_finished)
-		queue_free()
+		get_parent().queue_free()
 	$Label.text = str(count)
 	
 func _on_scrolling():

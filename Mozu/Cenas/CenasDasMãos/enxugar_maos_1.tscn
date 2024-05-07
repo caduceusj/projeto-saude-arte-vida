@@ -1,0 +1,232 @@
+[gd_scene load_steps=20 format=3 uid="uid://mk7ad1no8nxo"]
+
+[ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_vpmrq"]
+[ext_resource type="Texture2D" uid="uid://dxm55jpoqq05t" path="res://Mozu/Sprites/Enxugando/Mosu-Sheet.png" id="2_c8sdr"]
+[ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_fgpft"]
+[ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_qcecq"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="5_e5ain"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stlow"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1nhv"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcccm"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he8jh"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajpjt"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(0, 288, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j0wf"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(512, 288, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsad7"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(1024, 288, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeib5"]
+atlas = ExtResource("2_c8sdr")
+region = Rect2(1536, 288, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8egp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stlow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1nhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcccm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he8jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajpjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j0wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsad7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeib5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_ltiym"]
+resource_name = "Feedback"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floatingLabel/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("floatingLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(392, 40), Vector2(392, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_esi6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floatingLabel/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("floatingLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(392, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stomw"]
+_data = {
+"Feedback": SubResource("Animation_ltiym"),
+"RESET": SubResource("Animation_esi6e")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdvdn"]
+bg_color = Color(0, 0, 0, 0.239216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx7r8"]
+bg_color = Color(1, 0.0784314, 0.247059, 0.870588)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="enxugarMaos1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vpmrq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(256, 144)
+sprite_frames = SubResource("SpriteFrames_b8egp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stomw")
+}
+
+[node name="clicaveis" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Click" parent="clicaveis" instance=ExtResource("3_fgpft")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 224.0
+offset_top = 168.0
+offset_right = 224.0
+offset_bottom = 168.0
+
+[node name="Click2" parent="clicaveis" instance=ExtResource("3_fgpft")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 192.0
+offset_top = 96.0
+offset_right = 192.0
+offset_bottom = 96.0
+
+[node name="Click3" parent="clicaveis" instance=ExtResource("3_fgpft")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 208.0
+offset_top = 80.0
+offset_right = 208.0
+offset_bottom = 80.0
+
+[node name="Click4" parent="clicaveis" instance=ExtResource("3_fgpft")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 232.0
+offset_top = 72.0
+offset_right = 232.0
+offset_bottom = 72.0
+
+[node name="Click5" parent="clicaveis" instance=ExtResource("3_fgpft")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 264.0
+offset_top = 72.0
+offset_right = 264.0
+offset_bottom = 72.0
+
+[node name="Drag" parent="clicaveis" instance=ExtResource("4_qcecq")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 16.0
+offset_top = 256.0
+offset_right = 56.0
+offset_bottom = 296.0
+rotation = -0.755188
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vdvdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tx7r8")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="floatingLabel" type="Node2D" parent="."]
+position = Vector2(392, 40)
+
+[node name="Label" type="Label" parent="floatingLabel"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 115.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_e5ain")
+text = "Bom Trabalho!"

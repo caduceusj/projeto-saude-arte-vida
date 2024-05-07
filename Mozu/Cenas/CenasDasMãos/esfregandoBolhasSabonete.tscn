@@ -1,0 +1,255 @@
+[gd_scene load_steps=22 format=3 uid="uid://cu470holn8yav"]
+
+[ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_skri4"]
+[ext_resource type="Texture2D" uid="uid://02uv8h46qvld" path="res://Mozu/Sprites/EsfregaSabonete/Mosu-WipingTogether-Sheet.png" id="2_uuvyk"]
+[ext_resource type="PackedScene" uid="uid://dkmi2ou285u18" path="res://Mozu/Cenas/Cifras/circleCifra.tscn" id="3_883dr"]
+[ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_pudi4"]
+[ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_0si6p"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="5_fyder"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c008k"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a61ws"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4052"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(0, 288, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy032"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(512, 288, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u11rg"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(0, 576, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej7r6"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(512, 576, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmeln"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(0, 864, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5k84"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(512, 864, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqs6i"]
+atlas = ExtResource("2_uuvyk")
+region = Rect2(0, 1152, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wag5x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c008k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a61ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4052")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy032")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u11rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej7r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmeln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5k84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqs6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="Animation" id="Animation_ltiym"]
+resource_name = "Feedback"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floatingLabel/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("floatingLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(392, 40), Vector2(392, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_esi6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("floatingLabel/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("floatingLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(392, 40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_stomw"]
+_data = {
+"Feedback": SubResource("Animation_ltiym"),
+"RESET": SubResource("Animation_esi6e")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdvdn"]
+bg_color = Color(0, 0, 0, 0.239216)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx7r8"]
+bg_color = Color(1, 0.0784314, 0.247059, 0.870588)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="EsfregandoPontasDosDedos" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_skri4")
+tempo = 25
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(256, 144)
+sprite_frames = SubResource("SpriteFrames_wag5x")
+frame = 8
+frame_progress = 0.452598
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_stomw")
+}
+
+[node name="clicaveis" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Click" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 144.0
+offset_top = 80.0
+offset_right = 144.0
+offset_bottom = 80.0
+
+[node name="Click2" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 160.0
+offset_top = 144.0
+offset_right = 160.0
+offset_bottom = 144.0
+
+[node name="Click3" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 272.0
+offset_top = 120.0
+offset_right = 272.0
+offset_bottom = 120.0
+
+[node name="Click4" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 256.0
+offset_bottom = 80.0
+
+[node name="Click5" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 264.0
+offset_top = 160.0
+offset_right = 264.0
+offset_bottom = 160.0
+
+[node name="Click6" parent="clicaveis" instance=ExtResource("3_pudi4")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 224.0
+offset_top = 96.0
+offset_right = 224.0
+offset_bottom = 96.0
+
+[node name="Drag" parent="clicaveis" instance=ExtResource("4_0si6p")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 24.0
+offset_top = 272.0
+offset_right = 64.0
+offset_bottom = 312.0
+rotation = -0.741383
+
+[node name="CircleMouse" parent="clicaveis" instance=ExtResource("3_883dr")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(360, 136)
+scale = Vector2(1, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vdvdn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tx7r8")
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="floatingLabel" type="Node2D" parent="."]
+position = Vector2(392, 40)
+
+[node name="Label" type="Label" parent="floatingLabel"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 115.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("5_fyder")
+text = "Bom Trabalho!"

@@ -10,10 +10,10 @@ anchors_preset = 0
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 texture_normal = ExtResource("1_gwf7x")
 texture_pressed = ExtResource("2_oqo2l")
 texture_hover = ExtResource("2_oqo2l")
@@ -21,8 +21,7 @@ stretch_mode = 0
 script = ExtResource("3_xac4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
-position = Vector2(16, 16)
-scale = Vector2(2, 2)
+position = Vector2(8, 8)
 texture = ExtResource("2_oqo2l")
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
