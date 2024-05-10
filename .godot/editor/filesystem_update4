@@ -1,12 +1,14 @@
 res://Mozu/Cenas/CenasDasMãos/enxugar_maos_1.tscn
 res://PapersPleaseClone/Scripts/Feedback.gd
 res://PapersPleaseClone/Scripts/miniDialogos.gd
-res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd
 res://Mozu/Cenas/CenasDasMãos/enxugar_maos_2.tscn
 res://Mozu/Cenas/Cifras/drag_back_forth.tscn
-res://Mozu/Scripts/Cifras/GaugeBackForth.gd
 res://Mozu/Cenas/Cifras/Click.tscn
 res://Mozu/Cenas/CenasDasMãos/esfregandoPontasDosDedos.tscn
 res://Mozu/Cenas/Cifras/circleCifra.tscn
-res://Mozu/Scripts/Cifras/circleCifra.gd
 res://Mozu/Cenas/CenasDasMãos/esfregandoBolhasSabonete.tscn
+res://PapersPleaseClone/Cenas/MesaDeMayoVestuario/mesaVestes.tscn
+res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn
+res://PapersPleaseClone/Cenas/Fases/Game/game.tscn
+res://PapersPleaseClone/Scripts/barra_progresso.gd
+res://PapersPleaseClone/Scripts/HUD.gd

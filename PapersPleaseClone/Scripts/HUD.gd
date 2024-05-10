@@ -41,7 +41,7 @@ func _on_game_over():
 	$EndgameScreen.show()
 	if(pontuacao >= 30):
 		$EndgameScreen/Text.text = "Ótimo Trabalho !"
-		$EndgameScreen/Label.text = "Você executou corretamente a parte da Parestesia e obteve a pontuação de " +str(pontuacao)+ " pontos"
+		$EndgameScreen/Label.text = "Você executou corretamente a parte da Paramentação e obteve a pontuação de " +str(pontuacao)+ " pontos"
 	elif(pontuacao < 30):
 		$EndgameScreen/Text.text = "Você Pode Melhorar!"
 		$EndgameScreen/Label.text = "Você pode fazer melhor! sua pontuação foi de apenas  " +str(pontuacao)+ " pontos, tente novamente!"
