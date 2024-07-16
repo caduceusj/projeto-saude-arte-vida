@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bd7f5ew7oo3bc"]
+
+[ext_resource type="Texture2D" uid="uid://dqxpitspsif18" path="res://Procedimento/sprites/baby_bg.png" id="1_ije3p"]
+[ext_resource type="Script" path="res://Procedimento/scripts/procedure_game.gd" id="1_qxfxs"]
+[ext_resource type="Texture2D" uid="uid://m5r2yvib6cbt" path="res://Procedimento/sprites/baby.png" id="3_gvqva"]
+[ext_resource type="PackedScene" uid="uid://dvakxxpsfgcrb" path="res://Procedimento/cenas/measurement_game.tscn" id="3_h8k7t"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="4_q1u0q"]
+[ext_resource type="PackedScene" uid="uid://1xc3xu64s483" path="res://Procedimento/cenas/angle_game.tscn" id="4_s2mym"]
+[ext_resource type="PackedScene" uid="uid://csa0fqu6qoltr" path="res://Procedimento/cenas/cleaning_game.tscn" id="7_reu0u"]
+[ext_resource type="PackedScene" uid="uid://cxtbw3mb05lha" path="res://Procedimento/cenas/maze_game.tscn" id="8_lb0ip"]
+
+[node name="ProcedureGame" type="Node2D"]
+script = ExtResource("1_qxfxs")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(512, 288)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ije3p")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Baby" type="TextureRect" parent="."]
+offset_left = -134.0
+offset_top = -39.0
+offset_right = 632.0
+offset_bottom = 391.0
+texture = ExtResource("3_gvqva")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 9.0
+offset_top = 16.0
+offset_right = 148.0
+offset_bottom = 212.0
+theme = ExtResource("4_q1u0q")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "label informativo"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Minigames" type="Node" parent="."]
+
+[node name="MeasurementGame" parent="Minigames" instance=ExtResource("3_h8k7t")]
+visible = false
+
+[node name="Cleaning_game" parent="Minigames" instance=ExtResource("7_reu0u")]
+visible = false
+
+[node name="AngleGame" parent="Minigames" instance=ExtResource("4_s2mym")]
+visible = false
+
+[node name="MazeGame" parent="Minigames" instance=ExtResource("8_lb0ip")]
+visible = false
+
+[connection signal="measuremant_game_finish" from="Minigames/MeasurementGame" to="." method="_on_measuremant_game_finish"]
+[connection signal="cleaning_game_finished" from="Minigames/Cleaning_game" to="." method="_on_cleaning_game_finished"]
+[connection signal="angle_game_finish" from="Minigames/AngleGame" to="." method="_on_angle_game_finish"]
+[connection signal="game_over" from="Minigames/AngleGame" to="." method="game_over"]
+[connection signal="game_over" from="Minigames/MazeGame" to="." method="game_over"]
+[connection signal="maze_game_finished" from="Minigames/MazeGame" to="." method="_on_maze_game_finished"]

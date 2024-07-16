@@ -1,0 +1,12 @@
+res://cenas/angle_game.tscn
+res://dialogos/Resource/characterSkeleton.gd
+res://scripts/game.gd
+res://fonts/theme/balloon_theme.tres
+res://scripts/angle_game.gd
+res://cenas/game.tscn
+res://cenas/measurement_game.tscn
+res://cenas/cleaning_game.tscn
+res://cenas/maze_game.tscn
+res://cenas/procedure_game.tscn
+res://cenas/feedback.tscn
+res://scripts/procedure_game.gd

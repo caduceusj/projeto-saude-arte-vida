@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxtbw3mb05lha"]
+
+[ext_resource type="Script" path="res://Procedimento/scripts/maze_game.gd" id="1_dcpf2"]
+[ext_resource type="Texture2D" uid="uid://ca8cjwjd5ohc0" path="res://Procedimento/sprites/maze_game_test.png" id="2_u6jxd"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="3_klr6c"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hn86f"]
+size = Vector2(20, 26)
+
+[node name="MazeGame" type="Node2D"]
+script = ExtResource("1_dcpf2")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_u6jxd")
+
+[node name="CateterLabel" type="Label" parent="."]
+offset_left = 387.0
+offset_top = 243.0
+offset_right = 506.0
+offset_bottom = 283.0
+theme = ExtResource("3_klr6c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Cateter restante:
+00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Maze" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="LeftWall" type="Area2D" parent="Maze"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/LeftWall"]
+position = Vector2(2, -3)
+polygon = PackedVector2Array(-2, 3, 510, 3, 510, 66, 389, 68, 317, 70, 260, 86, 220, 107, 197, 134, 189, 180, 192, 253, 202, 291, -2, 291)
+
+[node name="RightWall" type="Area2D" parent="Maze"]
+position = Vector2(512, 288)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/RightWall"]
+polygon = PackedVector2Array(0, 0, 0, -199, -75, -200, -111, -198, -172, -196, -194, -193, -220, -186, -237, -180, -248, -173, -262, -166, -276, -153, -289, -136, -293, -125, -296, -110, -296, -91, -293, -73, -285, 0)
+
+[node name="FinishArea" type="Area2D" parent="Maze"]
+position = Vector2(512, 77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Maze/FinishArea"]
+position = Vector2(-14, -1)
+shape = SubResource("RectangleShape2D_hn86f")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(214, 278)
+
+[connection signal="mouse_entered" from="Maze/LeftWall" to="." method="_on_left_wall_mouse_entered"]
+[connection signal="mouse_entered" from="Maze/RightWall" to="." method="_on_right_wall_mouse_entered"]
+[connection signal="mouse_entered" from="Maze/FinishArea" to="." method="_on_finish_area_mouse_entered"]

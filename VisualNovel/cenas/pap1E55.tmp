@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://6c4h7kkc4r7s"]
+
+[ext_resource type="Script" path="res://cenas/papel.gd" id="1_tt3ja"]
+[ext_resource type="Texture2D" uid="uid://dxpd1ybyonngw" path="res://sprites/papel_pixelart.png" id="1_yrs2c"]
+
+[sub_resource type="Animation" id="Animation_frq3g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_e063q"]
+resource_name = "papel_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(256, -145), Vector2(256, 144)]
+}
+
+[sub_resource type="Animation" id="Animation_uytoj"]
+resource_name = "papel_saindo"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(256, 144), Vector2(256, -145)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2nrx"]
+_data = {
+"RESET": SubResource("Animation_frq3g"),
+"papel_chegando": SubResource("Animation_e063q"),
+"papel_saindo": SubResource("Animation_uytoj")
+}
+
+[node name="Papel" type="Node2D"]
+script = ExtResource("1_tt3ja")
+
+[node name="PapelSprite" type="Sprite2D" parent="."]
+position = Vector2(256, -145)
+texture = ExtResource("1_yrs2c")
+
+[node name="LabelCaso" type="RichTextLabel" parent="PapelSprite"]
+offset_left = -123.0
+offset_top = -119.0
+offset_right = 123.0
+offset_bottom = 104.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos Texto para os casos "
+
+[node name="ProximoButton" type="Button" parent="."]
+offset_left = 397.0
+offset_top = 144.0
+offset_right = 470.0
+offset_bottom = 175.0
+text = "Próximo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v2nrx")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+offset_left = 3.0
+offset_top = 59.0
+offset_right = 125.0
+offset_bottom = 229.0
+alignment = 1
+
+[node name="Resposta1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Procedimento
+PICC"
+
+[node name="Resposta2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Manter em 
+observação"
+
+[node name="Resposta3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Resposta
+agressiva"
+
+[connection signal="pressed" from="ProximoButton" to="." method="_on_proximo_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="VBoxContainer/Resposta1" to="." method="_on_resposta_1_pressed"]

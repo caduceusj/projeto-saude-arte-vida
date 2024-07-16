@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://1xc3xu64s483"]
+
+[ext_resource type="Script" path="res://Procedimento/scripts/angle_game.gd" id="1_e11wr"]
+[ext_resource type="Texture2D" uid="uid://dkl0sirqn17ud" path="res://icon.svg" id="2_ln48s"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="3_3daaf"]
+[ext_resource type="Texture2D" uid="uid://ctxtpqtcl3dhr" path="res://Procedimento/sprites/angle.png" id="4_emtk6"]
+[ext_resource type="Texture2D" uid="uid://cwfbhcr6hml6k" path="res://Procedimento/sprites/bisel_animation/bisel2.png" id="5_ippm0"]
+[ext_resource type="Texture2D" uid="uid://c2h3n6ycddgho" path="res://Procedimento/sprites/bisel_animation/bisel3.png" id="6_ofkhs"]
+[ext_resource type="Texture2D" uid="uid://vvx2bbm8bcw1" path="res://Procedimento/sprites/bisel_animation/bisel4.png" id="7_r7quy"]
+[ext_resource type="Texture2D" uid="uid://bxismxvx0yijl" path="res://Procedimento/sprites/bisel_animation/bisel5.png" id="8_6toau"]
+[ext_resource type="Texture2D" uid="uid://b8i4kpat308lp" path="res://Procedimento/sprites/bisel_animation/bisel6.png" id="9_ivru7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00jlk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ippm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ofkhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r7quy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6toau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ivru7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AngleGame" type="Node2D"]
+script = ExtResource("1_e11wr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+offset_left = 20.0
+offset_top = 243.0
+offset_right = 70.0
+offset_bottom = 283.0
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_3daaf")
+text = "Inserir"
+
+[node name="AngleLabel" type="Label" parent="."]
+offset_left = 416.0
+offset_top = 233.0
+offset_right = 511.0
+offset_bottom = 283.0
+theme = ExtResource("3_3daaf")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AngleTexture" type="TextureRect" parent="."]
+offset_left = 347.0
+offset_top = 37.0
+offset_right = 459.0
+offset_bottom = 117.0
+texture = ExtResource("4_emtk6")
+
+[node name="Bisel" type="Sprite2D" parent="AngleTexture"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(3.35699, 78.382)
+scale = Vector2(1.2, 0.01)
+texture = ExtResource("2_ln48s")
+offset = Vector2(64, 0)
+
+[node name="BiselAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(375, 106)
+sprite_frames = SubResource("SpriteFrames_00jlk")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="BiselAnimation" to="." method="_on_bisel_animation_animation_finished"]

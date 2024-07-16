@@ -1,6 +1,7 @@
-res://Mozu/Cenas/CenasDasMãos/esfregaPulso.tscn
+res://VisualNovel/cenas/procedure_game.tscn
 res://PapersPleaseClone/Scripts/Feedback.gd
-res://PapersPleaseClone/Scripts/miniDialogos.gd
+res://VisualNovel/fonts/theme/balloon_theme.tres
+res://Mozu/Cenas/CenasDasMãos/esfregaPulso.tscn
 res://Mozu/Cenas/CenasDasMãos/esfrega_dedao.tscn
 res://Mozu/Cenas/CenasDasMãos/esfrega_dedo_alongado.tscn
 res://Mozu/Cenas/Cifras/drag.tscn
@@ -17,3 +18,16 @@ res://Mozu/Cenas/CenasDasMãos/esfregandoPontasDosDedos.tscn
 res://Mozu/Cenas/CenasDasMãos/enxugar_maos_2.tscn
 res://Geral/Cenas/menu_geral.tscn
 res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn
+res://VisualNovel/scripts/procedure_game.gd
+res://VisualNovel/cenas/visual_novel.tscn
+res://VisualNovel/scripts/visual_novel.gd
+res://VisualNovel/cenas/scene_transition.tscn
+res://VisualNovel/cenas/feedback.tscn
+res://VisualNovel/scripts/singleton.gd
+res://Geral/Scripts/MenuGeral.gd
+res://VisualNovel/cenas/pause_menu.tscn
+res://VisualNovel/scripts/pause_menu.gd
+res://Procedimento/cenas/procedure_game.tscn
+res://Procedimento/scripts/measurement_game.gd
+res://Procedimento/scripts/procedure_game.gd
+res://Procedimento/scripts/maze_game.gd

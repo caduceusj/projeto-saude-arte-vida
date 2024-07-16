@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvakxxpsfgcrb"]
+
+[ext_resource type="Script" path="res://Procedimento/scripts/measurement_game.gd" id="1_65e65"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="2_rv274"]
+
+[node name="MeasurementGame" type="Node2D"]
+script = ExtResource("1_65e65")
+
+[node name="Ok" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+offset_left = 20.0
+offset_top = 243.0
+offset_right = 120.0
+offset_bottom = 283.0
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_rv274")
+text = "Ok"
+
+[node name="Apagar" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+offset_left = 20.0
+offset_top = 199.0
+offset_right = 120.0
+offset_bottom = 239.0
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_rv274")
+text = "Apagar"
+
+[node name="DistanceLabel" type="Label" parent="."]
+offset_left = 416.0
+offset_top = 254.0
+offset_right = 510.0
+offset_bottom = 277.0
+theme = ExtResource("2_rv274")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Distância: 0"
+
+[connection signal="mouse_entered" from="Ok" to="." method="_on_buttons_mouse_entered"]
+[connection signal="mouse_exited" from="Ok" to="." method="_on_buttons_mouse_exited"]
+[connection signal="pressed" from="Ok" to="." method="_on_ok_button_pressed"]
+[connection signal="mouse_entered" from="Apagar" to="." method="_on_buttons_mouse_entered"]
+[connection signal="mouse_exited" from="Apagar" to="." method="_on_buttons_mouse_exited"]
+[connection signal="pressed" from="Apagar" to="." method="_on_apagar_pressed"]

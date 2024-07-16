@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn4ypxny307xc"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_sfw1f"]
+[ext_resource type="Resource" uid="uid://dwumek0nsueyp" path="res://dialogos/dialogo1.dialogue" id="2_ufkja"]
+[ext_resource type="Texture2D" uid="uid://d114ay07g0qcu" path="res://sprites/backgroundtest.png" id="3_44k21"]
+[ext_resource type="PackedScene" uid="uid://cq0r75jp0b2uj" path="res://cenas/character.tscn" id="4_5i4uv"]
+[ext_resource type="PackedScene" uid="uid://cvrq7r3d3233h" path="res://cenas/scene_transition.tscn" id="5_wktr4"]
+[ext_resource type="PackedScene" uid="uid://codbkkxx1cbn0" path="res://cenas/pause_menu.tscn" id="6_o8l38"]
+[ext_resource type="PackedScene" uid="uid://6c4h7kkc4r7s" path="res://cenas/papel.tscn" id="7_n1sgc"]
+
+[node name="Game" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_sfw1f")
+dialogue_resource = ExtResource("2_ufkja")
+
+[node name="BackGround" type="TextureRect" parent="."]
+process_mode = 1
+offset_right = 512.0
+offset_bottom = 288.0
+mouse_filter = 2
+texture = ExtResource("3_44k21")
+
+[node name="Character" parent="." instance=ExtResource("4_5i4uv")]
+process_mode = 1
+
+[node name="Papel" parent="." instance=ExtResource("7_n1sgc")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_o8l38")]
+process_mode = 2
+
+[node name="SceneTransition" parent="." instance=ExtResource("5_wktr4")]
+layer = 99
+
+[connection signal="personagem_chegou" from="Character" to="." method="_on_character_personagem_chegou"]
+[connection signal="proximo_caso" from="Papel" to="." method="_on_papel_proximo_caso"]
+[connection signal="reiniciar_jogo" from="PauseMenu" to="." method="_on_pause_menu_reiniciar_jogo"]

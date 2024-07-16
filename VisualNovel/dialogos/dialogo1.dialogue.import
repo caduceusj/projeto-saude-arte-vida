@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dwumek0nsueyp"
+path="res://.godot/imported/dialogo1.dialogue-5e880eee318396f21e278c4b9656aaab.tres"
+
+[deps]
+
+source_file="res://VisualNovel/dialogos/dialogo1.dialogue"
+dest_files=["res://.godot/imported/dialogo1.dialogue-5e880eee318396f21e278c4b9656aaab.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,152 @@
+[gd_scene load_steps=9 format=3 uid="uid://6c4h7kkc4r7s"]
+
+[ext_resource type="Script" path="res://VisualNovel/scripts/papel.gd" id="1_tt3ja"]
+[ext_resource type="Texture2D" uid="uid://c882jes1a1rm" path="res://VisualNovel/sprites/IPad.png" id="2_0elck"]
+[ext_resource type="FontFile" uid="uid://yog5u3w34hrh" path="res://VisualNovel/fonts/MP16REG.ttf" id="4_b435x"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="4_h72ty"]
+
+
+[sub_resource type="Animation" id="Animation_frq3g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(256, -145)]
+}
+
+[sub_resource type="Animation" id="Animation_e063q"]
+resource_name = "papel_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(256, -145), Vector2(256, 144)]
+}
+
+[sub_resource type="Animation" id="Animation_uytoj"]
+resource_name = "papel_saindo"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PapelSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(256, 144), Vector2(256, -145)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v2nrx"]
+_data = {
+"RESET": SubResource("Animation_frq3g"),
+"papel_chegando": SubResource("Animation_e063q"),
+"papel_saindo": SubResource("Animation_uytoj")
+}
+
+[node name="Papel" type="Node2D"]
+script = ExtResource("1_tt3ja")
+
+[node name="PapelSprite" type="Sprite2D" parent="."]
+position = Vector2(256, -145)
+texture = ExtResource("2_0elck")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PapelSprite"]
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.018
+anchor_right = 0.025
+anchor_bottom = 0.018
+offset_left = -122.4
+offset_top = -132.04
+offset_right = 109.6
+offset_bottom = 124.96
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_b435x")
+theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "[center]HOSPITAL INFANTIL[/center]
+[center]UTI Neonatal[/center]
+
+Paciente: Maria Alice Silva
+Prontuário: 123456
+Leito: 01
+Peso Atual: 1200g
+
+Prescrição:
+01. Incubadora aquecida para temperatura axialr 36, 5-37,5º C
+
+- Horário: Em Uso
+
+02. Oximetria de pulso contínua
+
+- Horário: Em Uso
+
+03. Cabeceira elevada em 30ª
+
+- Horário: Atenção
+
+04. CPAP Nasal: FiO2 40%, PEEP 6mmHg
+
+- Horário: Atenção
+
+05. Dieta zero, registrar resíduo gástrico em balança hídrico
+
+- Horário: 12h 15h 18h 21h 24h 03h 06h 09h
+
+06. Oxacilina (50mg/1ml) ​fazer 0,6 ml  + 9,4 ml  SF 0,9%  , 8/8 horas,  EV,  em 30 minutos  D0/7
+
+- Horário: 08h 16h 24h
+
+07. Amicacina ( 5 mg/ml), fazer 3,6 ml + 1,4 ml SF 0,9%, EV, 24h. D0/7
+
+- Horário: 20h
+
+08. Hidratação Venosa para 24h
+SG 10% —-------------- 99,3 ml 
+NaCl 0,9% —----------19,5 ml
+KCL 19,1%------------1,2
+Volume Total —------ 120ml
+Velocidade de infusão em BIC:5 ml/h
+(VIG 6,9 Concentração de glicose menor que 12,5%)
+
+- Horário: 8h30
+
+09. Dobutamina (12,5mg/ml) fazer 24 ml, EV,  Velocidade de infusão em BIC:0,3 ml/h  
+
+- Horário: 10h30"
+
+[node name="ProximoButton" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 255.0
+offset_right = 509.0
+offset_bottom = 285.0
+theme = ExtResource("4_h72ty")
+text = "Próximo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_v2nrx")
+}
+
+[connection signal="pressed" from="ProximoButton" to="." method="_on_proximo_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

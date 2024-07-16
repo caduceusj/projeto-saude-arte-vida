@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://qh3i41fcbljc"
+path="res://.godot/imported/casos.dialogue-89d9bd08ce871964e8eb44d1bd54b7e4.tres"
+
+[deps]
+
+source_file="res://VisualNovel/dialogos/casos.dialogue"
+dest_files=["res://.godot/imported/casos.dialogue-89d9bd08ce871964e8eb44d1bd54b7e4.tres"]
+
+[params]
+
+defaults=true

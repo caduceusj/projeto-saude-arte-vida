@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_button_button_down():
-	#VISUAL NOVEL 
+	SceneTransition.change_scene("res://VisualNovel/cenas/visual_novel.tscn")
 	pass # Replace with function body.
 
 

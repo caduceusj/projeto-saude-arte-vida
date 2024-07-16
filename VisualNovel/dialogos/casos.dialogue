@@ -1,0 +1,72 @@
+import "res://VisualNovel/dialogos/dialogo1.dialogue" as dialogo1
+
+
+~ caso1
+Enfermeira: Vou te passar o bebê do leito 01, Maria Alice Silva
+Enfermeira: Ela é um bebê de 17 dias de vida, peso de nascimento 1100g, idade gestacional de 32 semanas e 5 dias, parto cesáreo por sofrimento fetal e pré-eclâmpsia.
+Enfermeira: Extubação no 12º dia de vida, há 5 dias em CPAP nasal , com FiO2 de 40%, PEEP de 6 mmHg, dieta por sonda orogástrica desde 3º dia de vida.
+Enfermeira: Apresentou nas últimas 24 horas, 2 episódios de apneia, bradicardia e cianose, pele redilhada, hipotensão, hipoatividade, hipertermia,
+Enfermeira: distensão abdominal e 3 episódios de resíduo gástrico esverdeado, sendo suspensa a dieta, mantendo SOG aberta.
+Enfermeira: Foi coletado exames de sangue e hemocultura, realizado raio-x. Iniciou hidratação, aguarda iniciar oxacilina, amicacina e dobutamina.
+Enfermeira: Está com acesso venoso periférico em membro inferior direito pérvio e sem sinais flogísticos.
+=> respostas
+
+~ caso2
+Enfermeira: Vou te passar o caso2.
+Enfermeira: Esse é o caso2
+=> respostas
+
+~ caso3
+Enfermeira: Vou te passar o caso3.
+Enfermeira: Esse é o caso3
+=> respostas
+
+~ caso4
+Enfermeira: Vou te passar o caso4.
+Enfermeira: Esse é o caso4
+=> respostas
+
+~ caso5
+Enfermeira: Vou te passar o bebê do leito 08,João Pedro Araújo, leito 05
+Enfermeira: Ele é um bebê que tem 14h de vida, peso de nascimento de 4500g, parto cesariano por macrossomia e diabetes materna.
+Enfermeira: Evoluiu com taquipneia transitória, já em CPAP desde nascimento com com FiO2 de 30%, PEEP de 6 mmHg, dieta zero, hipoglicemia, 
+Enfermeira: hipotermia e com hidratação venosa, em acesso venoso periférico que foi perdido nos últimos 30 minutos.
+Enfermeira: A equipe de enfermagem já tentou a punção venosa, sem êxito. Já fez raio-x e colheu exames de 12 de vida.
+Enfermeira: Então, a prioridade do plantão é providenciar um acesso venoso para ele.
+=> respostas
+
+~ caso6
+Enfermeira: Vou te passar o caso6.
+Enfermeira: Esse é o caso6
+=> respostas
+
+~ caso7
+Enfermeira: Vou te passar o caso7.
+Enfermeira: Esse é o caso7
+=> respostas
+
+~ caso8
+Enfermeira: Vou te passar o caso8.
+Enfermeira: Esse é o caso8
+=> respostas
+
+~ respostas
+do mostrar_caso()
+Enfermeira: [[Qual protocolo deveriamos seguir?|O que devemos fazer?]]
+- PICC
+	Você: Esse acesso periférico não será seguro para essa etapa do tratamento. Vai precisar passar um PICC.
+	Você: Vou avaliar a condição das veias dele e comunicar aos pais a necessidade do procedimento.
+	do testar_caso("PICC")
+- Manter em observação
+	Você: Vamos continuar observando pelas próximas 24 horas se ele vai apresentar alguma variação no quadro clínico.
+	do testar_caso("obs")
+- Resposta agressiva
+	Você: Vixe, esse ai já era.
+	do feedback_linguagem()
+if (caso_atual == num_casos):
+	Enfermeira: Esses foram os pacientes de hoje.
+	=> dialogo1/dialogo_picc
+else:
+	Enfermeira: [[Entendido|Certo]], [[vou te passar|aqui está]] o próximo [[caso|bebê|paciente]].
+	do atualizar_caso()
+	=> dialogo1/mostrar_casos

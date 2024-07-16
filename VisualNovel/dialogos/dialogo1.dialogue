@@ -1,0 +1,138 @@
+import "res://VisualNovel/dialogos/casos.dialogue" as casos
+
+
+~ inicio
+Enfermeira: Olá, você está pronto(a) para mais um plantão?
+Você: Sim! Vamos lá!
+=> mostrar_casos
+
+~ mostrar_casos
+if (caso_num_atual == 1):
+	=> casos/caso1
+if (caso_num_atual == 2):
+	=> casos/caso2
+if (caso_num_atual == 3):
+	=> casos/caso3
+if (caso_num_atual == 4):
+	=> casos/caso4
+if (caso_num_atual == 5):
+	=> casos/caso5
+if (caso_num_atual == 6):
+	=> casos/caso6
+if (caso_num_atual == 7):
+	=> casos/caso7
+if (caso_num_atual == 8):
+	=> casos/caso8
+
+~ dialogo_picc
+Você: Vamos priorizar o caso {{caso_prioridade}} pela necessidade de PICC.
+Enfermeira: Entendido, devemos consultar a mãe imediatamente.
+*caminha até entrada da UTI, onde a mãe do paciente aguarda noticias*
+if mae_tipo == 'normal':
+	=> dialogo_mae_normal
+elif mae_tipo == 'preocupada':
+	=> dialogo_mae_preocupada
+else:
+	=> dialogo_mae_indiferente
+
+~ dialogo_mae_normal
+do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+Você:  Olá, Maria. Bom dia! Tudo bem com a senhora? Sou enfermeiro(a) de plantão que está cuidando do seu bebê.
+Maria: O que houve com meu filho? Ele vai ficar bem? 
+=>< responder_mae
+Maria: Mas o que é isso? Poderia me explicar?
+=>< explicar_picc
+Maria: Meu filho vai sentir dor?
+Você: Não se preocupe, vamos tomar as medidas necessárias para que ele não sinta dor.
+Maria: Mas existe algum risco?
+Você: Sim, existem.
+=>< explicar_riscos
+Maria: Tudo bem, sei que é para a melhora do meu bebê.
+Você: Você tem mais alguma dúvida, Maria?
+Maria: Não.
+Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
+Maria: Claro!
+Você: Obrigado(a)! Vamos dar início.
+=> cena3
+
+~ dialogo_mae_preocupada
+do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+Você: Olá Marta. Bom dia! Sou enfermeiro(a) de plantão que está cuidando do seu bebê. Tudo bem com a senhora?
+Marta: Ai meu Deus! O que ta acontecendo? Por favor, me conte!
+=>< responder_mae
+Marta: Catéter PICC? Que diabo é isso? Só pode ser coisa ruim.
+=>< explicar_picc
+Marta: Dói muito, né?
+Você: Não se preocupe, vamos tomar as medidas necessárias para que ele não sinta dor.
+Marta: Mas isso não é muito arriscado?
+Você: Existem riscos:
+=>< explicar_riscos
+Marta: Tem certeza que é necessário? Ainda não estou tão segura...
+Você: Pode ter certeza que é a melhor opção para o seu bebê.
+Marta: Sendo assim, tudo bem.
+Você: A senhora teria mais alguma dúvida?
+Marta: Não, você já me tranquilizou. Obrigada!
+Você: Sem problemas!
+Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
+Marta: Agora mesmo!
+Você: Obrigado(a)! Vamos dar início ao tratamento.
+=> cena3
+
+~ dialogo_mae_indiferente
+do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+Você: Olá Ana. Bom dia! Sou enfermeiro(a) de plantão que está cuidando do seu bebê.
+Ana: Olá enfermeiro(a), alguma novidade?
+=>< responder_mae
+Ana: O que é catéter PICC?
+=>< explicar_picc
+Ana: Ah, tá. Ok.
+Você: Você tem mais alguma dúvida?
+Ana: Não. Está tudo bem.
+Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
+Ana: Ok.
+Você: Obrigado(a)! Vamos iniciar o tratamento.
+=> cena3
+
+~ responder_mae
+Você: Então...
+- Informar sobre necessidade do tratamento.
+	Você: Hoje, seu bebê precisa começar um tratamento com antibióticos na veia e para isto, precisamos inserir um cateter que se chama PICC.
+	Você: Com isso ele terá maior probabilidade de melhorar mais rápido.
+- Responder agressivamente.
+	Você: Seu bebê piorou com força, tá quase morrendo.
+	do feedback_linguagem():
+	=> END!
+- Mentir sobre a situação, mas solicitar o PICC.
+	Você: Seu bebê está bem, mas vamos ter que fazer um pequeno procedimento.
+	do feedback_mentira():
+=> END
+
+~ explicar_picc
+Você: É um cateter que entra por uma veia do seu bebê e chega até próximo ao coração.
+Você: Usando ele, não iremos precisar ficar furando o seu filho várias vezes e é uma opção segura.
+=> END
+
+~ explicar_riscos
+Você: Ele pode ficar com a temperatura baixa e a saturação de oxigênio pode diminuir se demorarmos.
+Você: Infecções também são possíveis, mas somos capacitados para tomar as medidas necessárias caso seja necessário.
+Você: Nossa equipe está muito preparada e seguiremos protocolos.
+=> END
+
+~ cena3
+do mudar_cenario(Singleton.cena1_background, Singleton.character1)
+Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
+Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
+Você: Vou checar a temperatura do bebê novamente para garantir que está adequada
+Enfermeira: O restante da equipe já está a caminho.
+Você: Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.
+Enfermeira: Aqui está.
+Você: Frequência cardíaca em 136 bpm e respiratória em 44 imp.
+Enfermeira: Ambas na faixa da normalidade.
+Enfermeira: Devemos observar a saturação de oxigênio.
+Você: Saturação em 90%, vai necessitar de suporte de oxigenoterapia.
+Enfermeira: Equipamento está a postos.
+Enfermeira: Qual estratégia analgésica será utilizada para esse paciente?
+Você: tal tal tal
+Você: Iniciemos o procedimento.
+do game_over()
+=> END!

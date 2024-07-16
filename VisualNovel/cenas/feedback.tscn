@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6uv43k5i1guq"]
+
+[ext_resource type="Script" path="res://VisualNovel/scripts/feedback.gd" id="1_6ligv"]
+[ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="2_ipt3g"]
+
+[node name="Feedback" type="Node2D"]
+script = ExtResource("1_6ligv")
+
+[node name="BackGround" type="TextureRect" parent="."]
+offset_right = 512.0
+offset_bottom = 288.0
+theme = ExtResource("2_ipt3g")
+
+[node name="Panel" type="Panel" parent="BackGround"]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 288.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackGround"]
+layout_mode = 0
+offset_left = 48.0
+offset_right = 464.0
+offset_bottom = 288.0
+theme = ExtResource("2_ipt3g")
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="GameOver" type="Label" parent="BackGround/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "FIM DE JOGO
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FeedbackLabel" type="Label" parent="BackGround/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "texto exemplo para feedback texto exemplo para feedback texto exemplo para feedback"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Restart" type="Button" parent="BackGround/VBoxContainer"]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 16
+text = "Tentar novamente"
+
+[node name="Menu" type="Button" parent="BackGround/VBoxContainer"]
+custom_minimum_size = Vector2(160, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Voltar ao menu"
+
+[connection signal="pressed" from="BackGround/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="BackGround/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

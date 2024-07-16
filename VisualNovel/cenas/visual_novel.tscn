@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bn4ypxny307xc"]
+
+[ext_resource type="Script" path="res://VisualNovel/scripts/visual_novel.gd" id="1_sfw1f"]
+[ext_resource type="Resource" uid="uid://dwumek0nsueyp" path="res://VisualNovel/dialogos/dialogo1.dialogue" id="2_ufkja"]
+[ext_resource type="Texture2D" uid="uid://bffk25knbol3y" path="res://VisualNovel/sprites/background1_neonatal.png" id="3_18om8"]
+[ext_resource type="PackedScene" uid="uid://cq0r75jp0b2uj" path="res://VisualNovel/cenas/character.tscn" id="4_5i4uv"]
+[ext_resource type="PackedScene" uid="uid://codbkkxx1cbn0" path="res://VisualNovel/cenas/pause_menu.tscn" id="6_o8l38"]
+[ext_resource type="PackedScene" uid="uid://6c4h7kkc4r7s" path="res://VisualNovel/cenas/papel.tscn" id="7_n1sgc"]
+
+[node name="VisualNovel" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_sfw1f")
+dialogue_resource = ExtResource("2_ufkja")
+
+[node name="BackGround" type="TextureRect" parent="."]
+process_mode = 1
+texture_filter = 1
+custom_minimum_size = Vector2(512, 288)
+offset_right = 512.0
+offset_bottom = 288.0
+mouse_filter = 2
+texture = ExtResource("3_18om8")
+expand_mode = 1
+
+[node name="Character" parent="." instance=ExtResource("4_5i4uv")]
+process_mode = 1
+
+[node name="Papel" parent="." instance=ExtResource("7_n1sgc")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_o8l38")]
+process_mode = 2
+
+[connection signal="personagem_chegou" from="Character" to="." method="_on_character_personagem_chegou"]
+[connection signal="proximo_caso" from="Papel" to="." method="_on_papel_proximo_caso"]
+[connection signal="reiniciar_jogo" from="PauseMenu" to="." method="_on_pause_menu_reiniciar_jogo"]
