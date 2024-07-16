@@ -96,7 +96,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5a0mv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_653rm")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_653rm")
-text = "Sair"
+text = "Menu Principal"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

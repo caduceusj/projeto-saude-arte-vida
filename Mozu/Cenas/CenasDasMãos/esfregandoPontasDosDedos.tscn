@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dk5gm132xl6is"]
+[gd_scene load_steps=22 format=3 uid="uid://dk5gm132xl6is"]
 
 [ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_1wlj3"]
+[ext_resource type="PackedScene" uid="uid://cu470holn8yav" path="res://Mozu/Cenas/CenasDasMãos/esfregandoBolhasSabonete.tscn" id="2_20kmd"]
 [ext_resource type="Texture2D" uid="uid://02uv8h46qvld" path="res://Mozu/Sprites/EsfregaSabonete/Mosu-WipingTogether-Sheet.png" id="2_ccate"]
 [ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_27cpc"]
 [ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_ygr8r"]
@@ -160,6 +161,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1wlj3")
+nextStage = ExtResource("2_20kmd")
 tempo = 15
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

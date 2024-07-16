@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://vi8ycfal7g7y"]
+[gd_scene load_steps=22 format=3 uid="uid://vi8ycfal7g7y"]
 
 [ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_kapbj"]
+[ext_resource type="PackedScene" uid="uid://mk7ad1no8nxo" path="res://Mozu/Cenas/CenasDasMãos/enxugar_maos_1.tscn" id="2_i3rkl"]
 [ext_resource type="Texture2D" uid="uid://dpl23qsihdu54" path="res://Mozu/Sprites/EnxugandoEmbaixo/Mosu-Towel-Wiping.png" id="2_i7bm7"]
 [ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_typ0v"]
 [ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_ib43d"]
@@ -154,6 +155,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kapbj")
+nextStage = ExtResource("2_i3rkl")
 tempo = 20
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -215,12 +217,15 @@ offset_bottom = 104.0
 
 [node name="DragBackForth" parent="clicaveis" instance=ExtResource("5_fceht")]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-offset_left = 320.0
-offset_top = 128.0
-offset_right = 320.0
-offset_bottom = 128.0
+position = Vector2(288, 96)
 rotation = -5.50536
+scale = Vector2(1.5, 1.5)
+
+[node name="GaugeFill" parent="clicaveis/DragBackForth" index="0"]
+count = 20
+
+[node name="Sprite2D" parent="clicaveis/DragBackForth/GaugeFill" index="0"]
+modulate = Color(1, 1, 1, 0)
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -241,3 +246,5 @@ offset_right = 115.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("5_execv")
 text = "Bom Trabalho!"
+
+[editable path="clicaveis/DragBackForth"]

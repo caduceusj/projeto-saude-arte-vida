@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4y1talmpsdm0"]
+
+[ext_resource type="Script" path="res://Geral/Scripts/MenuGeral.gd" id="1_jf6c6"]
+[ext_resource type="Texture2D" uid="uid://b3hsde2sh5wlj" path="res://Geral/Menu.png" id="2_a32i4"]
+[ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="3_4krmc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bebkq"]
+bg_color = Color(0.356863, 0.431373, 0.882353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.153546, 0.315875, 0.761178, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkf4o"]
+bg_color = Color(0.126576, 0.154997, 0.440375, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.153546, 0.315875, 0.761178, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MenuGeral" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jf6c6")
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 288.0
+texture = ExtResource("2_a32i4")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -55.0
+offset_right = 89.0
+offset_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4krmc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bebkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkf4o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkf4o")
+text = "Atendimento"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4krmc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bebkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkf4o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkf4o")
+text = "Lavagem de Maos"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4krmc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bebkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkf4o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkf4o")
+text = "Paramentação"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4krmc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bebkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkf4o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkf4o")
+text = "Procedimento"
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_4krmc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bebkq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tkf4o")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tkf4o")
+text = "Sair"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button3" to="." method="_on_button_3_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button4" to="." method="_on_button_4_button_down"]
+[connection signal="button_down" from="VBoxContainer/Button5" to="." method="_on_button_5_button_down"]

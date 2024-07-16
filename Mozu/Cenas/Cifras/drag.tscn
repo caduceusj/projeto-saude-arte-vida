@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://bebluii84t51r"]
+[gd_scene load_steps=10 format=3 uid="uid://bebluii84t51r"]
 
-[ext_resource type="Texture2D" uid="uid://iiipsy4nihvw" path="res://Mozu/Sprites/Placeholder/Drag.png" id="1_2jb5h"]
-[ext_resource type="Texture2D" uid="uid://bwdpqaugofvim" path="res://Mozu/Sprites/Placeholder/DragHover.png" id="2_p1ytx"]
+[ext_resource type="Texture2D" uid="uid://yuq22y52tdpy" path="res://Mozu/Sprites/Drag/tile008.png" id="1_4n8kc"]
+[ext_resource type="Texture2D" uid="uid://bk7sq4vyf3le6" path="res://Mozu/Sprites/Drag/tile010.png" id="2_tpo51"]
 [ext_resource type="Script" path="res://Mozu/Scripts/Cifras/GaugeFill.gd" id="3_shbdv"]
+[ext_resource type="Texture2D" uid="uid://d88vq78tf1vq" path="res://Mozu/Sprites/Drag/tile014.png" id="4_h6uf1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4oieh"]
-texture = ExtResource("1_2jb5h")
-texture_margin_left = 1.0
-texture_margin_right = 15.0
+content_margin_left = 16.0
+texture = ExtResource("1_4n8kc")
+region_rect = Rect2(7.7707, 8.64771, 49.641, 48.5619)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n8cp8"]
-texture = ExtResource("2_p1ytx")
-texture_margin_left = 1.0
-texture_margin_right = 15.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yjidm"]
+content_margin_left = 16.0
+texture = ExtResource("2_tpo51")
+region_rect = Rect2(5.74086, 5.74111, 53.418, 51.4685)
 
 [sub_resource type="Animation" id="Animation_ys4ei"]
 resource_name = "Drag"
@@ -110,14 +111,14 @@ layout_mode = 0
 offset_right = 152.0
 offset_bottom = 16.0
 theme_override_styles/grabber = SubResource("StyleBoxTexture_4oieh")
-theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_n8cp8")
+theme_override_styles/grabber_highlight = SubResource("StyleBoxTexture_yjidm")
 theme_override_styles/grabber_pressed = SubResource("StyleBoxTexture_4oieh")
 script = ExtResource("3_shbdv")
 
 [node name="Sprite2D" type="Sprite2D" parent="GaugeFill"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(144, 8)
-texture = ExtResource("2_p1ytx")
+texture = ExtResource("4_h6uf1")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GaugeFill"]
 libraries = {

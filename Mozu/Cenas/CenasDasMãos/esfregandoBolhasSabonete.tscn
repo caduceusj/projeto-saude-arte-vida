@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cu470holn8yav"]
+[gd_scene load_steps=23 format=3 uid="uid://cu470holn8yav"]
 
 [ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_skri4"]
 [ext_resource type="Texture2D" uid="uid://02uv8h46qvld" path="res://Mozu/Sprites/EsfregaSabonete/Mosu-WipingTogether-Sheet.png" id="2_uuvyk"]
+[ext_resource type="PackedScene" uid="uid://ca3y1km4bcuix" path="res://Mozu/Cenas/CenasDasMãos/esfregaEntreDedos.tscn" id="2_wyj14"]
 [ext_resource type="PackedScene" uid="uid://dkmi2ou285u18" path="res://Mozu/Cenas/Cifras/circleCifra.tscn" id="3_883dr"]
 [ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_pudi4"]
 [ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_0si6p"]
@@ -161,13 +162,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_skri4")
+nextStage = ExtResource("2_wyj14")
 tempo = 25
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(256, 144)
 sprite_frames = SubResource("SpriteFrames_wag5x")
-frame = 8
-frame_progress = 0.452598
+frame_progress = 0.222725
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

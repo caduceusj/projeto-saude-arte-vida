@@ -1,6 +1,8 @@
 extends Node2D
 
 var score = 0
+
+@export var max_score = 30
 var last_mouse_pos = Vector2()
 var canTrack = false
 var isClicked = false
@@ -18,12 +20,12 @@ func _process(delta):
 	var mouse_pos = get_global_mouse_position()
 	var diff = mouse_pos - last_mouse_pos
 	var distance = diff.length()
-	$Label.text = str(score)
+	$Label.text = str(int(score))
 	if distance > 0 and canTrack and isClicked == true:
 		score += distance/100
-		print("Score: ", score)
+		print("Score: ", int(score))
 
-	if(score >30):
+	if(score > max_score):
 		queue_free()
 
 	last_mouse_pos = mouse_pos

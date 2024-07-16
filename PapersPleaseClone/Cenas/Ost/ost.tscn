@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://d16it6ky0cf7w"]
 
-[ext_resource type="AudioStream" uid="uid://x3p83kv47gk4" path="res://PapersPleaseClone/Sons/MusicaHospitalar1.wav" id="1_4wies"]
+[ext_resource type="AudioStream" uid="uid://cg7c2ia122olh" path="res://Mozu/Ost/586838__migfus20__background-music.mp3" id="1_mqam4"]
 
 [node name="OST" type="AudioStreamPlayer"]
-stream = ExtResource("1_4wies")
+stream = ExtResource("1_mqam4")
 autoplay = true
+
+[node name="SFXPLAYER" type="AudioStreamPlayer" parent="."]

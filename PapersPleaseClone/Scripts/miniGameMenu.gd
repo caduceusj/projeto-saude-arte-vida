@@ -21,4 +21,4 @@ func _on_button_3_pressed():
 
 
 func _on_button_4_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Geral/Cenas/menu_geral.tscn")
