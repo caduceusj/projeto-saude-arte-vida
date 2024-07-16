@@ -25,6 +25,9 @@ titles = {
 "casos/caso8": "49",
 "casos/respostas": "54",
 "cena3": "197",
+"chamada_mozu": "223",
+"chamada_papers_please": "216",
+"chamada_procedimento": "229",
 "dialogo_mae_indiferente": "157",
 "dialogo_mae_normal": "114",
 "dialogo_mae_preocupada": "134",
@@ -1373,10 +1376,228 @@ lines = {
 "next_id": "end!",
 "type": &"goto"
 },
+"215": {
+"id": "215",
+"next_id": "216",
+"text": "chamada_papers_please",
+"type": &"title"
+},
+"216": {
+"id": "216",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "mudar_cenario",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "Singleton"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "cena1_background"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "Singleton"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "character1"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "217",
+"type": &"mutation"
+},
+"217": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "217",
+"next_id": "218",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
+"text_replacements": Array[Dictionary]([{
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "caso_prioridade"
+}]),
+"value_in_text": "{{caso_prioridade}}"
+}]),
+"translation_key": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
+"type": &"dialogue"
+},
+"218": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "218",
+"next_id": "219",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
+"type": &"dialogue"
+},
+"219": {
+"id": "219",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "220",
+"type": &"mutation"
+},
 "22": {
 "id": "22",
 "is_snippet": false,
 "next_id": "54",
+"type": &"goto"
+},
+"220": {
+"id": "220",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"222": {
+"id": "222",
+"next_id": "223",
+"text": "chamada_mozu",
+"type": &"title"
+},
+"223": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "223",
+"next_id": "224",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Equipe e equipamentos preparados!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Equipe e equipamentos preparados!",
+"type": &"dialogue"
+},
+"224": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "224",
+"next_id": "225",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Ótimo, irei terminar minha preparação também.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ótimo, irei terminar minha preparação também.",
+"type": &"dialogue"
+},
+"225": {
+"id": "225",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://Mozu/Menu/Menu.tscn"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "226",
+"type": &"mutation"
+},
+"226": {
+"id": "226",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"228": {
+"id": "228",
+"next_id": "229",
+"text": "chamada_procedimento",
+"type": &"title"
+},
+"229": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "229",
+"next_id": "230",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tudo preparado?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tudo preparado?",
+"type": &"dialogue"
+},
+"230": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "230",
+"next_id": "231",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Sim!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sim!",
+"type": &"dialogue"
+},
+"231": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "231",
+"next_id": "232",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Certo, vamos iniciar o procedimento.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Certo, vamos iniciar o procedimento.",
+"type": &"dialogue"
+},
+"232": {
+"id": "232",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://Procedimento/cenas/procedure_game.tscn"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "233",
+"type": &"mutation"
+},
+"233": {
+"id": "233",
+"is_snippet": false,
+"next_id": "end",
 "type": &"goto"
 },
 "24": {
@@ -2356,5 +2577,25 @@ Enfermeira: Qual estratégia analgésica será utilizada para esse paciente?
 Você: tal tal tal
 Você: Iniciemos o procedimento.
 do game_over()
-=> END!"
+=> END!
+
+~ chamada_papers_please
+do mudar_cenario(Singleton.cena1_background, Singleton.character1)
+Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
+Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
+do SceneTransition.change_scene(\"res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn\")
+=> END
+
+~ chamada_mozu
+Enfermeira: Equipe e equipamentos preparados!
+Você: Ótimo, irei terminar minha preparação também.
+do SceneTransition.change_scene(\"res://Mozu/Menu/Menu.tscn\")
+=> END
+
+~ chamada_procedimento
+Você: Tudo preparado?
+Enfermeira: Sim!
+Você: Certo, vamos iniciar o procedimento.
+do SceneTransition.change_scene(\"res://Procedimento/cenas/procedure_game.tscn\")
+=> END"
 metadata/dialogue_manager_version = "2.40.0"

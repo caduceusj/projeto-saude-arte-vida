@@ -31,3 +31,4 @@ res://Procedimento/cenas/procedure_game.tscn
 res://Procedimento/scripts/measurement_game.gd
 res://Procedimento/scripts/procedure_game.gd
 res://Procedimento/scripts/maze_game.gd
+res://VisualNovel/scripts/feedback.gd

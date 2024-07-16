@@ -136,3 +136,23 @@ Você: tal tal tal
 Você: Iniciemos o procedimento.
 do game_over()
 => END!
+
+~ chamada_papers_please
+do mudar_cenario(Singleton.cena1_background, Singleton.character1)
+Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
+Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
+do SceneTransition.change_scene("res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn")
+=> END
+
+~ chamada_mozu
+Enfermeira: Equipe e equipamentos preparados!
+Você: Ótimo, irei terminar minha preparação também.
+do SceneTransition.change_scene("res://Mozu/Menu/Menu.tscn")
+=> END
+
+~ chamada_procedimento
+Você: Tudo preparado?
+Enfermeira: Sim!
+Você: Certo, vamos iniciar o procedimento.
+do SceneTransition.change_scene("res://Procedimento/cenas/procedure_game.tscn")
+=> END

@@ -12,4 +12,4 @@ func _on_restart_pressed():
 
 
 func _on_menu_pressed():
-	get_tree().quit()
+	SceneTransition.change_scene("res://Geral/Cenas/menu_geral.tscn")
