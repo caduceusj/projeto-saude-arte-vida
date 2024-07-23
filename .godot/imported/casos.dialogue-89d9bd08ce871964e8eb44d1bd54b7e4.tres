@@ -1,49 +1,51 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_1b0ox"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_c2vy2"]
 
 [resource]
-script = ExtResource("1_1b0ox")
+script = ExtResource("1_c2vy2")
 using_states = PackedStringArray()
 titles = {
-"2377153303/cena3": "122",
-"2377153303/chamada_mozu": "148",
-"2377153303/chamada_papers_please": "141",
-"2377153303/chamada_procedimento": "154",
+"2377153303/cena3": "150",
+"2377153303/chamada_mozu": "131",
+"2377153303/chamada_papers_please": "123",
+"2377153303/chamada_procedimento": "137",
 "2377153303/dialogo_mae_indiferente": "82",
 "2377153303/dialogo_mae_normal": "39",
 "2377153303/dialogo_mae_preocupada": "59",
 "2377153303/dialogo_picc": "28",
 "2377153303/explicar_picc": "111",
 "2377153303/explicar_riscos": "116",
+"2377153303/fim": "145",
 "2377153303/inicio": "5",
 "2377153303/mostrar_casos": "10",
 "2377153303/responder_mae": "97",
-"caso1": "166",
-"caso2": "176",
-"caso3": "181",
-"caso4": "186",
-"caso5": "191",
-"caso6": "200",
-"caso7": "205",
-"caso8": "210",
-"dialogo1/cena3": "122",
-"dialogo1/chamada_mozu": "148",
-"dialogo1/chamada_papers_please": "141",
-"dialogo1/chamada_procedimento": "154",
+"caso1": "174",
+"caso2": "184",
+"caso3": "189",
+"caso4": "194",
+"caso5": "199",
+"caso6": "208",
+"caso7": "213",
+"caso8": "218",
+"dialogo1/cena3": "150",
+"dialogo1/chamada_mozu": "131",
+"dialogo1/chamada_papers_please": "123",
+"dialogo1/chamada_procedimento": "137",
 "dialogo1/dialogo_mae_indiferente": "82",
 "dialogo1/dialogo_mae_normal": "39",
 "dialogo1/dialogo_mae_preocupada": "59",
 "dialogo1/dialogo_picc": "28",
 "dialogo1/explicar_picc": "111",
 "dialogo1/explicar_riscos": "116",
+"dialogo1/fim": "145",
 "dialogo1/inicio": "5",
 "dialogo1/mostrar_casos": "10",
 "dialogo1/responder_mae": "97",
-"respostas": "215"
+"respostas": "223"
 }
 character_names = PackedStringArray("Enfermeira", "Você", "Maria", "Marta", "Ana")
-first_title = "166"
+first_title = "174"
 lines = {
 "0": {
 "character": "",
@@ -194,7 +196,7 @@ lines = {
 "11": {
 "id": "11",
 "is_snippet": false,
-"next_id": "166",
+"next_id": "174",
 "parent_id": "10",
 "type": &"goto"
 },
@@ -306,14 +308,14 @@ lines = {
 "next_id_after": "14",
 "type": &"condition"
 },
-"121": {
-"id": "121",
-"next_id": "122",
-"text": "2377153303/cena3",
-"type": &"title"
-},
 "122": {
 "id": "122",
+"next_id": "123",
+"text": "2377153303/chamada_papers_please",
+"type": &"title"
+},
+"123": {
+"id": "123",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "mudar_cenario",
@@ -334,18 +336,21 @@ lines = {
 }, {
 "type": "variable",
 "value": "character1"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "false"
 }])])
 }]),
 "is_blocking": true
 },
-"next_id": "123",
+"next_id": "124",
 "type": &"mutation"
 },
-"123": {
+"124": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "123",
-"next_id": "124",
+"id": "124",
+"next_id": "125",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
@@ -359,11 +364,11 @@ lines = {
 "translation_key": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
 "type": &"dialogue"
 },
-"124": {
+"125": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "124",
-"next_id": "125",
+"id": "125",
+"next_id": "126",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
@@ -371,84 +376,68 @@ lines = {
 "translation_key": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
 "type": &"dialogue"
 },
-"125": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "125",
-"next_id": "126",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
-"type": &"dialogue"
-},
 "126": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "126",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "GameController"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "mode"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "number",
+"value": 1
+}]),
+"is_blocking": true
+},
 "next_id": "127",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "O restante da equipe já está a caminho.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "O restante da equipe já está a caminho.",
-"type": &"dialogue"
+"type": &"mutation"
 },
 "127": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
 "id": "127",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://PapersPleaseClone/Cenas/Fases/Game/game.tscn"
+}])])
+}]),
+"is_blocking": true
+},
 "next_id": "128",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
-"type": &"dialogue"
+"type": &"mutation"
 },
 "128": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "128",
-"next_id": "129",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Aqui está.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Aqui está.",
-"type": &"dialogue"
-},
-"129": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "129",
-"next_id": "130",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
-"type": &"dialogue"
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "13": {
 "id": "13",
 "is_snippet": false,
-"next_id": "176",
+"next_id": "184",
 "parent_id": "12",
 "type": &"goto"
 },
 "130": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "130",
 "next_id": "131",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Ambas na faixa da normalidade.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ambas na faixa da normalidade.",
-"type": &"dialogue"
+"text": "2377153303/chamada_mozu",
+"type": &"title"
 },
 "131": {
 "character": "Enfermeira",
@@ -457,9 +446,9 @@ lines = {
 "next_id": "132",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Devemos observar a saturação de oxigênio.",
+"text": "Equipe e equipamentos preparados!",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Devemos observar a saturação de oxigênio.",
+"translation_key": "Equipe e equipamentos preparados!",
 "type": &"dialogue"
 },
 "132": {
@@ -469,66 +458,70 @@ lines = {
 "next_id": "133",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
+"text": "Ótimo, irei terminar minha preparação também.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
+"translation_key": "Ótimo, irei terminar minha preparação também.",
 "type": &"dialogue"
 },
 "133": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "133",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://Mozu/Cenas/CenasDasMãos/ligaTorneira.tscn"
+}])])
+}]),
+"is_blocking": true
+},
 "next_id": "134",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Equipamento está a postos.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Equipamento está a postos.",
-"type": &"dialogue"
+"type": &"mutation"
 },
 "134": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "134",
-"next_id": "135",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Qual estratégia analgésica será utilizada para esse paciente?",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Qual estratégia analgésica será utilizada para esse paciente?",
-"type": &"dialogue"
-},
-"135": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "135",
-"next_id": "136",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "tal tal tal",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "tal tal tal",
-"type": &"dialogue"
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "136": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
 "id": "136",
 "next_id": "137",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Iniciemos o procedimento.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Iniciemos o procedimento.",
-"type": &"dialogue"
+"text": "2377153303/chamada_procedimento",
+"type": &"title"
 },
 "137": {
 "id": "137",
 "mutation": {
 "expression": Array[Dictionary]([{
-"function": "game_over",
+"function": "mudar_cenario",
 "type": &"function",
-"value": Array[Array]([])
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "Singleton"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "cena1_background"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "Singleton"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "character1"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "true"
+}])])
 }]),
 "is_blocking": true
 },
@@ -536,10 +529,28 @@ lines = {
 "type": &"mutation"
 },
 "138": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
 "id": "138",
-"is_snippet": false,
-"next_id": "end!",
-"type": &"goto"
+"next_id": "139",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tudo preparado?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tudo preparado?",
+"type": &"dialogue"
+},
+"139": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "139",
+"next_id": "140",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Sim!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Sim!",
+"type": &"dialogue"
 },
 "14": {
 "condition": {
@@ -566,13 +577,96 @@ lines = {
 "type": &"condition"
 },
 "140": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
 "id": "140",
 "next_id": "141",
-"text": "2377153303/chamada_papers_please",
-"type": &"title"
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Certo, vamos iniciar o procedimento.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Certo, vamos iniciar o procedimento.",
+"type": &"dialogue"
 },
 "141": {
 "id": "141",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "SceneTransition"
+}, {
+"type": "dot"
+}, {
+"function": "change_scene",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "string",
+"value": "res://Procedimento/cenas/procedure_game.tscn"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "142",
+"type": &"mutation"
+},
+"142": {
+"id": "142",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"144": {
+"id": "144",
+"next_id": "145",
+"text": "2377153303/fim",
+"type": &"title"
+},
+"145": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "145",
+"next_id": "146",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
+"type": &"dialogue"
+},
+"146": {
+"id": "146",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "game_over",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "147",
+"type": &"mutation"
+},
+"147": {
+"id": "147",
+"is_snippet": false,
+"next_id": "end!",
+"type": &"goto"
+},
+"149": {
+"id": "149",
+"next_id": "150",
+"text": "2377153303/cena3",
+"type": &"title"
+},
+"15": {
+"id": "15",
+"is_snippet": false,
+"next_id": "189",
+"parent_id": "14",
+"type": &"goto"
+},
+"150": {
+"id": "150",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "mudar_cenario",
@@ -593,18 +687,21 @@ lines = {
 }, {
 "type": "variable",
 "value": "character1"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "false"
 }])])
 }]),
 "is_blocking": true
 },
-"next_id": "142",
+"next_id": "151",
 "type": &"mutation"
 },
-"142": {
+"151": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "142",
-"next_id": "143",
+"id": "151",
+"next_id": "152",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
@@ -618,11 +715,11 @@ lines = {
 "translation_key": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
 "type": &"dialogue"
 },
-"143": {
+"152": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "143",
-"next_id": "144",
+"id": "152",
+"next_id": "153",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
@@ -630,171 +727,89 @@ lines = {
 "translation_key": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
 "type": &"dialogue"
 },
-"144": {
-"id": "144",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "SceneTransition"
-}, {
-"type": "dot"
-}, {
-"function": "change_scene",
-"type": &"function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "string",
-"value": "res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn"
-}])])
-}]),
-"is_blocking": true
-},
-"next_id": "145",
-"type": &"mutation"
-},
-"145": {
-"id": "145",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"147": {
-"id": "147",
-"next_id": "148",
-"text": "2377153303/chamada_mozu",
-"type": &"title"
-},
-"148": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "148",
-"next_id": "149",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Equipe e equipamentos preparados!",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Equipe e equipamentos preparados!",
-"type": &"dialogue"
-},
-"149": {
+"153": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "149",
-"next_id": "150",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Ótimo, irei terminar minha preparação também.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ótimo, irei terminar minha preparação também.",
-"type": &"dialogue"
-},
-"15": {
-"id": "15",
-"is_snippet": false,
-"next_id": "181",
-"parent_id": "14",
-"type": &"goto"
-},
-"150": {
-"id": "150",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "SceneTransition"
-}, {
-"type": "dot"
-}, {
-"function": "change_scene",
-"type": &"function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "string",
-"value": "res://Mozu/Menu/Menu.tscn"
-}])])
-}]),
-"is_blocking": true
-},
-"next_id": "151",
-"type": &"mutation"
-},
-"151": {
-"id": "151",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"153": {
 "id": "153",
 "next_id": "154",
-"text": "2377153303/chamada_procedimento",
-"type": &"title"
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
+"type": &"dialogue"
 },
 "154": {
-"character": "Você",
+"character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
 "id": "154",
 "next_id": "155",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Tudo preparado?",
+"text": "O restante da equipe já está a caminho.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Tudo preparado?",
+"translation_key": "O restante da equipe já está a caminho.",
 "type": &"dialogue"
 },
 "155": {
-"character": "Enfermeira",
+"character": "Você",
 "character_replacements": Array[Dictionary]([]),
 "id": "155",
 "next_id": "156",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Sim!",
+"text": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Sim!",
+"translation_key": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
 "type": &"dialogue"
 },
 "156": {
-"character": "Você",
+"character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
 "id": "156",
 "next_id": "157",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Certo, vamos iniciar o procedimento.",
+"text": "Aqui está.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Certo, vamos iniciar o procedimento.",
+"translation_key": "Aqui está.",
 "type": &"dialogue"
 },
 "157": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
 "id": "157",
-"mutation": {
-"expression": Array[Dictionary]([{
-"type": "variable",
-"value": "SceneTransition"
-}, {
-"type": "dot"
-}, {
-"function": "change_scene",
-"type": &"function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "string",
-"value": "res://Procedimento/cenas/procedure_game.tscn"
-}])])
-}]),
-"is_blocking": true
-},
 "next_id": "158",
-"type": &"mutation"
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
+"type": &"dialogue"
 },
 "158": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
 "id": "158",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
+"next_id": "159",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Ambas na faixa da normalidade.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ambas na faixa da normalidade.",
+"type": &"dialogue"
 },
 "159": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
 "id": "159",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
+"next_id": "160",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Devemos observar a saturação de oxigênio.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Devemos observar a saturação de oxigênio.",
+"type": &"dialogue"
 },
 "16": {
 "condition": {
@@ -820,17 +835,109 @@ lines = {
 "next_id_after": "18",
 "type": &"condition"
 },
+"160": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "160",
+"next_id": "161",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
+"type": &"dialogue"
+},
+"161": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "161",
+"next_id": "162",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Equipamento está a postos.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Equipamento está a postos.",
+"type": &"dialogue"
+},
+"162": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "162",
+"next_id": "163",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Qual estratégia analgésica será utilizada para esse paciente?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Qual estratégia analgésica será utilizada para esse paciente?",
+"type": &"dialogue"
+},
+"163": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "163",
+"next_id": "164",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "tal tal tal",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "tal tal tal",
+"type": &"dialogue"
+},
+"164": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "164",
+"next_id": "165",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Iniciemos o procedimento.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Iniciemos o procedimento.",
+"type": &"dialogue"
+},
 "165": {
 "id": "165",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "game_over",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
 "next_id": "166",
+"type": &"mutation"
+},
+"166": {
+"id": "166",
+"is_snippet": false,
+"next_id": "end!",
+"type": &"goto"
+},
+"167": {
+"id": "167",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"17": {
+"id": "17",
+"is_snippet": false,
+"next_id": "194",
+"parent_id": "16",
+"type": &"goto"
+},
+"173": {
+"id": "173",
+"next_id": "174",
 "text": "caso1",
 "type": &"title"
 },
-"166": {
+"174": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "166",
-"next_id": "167",
+"id": "174",
+"next_id": "175",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Vou te passar o bebê do leito 01, Maria Alice Silva",
@@ -838,96 +945,17 @@ lines = {
 "translation_key": "Vou te passar o bebê do leito 01, Maria Alice Silva",
 "type": &"dialogue"
 },
-"167": {
+"175": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "167",
-"next_id": "168",
+"id": "175",
+"next_id": "176",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Ela é um bebê de 17 dias de vida, peso de nascimento 1100g, idade gestacional de 32 semanas e 5 dias, parto cesáreo por sofrimento fetal e pré-eclâmpsia.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Ela é um bebê de 17 dias de vida, peso de nascimento 1100g, idade gestacional de 32 semanas e 5 dias, parto cesáreo por sofrimento fetal e pré-eclâmpsia.",
 "type": &"dialogue"
-},
-"168": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "168",
-"next_id": "169",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Extubação no 12º dia de vida, há 5 dias em CPAP nasal , com FiO2 de 40%, PEEP de 6 mmHg, dieta por sonda orogástrica desde 3º dia de vida.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Extubação no 12º dia de vida, há 5 dias em CPAP nasal , com FiO2 de 40%, PEEP de 6 mmHg, dieta por sonda orogástrica desde 3º dia de vida.",
-"type": &"dialogue"
-},
-"169": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "169",
-"next_id": "170",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Apresentou nas últimas 24 horas, 2 episódios de apneia, bradicardia e cianose, pele redilhada, hipotensão, hipoatividade, hipertermia,",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Apresentou nas últimas 24 horas, 2 episódios de apneia, bradicardia e cianose, pele redilhada, hipotensão, hipoatividade, hipertermia,",
-"type": &"dialogue"
-},
-"17": {
-"id": "17",
-"is_snippet": false,
-"next_id": "186",
-"parent_id": "16",
-"type": &"goto"
-},
-"170": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "170",
-"next_id": "171",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "distensão abdominal e 3 episódios de resíduo gástrico esverdeado, sendo suspensa a dieta, mantendo SOG aberta.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "distensão abdominal e 3 episódios de resíduo gástrico esverdeado, sendo suspensa a dieta, mantendo SOG aberta.",
-"type": &"dialogue"
-},
-"171": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "171",
-"next_id": "172",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Foi coletado exames de sangue e hemocultura, realizado raio-x. Iniciou hidratação, aguarda iniciar oxacilina, amicacina e dobutamina.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Foi coletado exames de sangue e hemocultura, realizado raio-x. Iniciou hidratação, aguarda iniciar oxacilina, amicacina e dobutamina.",
-"type": &"dialogue"
-},
-"172": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "172",
-"next_id": "173",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Está com acesso venoso periférico em membro inferior direito pérvio e sem sinais flogísticos.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Está com acesso venoso periférico em membro inferior direito pérvio e sem sinais flogísticos.",
-"type": &"dialogue"
-},
-"173": {
-"id": "173",
-"is_snippet": false,
-"next_id": "215",
-"type": &"goto"
-},
-"175": {
-"id": "175",
-"next_id": "176",
-"text": "caso2",
-"type": &"title"
 },
 "176": {
 "character": "Enfermeira",
@@ -936,9 +964,9 @@ lines = {
 "next_id": "177",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Vou te passar o caso2.",
+"text": "Extubação no 12º dia de vida, há 5 dias em CPAP nasal , com FiO2 de 40%, PEEP de 6 mmHg, dieta por sonda orogástrica desde 3º dia de vida.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou te passar o caso2.",
+"translation_key": "Extubação no 12º dia de vida, há 5 dias em CPAP nasal , com FiO2 de 40%, PEEP de 6 mmHg, dieta por sonda orogástrica desde 3º dia de vida.",
 "type": &"dialogue"
 },
 "177": {
@@ -948,16 +976,34 @@ lines = {
 "next_id": "178",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Esse é o caso2",
+"text": "Apresentou nas últimas 24 horas, 2 episódios de apneia, bradicardia e cianose, pele redilhada, hipotensão, hipoatividade, hipertermia,",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Esse é o caso2",
+"translation_key": "Apresentou nas últimas 24 horas, 2 episódios de apneia, bradicardia e cianose, pele redilhada, hipotensão, hipoatividade, hipertermia,",
 "type": &"dialogue"
 },
 "178": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
 "id": "178",
-"is_snippet": false,
-"next_id": "215",
-"type": &"goto"
+"next_id": "179",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "distensão abdominal e 3 episódios de resíduo gástrico esverdeado, sendo suspensa a dieta, mantendo SOG aberta.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "distensão abdominal e 3 episódios de resíduo gástrico esverdeado, sendo suspensa a dieta, mantendo SOG aberta.",
+"type": &"dialogue"
+},
+"179": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "179",
+"next_id": "180",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Foi coletado exames de sangue e hemocultura, realizado raio-x. Iniciou hidratação, aguarda iniciar oxacilina, amicacina e dobutamina.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Foi coletado exames de sangue e hemocultura, realizado raio-x. Iniciou hidratação, aguarda iniciar oxacilina, amicacina e dobutamina.",
+"type": &"dialogue"
 },
 "18": {
 "condition": {
@@ -984,16 +1030,70 @@ lines = {
 "type": &"condition"
 },
 "180": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
 "id": "180",
 "next_id": "181",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Está com acesso venoso periférico em membro inferior direito pérvio e sem sinais flogísticos.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Está com acesso venoso periférico em membro inferior direito pérvio e sem sinais flogísticos.",
+"type": &"dialogue"
+},
+"181": {
+"id": "181",
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
+},
+"183": {
+"id": "183",
+"next_id": "184",
+"text": "caso2",
+"type": &"title"
+},
+"184": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "184",
+"next_id": "185",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Vou te passar o caso2.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vou te passar o caso2.",
+"type": &"dialogue"
+},
+"185": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "185",
+"next_id": "186",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Esse é o caso2",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Esse é o caso2",
+"type": &"dialogue"
+},
+"186": {
+"id": "186",
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
+},
+"188": {
+"id": "188",
+"next_id": "189",
 "text": "caso3",
 "type": &"title"
 },
-"181": {
+"189": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "181",
-"next_id": "182",
+"id": "189",
+"next_id": "190",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Vou te passar o caso3.",
@@ -1001,11 +1101,18 @@ lines = {
 "translation_key": "Vou te passar o caso3.",
 "type": &"dialogue"
 },
-"182": {
+"19": {
+"id": "19",
+"is_snippet": false,
+"next_id": "199",
+"parent_id": "18",
+"type": &"goto"
+},
+"190": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "182",
-"next_id": "183",
+"id": "190",
+"next_id": "191",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Esse é o caso3",
@@ -1013,96 +1120,17 @@ lines = {
 "translation_key": "Esse é o caso3",
 "type": &"dialogue"
 },
-"183": {
-"id": "183",
-"is_snippet": false,
-"next_id": "215",
-"type": &"goto"
-},
-"185": {
-"id": "185",
-"next_id": "186",
-"text": "caso4",
-"type": &"title"
-},
-"186": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "186",
-"next_id": "187",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Vou te passar o caso4.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou te passar o caso4.",
-"type": &"dialogue"
-},
-"187": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "187",
-"next_id": "188",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Esse é o caso4",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Esse é o caso4",
-"type": &"dialogue"
-},
-"188": {
-"id": "188",
-"is_snippet": false,
-"next_id": "215",
-"type": &"goto"
-},
-"19": {
-"id": "19",
-"is_snippet": false,
-"next_id": "191",
-"parent_id": "18",
-"type": &"goto"
-},
-"190": {
-"id": "190",
-"next_id": "191",
-"text": "caso5",
-"type": &"title"
-},
 "191": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "191",
-"next_id": "192",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Vou te passar o bebê do leito 08,João Pedro Araújo, leito 05",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou te passar o bebê do leito 08,João Pedro Araújo, leito 05",
-"type": &"dialogue"
-},
-"192": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "192",
-"next_id": "193",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Ele é um bebê que tem 14h de vida, peso de nascimento de 4500g, parto cesariano por macrossomia e diabetes materna.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ele é um bebê que tem 14h de vida, peso de nascimento de 4500g, parto cesariano por macrossomia e diabetes materna.",
-"type": &"dialogue"
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
 },
 "193": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "193",
 "next_id": "194",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Evoluiu com taquipneia transitória, já em CPAP desde nascimento com com FiO2 de 30%, PEEP de 6 mmHg, dieta zero, hipoglicemia,",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Evoluiu com taquipneia transitória, já em CPAP desde nascimento com com FiO2 de 30%, PEEP de 6 mmHg, dieta zero, hipoglicemia,",
-"type": &"dialogue"
+"text": "caso4",
+"type": &"title"
 },
 "194": {
 "character": "Enfermeira",
@@ -1111,9 +1139,9 @@ lines = {
 "next_id": "195",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "hipotermia e com hidratação venosa, em acesso venoso periférico que foi perdido nos últimos 30 minutos.",
+"text": "Vou te passar o caso4.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "hipotermia e com hidratação venosa, em acesso venoso periférico que foi perdido nos últimos 30 minutos.",
+"translation_key": "Vou te passar o caso4.",
 "type": &"dialogue"
 },
 "195": {
@@ -1123,34 +1151,34 @@ lines = {
 "next_id": "196",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "A equipe de enfermagem já tentou a punção venosa, sem êxito. Já fez raio-x e colheu exames de 12 de vida.",
+"text": "Esse é o caso4",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "A equipe de enfermagem já tentou a punção venosa, sem êxito. Já fez raio-x e colheu exames de 12 de vida.",
+"translation_key": "Esse é o caso4",
 "type": &"dialogue"
 },
 "196": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
 "id": "196",
-"next_id": "197",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Então, a prioridade do plantão é providenciar um acesso venoso para ele.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Então, a prioridade do plantão é providenciar um acesso venoso para ele.",
-"type": &"dialogue"
-},
-"197": {
-"id": "197",
 "is_snippet": false,
-"next_id": "215",
+"next_id": "223",
 "type": &"goto"
 },
+"198": {
+"id": "198",
+"next_id": "199",
+"text": "caso5",
+"type": &"title"
+},
 "199": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
 "id": "199",
 "next_id": "200",
-"text": "caso6",
-"type": &"title"
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Vou te passar o bebê do leito 08,João Pedro Araújo, leito 05",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vou te passar o bebê do leito 08,João Pedro Araújo, leito 05",
+"type": &"dialogue"
 },
 "20": {
 "condition": {
@@ -1183,9 +1211,9 @@ lines = {
 "next_id": "201",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Vou te passar o caso6.",
+"text": "Ele é um bebê que tem 14h de vida, peso de nascimento de 4500g, parto cesariano por macrossomia e diabetes materna.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou te passar o caso6.",
+"translation_key": "Ele é um bebê que tem 14h de vida, peso de nascimento de 4500g, parto cesariano por macrossomia e diabetes materna.",
 "type": &"dialogue"
 },
 "201": {
@@ -1195,28 +1223,107 @@ lines = {
 "next_id": "202",
 "notes": "",
 "tags": PackedStringArray(),
+"text": "Evoluiu com taquipneia transitória, já em CPAP desde nascimento com com FiO2 de 30%, PEEP de 6 mmHg, dieta zero, hipoglicemia,",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Evoluiu com taquipneia transitória, já em CPAP desde nascimento com com FiO2 de 30%, PEEP de 6 mmHg, dieta zero, hipoglicemia,",
+"type": &"dialogue"
+},
+"202": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "202",
+"next_id": "203",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "hipotermia e com hidratação venosa, em acesso venoso periférico que foi perdido nos últimos 30 minutos.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "hipotermia e com hidratação venosa, em acesso venoso periférico que foi perdido nos últimos 30 minutos.",
+"type": &"dialogue"
+},
+"203": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "203",
+"next_id": "204",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "A equipe de enfermagem já tentou a punção venosa, sem êxito. Já fez raio-x e colheu exames de 12 de vida.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "A equipe de enfermagem já tentou a punção venosa, sem êxito. Já fez raio-x e colheu exames de 12 de vida.",
+"type": &"dialogue"
+},
+"204": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "204",
+"next_id": "205",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Então, a prioridade do plantão é providenciar um acesso venoso para ele.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Então, a prioridade do plantão é providenciar um acesso venoso para ele.",
+"type": &"dialogue"
+},
+"205": {
+"id": "205",
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
+},
+"207": {
+"id": "207",
+"next_id": "208",
+"text": "caso6",
+"type": &"title"
+},
+"208": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "208",
+"next_id": "209",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Vou te passar o caso6.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vou te passar o caso6.",
+"type": &"dialogue"
+},
+"209": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "209",
+"next_id": "210",
+"notes": "",
+"tags": PackedStringArray(),
 "text": "Esse é o caso6",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Esse é o caso6",
 "type": &"dialogue"
 },
-"202": {
-"id": "202",
+"21": {
+"id": "21",
 "is_snippet": false,
-"next_id": "215",
+"next_id": "208",
+"parent_id": "20",
 "type": &"goto"
 },
-"204": {
-"id": "204",
-"next_id": "205",
+"210": {
+"id": "210",
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
+},
+"212": {
+"id": "212",
+"next_id": "213",
 "text": "caso7",
 "type": &"title"
 },
-"205": {
+"213": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "205",
-"next_id": "206",
+"id": "213",
+"next_id": "214",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Vou te passar o caso7.",
@@ -1224,11 +1331,11 @@ lines = {
 "translation_key": "Vou te passar o caso7.",
 "type": &"dialogue"
 },
-"206": {
+"214": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "206",
-"next_id": "207",
+"id": "214",
+"next_id": "215",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Esse é o caso7",
@@ -1236,30 +1343,23 @@ lines = {
 "translation_key": "Esse é o caso7",
 "type": &"dialogue"
 },
-"207": {
-"id": "207",
+"215": {
+"id": "215",
 "is_snippet": false,
-"next_id": "215",
+"next_id": "223",
 "type": &"goto"
 },
-"209": {
-"id": "209",
-"next_id": "210",
+"217": {
+"id": "217",
+"next_id": "218",
 "text": "caso8",
 "type": &"title"
 },
-"21": {
-"id": "21",
-"is_snippet": false,
-"next_id": "200",
-"parent_id": "20",
-"type": &"goto"
-},
-"210": {
+"218": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "210",
-"next_id": "211",
+"id": "218",
+"next_id": "219",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Vou te passar o caso8.",
@@ -1267,93 +1367,16 @@ lines = {
 "translation_key": "Vou te passar o caso8.",
 "type": &"dialogue"
 },
-"211": {
+"219": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "211",
-"next_id": "212",
+"id": "219",
+"next_id": "220",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Esse é o caso8",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Esse é o caso8",
-"type": &"dialogue"
-},
-"212": {
-"id": "212",
-"is_snippet": false,
-"next_id": "215",
-"type": &"goto"
-},
-"214": {
-"id": "214",
-"next_id": "215",
-"text": "respostas",
-"type": &"title"
-},
-"215": {
-"id": "215",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "mostrar_caso",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
-"next_id": "216",
-"type": &"mutation"
-},
-"216": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "216",
-"next_id": "217",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "[[Qual protocolo deveriamos seguir?|O que devemos fazer?]]",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "[[Qual protocolo deveriamos seguir?|O que devemos fazer?]]",
-"type": &"dialogue"
-},
-"217": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "217",
-"next_id": "218",
-"next_id_after": "227",
-"notes": "",
-"responses": PackedStringArray("217", "221", "224"),
-"tags": PackedStringArray(),
-"text": "PICC",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "PICC",
-"type": &"response"
-},
-"218": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "218",
-"next_id": "219",
-"notes": "",
-"parent_id": "217",
-"tags": PackedStringArray(),
-"text": "Esse acesso periférico não será seguro para essa etapa do tratamento. Vai precisar passar um PICC.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Esse acesso periférico não será seguro para essa etapa do tratamento. Vai precisar passar um PICC.",
-"type": &"dialogue"
-},
-"219": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "219",
-"next_id": "220",
-"notes": "",
-"parent_id": "217",
-"tags": PackedStringArray(),
-"text": "Vou avaliar a condição das veias dele e comunicar aos pais a necessidade do procedimento.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Vou avaliar a condição das veias dele e comunicar aos pais a necessidade do procedimento.",
 "type": &"dialogue"
 },
 "22": {
@@ -1382,6 +1405,83 @@ lines = {
 },
 "220": {
 "id": "220",
+"is_snippet": false,
+"next_id": "223",
+"type": &"goto"
+},
+"222": {
+"id": "222",
+"next_id": "223",
+"text": "respostas",
+"type": &"title"
+},
+"223": {
+"id": "223",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "mostrar_caso",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "224",
+"type": &"mutation"
+},
+"224": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "224",
+"next_id": "225",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "[[Qual protocolo deveriamos seguir?|O que devemos fazer?]]",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "[[Qual protocolo deveriamos seguir?|O que devemos fazer?]]",
+"type": &"dialogue"
+},
+"225": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "225",
+"next_id": "226",
+"next_id_after": "235",
+"notes": "",
+"responses": PackedStringArray("225", "229", "232"),
+"tags": PackedStringArray(),
+"text": "PICC",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "PICC",
+"type": &"response"
+},
+"226": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "226",
+"next_id": "227",
+"notes": "",
+"parent_id": "225",
+"tags": PackedStringArray(),
+"text": "Esse acesso periférico não será seguro para essa etapa do tratamento. Vai precisar passar um PICC.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Esse acesso periférico não será seguro para essa etapa do tratamento. Vai precisar passar um PICC.",
+"type": &"dialogue"
+},
+"227": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "227",
+"next_id": "228",
+"notes": "",
+"parent_id": "225",
+"tags": PackedStringArray(),
+"text": "Vou avaliar a condição das veias dele e comunicar aos pais a necessidade do procedimento.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Vou avaliar a condição das veias dele e comunicar aos pais a necessidade do procedimento.",
+"type": &"dialogue"
+},
+"228": {
+"id": "228",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "testar_caso",
@@ -1393,16 +1493,16 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "227",
-"parent_id": "217",
+"next_id": "235",
+"parent_id": "225",
 "type": &"mutation"
 },
-"221": {
+"229": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "221",
-"next_id": "222",
-"next_id_after": "227",
+"id": "229",
+"next_id": "230",
+"next_id_after": "235",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Manter em observação",
@@ -1410,21 +1510,28 @@ lines = {
 "translation_key": "Manter em observação",
 "type": &"response"
 },
-"222": {
+"23": {
+"id": "23",
+"is_snippet": false,
+"next_id": "213",
+"parent_id": "22",
+"type": &"goto"
+},
+"230": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "222",
-"next_id": "223",
+"id": "230",
+"next_id": "231",
 "notes": "",
-"parent_id": "221",
+"parent_id": "229",
 "tags": PackedStringArray(),
 "text": "Vamos continuar observando pelas próximas 24 horas se ele vai apresentar alguma variação no quadro clínico.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Vamos continuar observando pelas próximas 24 horas se ele vai apresentar alguma variação no quadro clínico.",
 "type": &"dialogue"
 },
-"223": {
-"id": "223",
+"231": {
+"id": "231",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "testar_caso",
@@ -1436,16 +1543,16 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "227",
-"parent_id": "221",
+"next_id": "235",
+"parent_id": "229",
 "type": &"mutation"
 },
-"224": {
+"232": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "224",
-"next_id": "225",
-"next_id_after": "227",
+"id": "232",
+"next_id": "233",
+"next_id_after": "235",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Resposta agressiva",
@@ -1453,21 +1560,21 @@ lines = {
 "translation_key": "Resposta agressiva",
 "type": &"response"
 },
-"225": {
+"233": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "225",
-"next_id": "226",
+"id": "233",
+"next_id": "234",
 "notes": "",
-"parent_id": "224",
+"parent_id": "232",
 "tags": PackedStringArray(),
 "text": "Vixe, esse ai já era.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Vixe, esse ai já era.",
 "type": &"dialogue"
 },
-"226": {
-"id": "226",
+"234": {
+"id": "234",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "feedback_linguagem",
@@ -1476,11 +1583,11 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "227",
-"parent_id": "224",
+"next_id": "235",
+"parent_id": "232",
 "type": &"mutation"
 },
-"227": {
+"235": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": &"group",
@@ -1498,79 +1605,51 @@ lines = {
 "type": "colon"
 }])
 },
-"id": "227",
-"next_conditional_id": "230",
-"next_id": "228",
+"id": "235",
+"next_conditional_id": "238",
+"next_id": "236",
 "next_id_after": "end!",
 "type": &"condition"
 },
-"228": {
+"236": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "228",
-"next_id": "229",
+"id": "236",
+"next_id": "237",
 "notes": "",
-"parent_id": "227",
+"parent_id": "235",
 "tags": PackedStringArray(),
 "text": "Esses foram os pacientes de hoje.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Esses foram os pacientes de hoje.",
 "type": &"dialogue"
 },
-"229": {
-"id": "229",
+"237": {
+"id": "237",
 "is_snippet": false,
 "next_id": "28",
-"parent_id": "227",
+"parent_id": "235",
 "type": &"goto"
 },
-"23": {
-"id": "23",
-"is_snippet": false,
-"next_id": "205",
-"parent_id": "22",
-"type": &"goto"
-},
-"230": {
-"id": "230",
+"238": {
+"id": "238",
 "next_conditional_id": "end!",
-"next_id": "231",
+"next_id": "239",
 "next_id_after": "end!",
 "type": &"condition"
 },
-"231": {
+"239": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "231",
-"next_id": "232",
+"id": "239",
+"next_id": "240",
 "notes": "",
-"parent_id": "230",
+"parent_id": "238",
 "tags": PackedStringArray(),
 "text": "[[Entendido|Certo]], [[vou te passar|aqui está]] o próximo [[caso|bebê|paciente]].",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "[[Entendido|Certo]], [[vou te passar|aqui está]] o próximo [[caso|bebê|paciente]].",
 "type": &"dialogue"
-},
-"232": {
-"id": "232",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "atualizar_caso",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
-"next_id": "233",
-"parent_id": "230",
-"type": &"mutation"
-},
-"233": {
-"id": "233",
-"is_snippet": false,
-"next_id": "10",
-"parent_id": "230",
-"type": &"goto"
 },
 "24": {
 "condition": {
@@ -1596,10 +1675,31 @@ lines = {
 "next_id_after": "28",
 "type": &"condition"
 },
+"240": {
+"id": "240",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "atualizar_caso",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "241",
+"parent_id": "238",
+"type": &"mutation"
+},
+"241": {
+"id": "241",
+"is_snippet": false,
+"next_id": "10",
+"parent_id": "238",
+"type": &"goto"
+},
 "25": {
 "id": "25",
 "is_snippet": false,
-"next_id": "210",
+"next_id": "218",
 "parent_id": "24",
 "type": &"goto"
 },
@@ -1749,6 +1849,9 @@ lines = {
 }, {
 "type": "variable",
 "value": "character2"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "true"
 }])])
 }]),
 "is_blocking": true
@@ -1954,7 +2057,7 @@ lines = {
 "56": {
 "id": "56",
 "is_snippet": false,
-"next_id": "122",
+"next_id": "123",
 "type": &"goto"
 },
 "58": {
@@ -1985,6 +2088,9 @@ lines = {
 }, {
 "type": "variable",
 "value": "character2"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "true"
 }])])
 }]),
 "is_blocking": true
@@ -2226,7 +2332,7 @@ lines = {
 "79": {
 "id": "79",
 "is_snippet": false,
-"next_id": "122",
+"next_id": "123",
 "type": &"goto"
 },
 "81": {
@@ -2257,6 +2363,9 @@ lines = {
 }, {
 "type": "variable",
 "value": "character2"
+}]), Array[Dictionary]([{
+"type": "variable",
+"value": "true"
 }])])
 }]),
 "is_blocking": true
@@ -2395,7 +2504,7 @@ lines = {
 "94": {
 "id": "94",
 "is_snippet": false,
-"next_id": "122",
+"next_id": "123",
 "type": &"goto"
 },
 "96": {

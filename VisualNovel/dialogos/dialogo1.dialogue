@@ -36,7 +36,7 @@ else:
 	=> dialogo_mae_indiferente
 
 ~ dialogo_mae_normal
-do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+do mudar_cenario(Singleton.cena2_background, Singleton.character2, true)
 Você:  Olá, Maria. Bom dia! Tudo bem com a senhora? Sou enfermeiro(a) de plantão que está cuidando do seu bebê.
 Maria: O que houve com meu filho? Ele vai ficar bem? 
 =>< responder_mae
@@ -53,10 +53,10 @@ Maria: Não.
 Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
 Maria: Claro!
 Você: Obrigado(a)! Vamos dar início.
-=> cena3
+=> chamada_papers_please
 
 ~ dialogo_mae_preocupada
-do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+do mudar_cenario(Singleton.cena2_background, Singleton.character2, true)
 Você: Olá Marta. Bom dia! Sou enfermeiro(a) de plantão que está cuidando do seu bebê. Tudo bem com a senhora?
 Marta: Ai meu Deus! O que ta acontecendo? Por favor, me conte!
 =>< responder_mae
@@ -76,10 +76,10 @@ Você: Sem problemas!
 Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
 Marta: Agora mesmo!
 Você: Obrigado(a)! Vamos dar início ao tratamento.
-=> cena3
+=> chamada_papers_please
 
 ~ dialogo_mae_indiferente
-do mudar_cenario(Singleton.cena2_background, Singleton.character2)
+do mudar_cenario(Singleton.cena2_background, Singleton.character2, true)
 Você: Olá Ana. Bom dia! Sou enfermeiro(a) de plantão que está cuidando do seu bebê.
 Ana: Olá enfermeiro(a), alguma novidade?
 =>< responder_mae
@@ -91,7 +91,7 @@ Ana: Não. Está tudo bem.
 Você: A senhora poderia assinar o termo de consentimento para realizarmos o procedimento. Por favor?
 Ana: Ok.
 Você: Obrigado(a)! Vamos iniciar o tratamento.
-=> cena3
+=> chamada_papers_please
 
 ~ responder_mae
 Você: Então...
@@ -118,8 +118,36 @@ Você: Infecções também são possíveis, mas somos capacitados para tomar as 
 Você: Nossa equipe está muito preparada e seguiremos protocolos.
 => END
 
+
+~ chamada_papers_please
+do mudar_cenario(Singleton.cena1_background, Singleton.character1, false)
+Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
+Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
+do GameController.mode = 1
+do SceneTransition.change_scene("res://PapersPleaseClone/Cenas/Fases/Game/game.tscn")
+=> END
+
+~ chamada_mozu
+Enfermeira: Equipe e equipamentos preparados!
+Você: Ótimo, irei terminar minha preparação também.
+do SceneTransition.change_scene("res://Mozu/Cenas/CenasDasMãos/ligaTorneira.tscn")
+=> END
+
+~ chamada_procedimento
+do mudar_cenario(Singleton.cena1_background, Singleton.character1, true)
+Você: Tudo preparado?
+Enfermeira: Sim!
+Você: Certo, vamos iniciar o procedimento.
+do SceneTransition.change_scene("res://Procedimento/cenas/procedure_game.tscn")
+=> END
+
+~ fim
+Você: O procedimento foi um sucesso. Parabéns para toda a equipe!
+do game_over()
+=> END!
+
 ~ cena3
-do mudar_cenario(Singleton.cena1_background, Singleton.character1)
+do mudar_cenario(Singleton.cena1_background, Singleton.character1, false)
 Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
 Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
 Você: Vou checar a temperatura do bebê novamente para garantir que está adequada
@@ -136,23 +164,3 @@ Você: tal tal tal
 Você: Iniciemos o procedimento.
 do game_over()
 => END!
-
-~ chamada_papers_please
-do mudar_cenario(Singleton.cena1_background, Singleton.character1)
-Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
-Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
-do SceneTransition.change_scene("res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn")
-=> END
-
-~ chamada_mozu
-Enfermeira: Equipe e equipamentos preparados!
-Você: Ótimo, irei terminar minha preparação também.
-do SceneTransition.change_scene("res://Mozu/Menu/Menu.tscn")
-=> END
-
-~ chamada_procedimento
-Você: Tudo preparado?
-Enfermeira: Sim!
-Você: Certo, vamos iniciar o procedimento.
-do SceneTransition.change_scene("res://Procedimento/cenas/procedure_game.tscn")
-=> END

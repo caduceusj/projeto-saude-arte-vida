@@ -17,9 +17,9 @@ func _ready():
 
 
 func _on_measuremant_game_finish(dist):
-	SceneTransition.fade_in_animation()
-	await get_tree().create_timer(1).timeout
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN	
+#	SceneTransition.fade_in_animation()
+	#await get_tree().create_timer(1).timeout
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	distance = dist
 	maze_game.fuel_left = dist
 	measurement_game.queue_free()
@@ -27,9 +27,10 @@ func _on_measuremant_game_finish(dist):
 	cleaning_game.show()
 
 
+
 func _on_cleaning_game_finished():
-	SceneTransition.fade_in_animation()
-	await get_tree().create_timer(1).timeout
+#	SceneTransition.fade_in_animation()
+	#await get_tree().create_timer(1).timeout
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	cleaning_game.queue_free()
 	label.text = "Realize a inserção num ângulo de 15º"
@@ -47,14 +48,17 @@ func _on_angle_game_finish():
 
 func _on_maze_game_finished():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	game_over()
+	if Singleton.feedback != "":
+		game_over()
+	else:
+		Singleton.dialogue_checkpoint = "fim"
+		SceneTransition.change_scene("res://VisualNovel/cenas/visual_novel.tscn")
 
 
 func game_over():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if Singleton.feedback == "":
-		Singleton.feedback = "Parabéns!"
 	SceneTransition.change_scene("res://VisualNovel/cenas/feedback.tscn")
+
 
 
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dc17vkmtoeein"]
+[gd_scene load_steps=19 format=3 uid="uid://dc17vkmtoeein"]
 
 [ext_resource type="Script" path="res://PapersPleaseClone/Scripts/tablet.gd" id="1_mvqgj"]
 [ext_resource type="Texture2D" uid="uid://de5qcfia7rvia" path="res://PapersPleaseClone/Sprites/Ipad/IPad.png" id="2_70fs1"]
-[ext_resource type="Texture2D" uid="uid://bcojbqeh5xb8w" path="res://PapersPleaseClone/Sprites/Test/livro.png" id="2_nx4ou"]
 [ext_resource type="Theme" uid="uid://bmjbdwq5rxvvl" path="res://PapersPleaseClone/Tema/new_theme.tres" id="3_w5nvd"]
 [ext_resource type="Texture2D" uid="uid://inbg00i8itbd" path="res://PapersPleaseClone/Sprites/Equipamentos/compressaEsteril.png" id="4_3dl4j"]
 [ext_resource type="Texture2D" uid="uid://cxvumk0f3fhtn" path="res://PapersPleaseClone/Sprites/Equipamentos/Garrote.png" id="5_b8k1a"]
@@ -28,9 +27,6 @@ script = ExtResource("1_mvqgj")
 [node name="Tablet" type="Sprite2D" parent="."]
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_70fs1")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_nx4ou")
 
 [node name="ScrollContainerCheckBox" type="ScrollContainer" parent="."]
 custom_minimum_size = Vector2(160, 184)

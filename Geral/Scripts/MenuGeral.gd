@@ -20,7 +20,7 @@ func _on_button_3_button_down():
 
 
 func _on_button_4_button_down():
-	#Procedure Minigame
+	get_tree().change_scene_to_file("res://Procedimento/cenas/procedure_game.tscn")
 	pass
 
 func _on_button_5_button_down():

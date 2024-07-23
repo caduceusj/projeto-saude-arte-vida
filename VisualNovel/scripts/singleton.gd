@@ -1,6 +1,7 @@
 extends Node
 
 var checkpoint_scene = "res://VisualNovel/cenas/visual_novel.tscn"
+var dialogue_checkpoint = "inicio"
 var feedback:String = ""
 var cena1_background = "res://VisualNovel/sprites/background1_neonatal.png"
 var cena2_background = "res://VisualNovel/sprites/background2_neonatal.png"

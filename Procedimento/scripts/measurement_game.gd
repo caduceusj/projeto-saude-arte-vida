@@ -11,10 +11,13 @@ var destiny = Vector2(0,0)
 var clicks = 0
 var drawing = false
 var distance = 0
-var can_click = true
+var can_click = false
 
 func _ready():
 	disable_buttons()
+	#Prevent acidental click on menu start
+	await get_tree().create_timer(0.5).timeout
+	can_click = true
 
 func _process(_delta):
 	if Input.is_action_just_pressed("mouse_click") and can_click:
@@ -36,7 +39,6 @@ func _process(_delta):
 		queue_redraw()
 
 func _draw():
-	#draw_line(origin, destiny, Color.BLACK, 2)
 	draw_dashed_line(origin, destiny, Color.BLACK, 1, 1, false)
 
 

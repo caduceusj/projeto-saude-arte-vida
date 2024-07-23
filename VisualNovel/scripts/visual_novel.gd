@@ -3,7 +3,7 @@ extends Node2D
 const Ballon = preload("res://VisualNovel/dialogos/balloon.tscn")
 
 @export var dialogue_resource: DialogueResource
-var dialogue_start : String = "inicio"
+@onready var dialogue_start : String = Singleton.dialogue_checkpoint
 
 var caso_atual = 1 # Num do caso na sequência sorteada (1,2,3) ou (1,2,3,4)
 var caso_num_atual # Num do caso na posição caso_atual dos sorteados (1 à 8)
@@ -102,13 +102,15 @@ func game_over():
 		Singleton.feedback = "Parabéns, você conduziu corretamente os casos dos pacientes"
 	SceneTransition.change_scene("res://VisualNovel/cenas/feedback.tscn")
 	
-func mudar_cenario(background, character):
-	SceneTransition.fade_in_animation()
+func mudar_cenario(background, character, need_transition:bool):
+	if need_transition:
+		SceneTransition.fade_in_animation()
 	await get_tree().create_timer(1).timeout
 	var novo_background = load(background)
 	$BackGround.set_texture(novo_background)
 	$Character.mudar_textura(character)
-	await get_tree().create_timer(1).timeout
+	if need_transition:
+		await get_tree().create_timer(1).timeout
 	
 
 func _input(event: InputEvent):

@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cxtbw3mb05lha"]
 
 [ext_resource type="Script" path="res://Procedimento/scripts/maze_game.gd" id="1_dcpf2"]
-[ext_resource type="Texture2D" uid="uid://ca8cjwjd5ohc0" path="res://Procedimento/sprites/maze_game_test.png" id="2_u6jxd"]
+[ext_resource type="Texture2D" uid="uid://cg1yucmuktndv" path="res://Procedimento/sprites/bg-procedimento.png" id="2_id4kw"]
 [ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="3_klr6c"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn86f"]
-size = Vector2(20, 26)
+size = Vector2(20, 16)
 
 [node name="MazeGame" type="Node2D"]
 script = ExtResource("1_dcpf2")
@@ -14,7 +13,7 @@ script = ExtResource("1_dcpf2")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_u6jxd")
+texture = ExtResource("2_id4kw")
 
 [node name="CateterLabel" type="Label" parent="."]
 offset_left = 387.0
@@ -35,23 +34,23 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/LeftWall"]
 position = Vector2(2, -3)
-polygon = PackedVector2Array(-2, 3, 510, 3, 510, 66, 389, 68, 317, 70, 260, 86, 220, 107, 197, 134, 189, 180, 192, 253, 202, 291, -2, 291)
+polygon = PackedVector2Array(-2, 3, 510, 3, 510, 135, 491, 135, 453, 137, 415, 140, 396, 142, 372, 142, 351, 140, 332, 137, 322, 135, 303, 133, 291, 131, 270, 131, 256, 133, 241, 135, 227, 137, 213, 140, 199, 142, 184, 142, 172, 140, 163, 137, 151, 135, 141, 133, 129, 131, 118, 129, 106, 126, 96, 124, 77, 122, 56, 120, 18, 117, -2, 117)
 
 [node name="RightWall" type="Area2D" parent="Maze"]
 position = Vector2(512, 288)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/RightWall"]
-polygon = PackedVector2Array(0, 0, 0, -199, -75, -200, -111, -198, -172, -196, -194, -193, -220, -186, -237, -180, -248, -173, -262, -166, -276, -153, -289, -136, -293, -125, -296, -110, -296, -91, -293, -73, -285, 0)
+polygon = PackedVector2Array(0, 0, 0, -140, -19, -138, -57, -136, -95, -134, -114, -132, -138, -132, -159, -134, -178, -136, -188.205, -137.77, -207, -140, -219, -143, -240, -143, -254, -140, -269, -138, -283, -136, -297, -134, -311, -132, -326, -132, -338, -134, -347, -136, -359, -138, -371, -140, -381, -143, -392, -145, -404, -147, -414, -149, -433, -151, -454, -154, -492, -156, -512, -158, -512, 0)
 
 [node name="FinishArea" type="Area2D" parent="Maze"]
 position = Vector2(512, 77)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Maze/FinishArea"]
-position = Vector2(-14, -1)
+position = Vector2(-502, 45)
 shape = SubResource("RectangleShape2D_hn86f")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(214, 278)
+position = Vector2(504, 140)
 
 [connection signal="mouse_entered" from="Maze/LeftWall" to="." method="_on_left_wall_mouse_entered"]
 [connection signal="mouse_entered" from="Maze/RightWall" to="." method="_on_right_wall_mouse_entered"]
