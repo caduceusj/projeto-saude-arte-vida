@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://mk7ad1no8nxo"]
 
 [ext_resource type="Script" path="res://Mozu/Scripts/LavaMãos/enxugarMaos1.gd" id="1_vpmrq"]
-[ext_resource type="PackedScene" uid="uid://gscdgtvcxckg" path="res://Mozu/Menu/Menu.tscn" id="2_aoamg"]
 [ext_resource type="Texture2D" uid="uid://dxm55jpoqq05t" path="res://Mozu/Sprites/Enxugando/Mosu-Sheet.png" id="2_c8sdr"]
+[ext_resource type="PackedScene" uid="uid://bn4ypxny307xc" path="res://VisualNovel/cenas/visual_novel.tscn" id="2_h56fa"]
 [ext_resource type="PackedScene" uid="uid://ko26f0ckwlg3" path="res://Mozu/Cenas/Cifras/Click.tscn" id="3_fgpft"]
 [ext_resource type="PackedScene" uid="uid://bebluii84t51r" path="res://Mozu/Cenas/Cifras/drag.tscn" id="4_qcecq"]
 [ext_resource type="FontFile" uid="uid://uc6pmktvy2a5" path="res://PapersPleaseClone/Fonte/MP16REG.ttf" id="5_e5ain"]
@@ -154,7 +154,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vpmrq")
-nextStage = ExtResource("2_aoamg")
+nextStage = ExtResource("2_h56fa")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(256, 144)

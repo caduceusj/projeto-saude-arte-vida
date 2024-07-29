@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_7ht2e"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_npoys"]
 
 [resource]
-script = ExtResource("1_7ht2e")
+script = ExtResource("1_npoys")
 using_states = PackedStringArray()
 titles = {
 "2539873536/caso1": "5",

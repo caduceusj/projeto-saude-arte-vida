@@ -42,6 +42,9 @@ func _on_game_over():
 	if(pontuacao >= 30):
 		$EndgameScreen/Text.text = "Ótimo Trabalho !"
 		$EndgameScreen/Label.text = "Você executou corretamente a parte da Paramentação e obteve a pontuação de " +str(pontuacao)+ " pontos"
+		if(GameController.mode == 2):
+			Singleton.dialogue_checkpoint = "chamada_mozu"
+			SceneTransition.change_scene("res://VisualNovel/cenas/visual_novel.tscn")
 	elif(pontuacao < 30):
 		$EndgameScreen/Text.text = "Você Pode Melhorar!"
 		$EndgameScreen/Label.text = "Você pode fazer melhor! sua pontuação foi de apenas  " +str(pontuacao)+ " pontos, tente novamente!"

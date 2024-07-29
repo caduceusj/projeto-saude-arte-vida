@@ -1,6 +1,6 @@
 extends Control
 
-const MAX_VALUE = 30
+const MAX_VALUE = 120
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

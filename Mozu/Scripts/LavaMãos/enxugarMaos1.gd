@@ -19,7 +19,7 @@ func _ready():
 		$StartAnimation.hide()
 	$ProgressBar.max_value = tempo
 	$ProgressBar.value = tempo
-
+	Singleton.dialogue_checkpoint = "chamada_procedimento"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
