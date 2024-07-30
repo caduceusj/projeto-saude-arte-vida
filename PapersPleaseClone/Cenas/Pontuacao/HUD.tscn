@@ -121,12 +121,23 @@ vertical_alignment = 1
 autowrap_mode = 3
 clip_text = true
 
-[node name="Menu" type="Button" parent="EndgameScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="EndgameScreen"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 120.0
-offset_right = 192.0
-offset_bottom = 140.0
+offset_left = 67.0
+offset_top = 114.0
+offset_right = 189.0
+offset_bottom = 158.0
+
+[node name="Continuar" type="Button" parent="EndgameScreen/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_k0svf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jar7j")
+text = "Continuar
+"
+
+[node name="Menu" type="Button" parent="EndgameScreen/VBoxContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_k0svf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jar7j")
@@ -136,4 +147,5 @@ text = "Retornar ao Menu"
 [connection signal="pressed" from="BotaoPause" to="." method="_on_botao_pause_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="EndgameScreen/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="EndgameScreen/VBoxContainer/Continuar" to="." method="_on_endgame_continuar_pressed"]
+[connection signal="pressed" from="EndgameScreen/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

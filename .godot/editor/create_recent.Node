@@ -1,10 +1,10 @@
 VBoxContainer
+Button
 TextureRect
 Control
 AudioStreamPlayer
 Label
 AnimatedSprite2D
-Button
 HBoxContainer
 Node2D
 ProgressBar

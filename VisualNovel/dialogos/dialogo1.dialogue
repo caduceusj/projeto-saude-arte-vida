@@ -120,7 +120,7 @@ Você: Nossa equipe está muito preparada e seguiremos protocolos.
 
 
 ~ chamada_papers_please
-do mudar_cenario(Singleton.cena1_background, Singleton.character1, false)
+do mudar_cenario(Singleton.cena1_background, Singleton.character1, true)
 Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
 Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
 do GameController.mode = 1
@@ -134,8 +134,7 @@ do SceneTransition.change_scene("res://Mozu/Cenas/CenasDasMãos/ligaTorneira.tsc
 => END
 
 ~ chamada_procedimento
-do mudar_cenario(Singleton.cena1_background, Singleton.character1, true)
-Você: Tudo preparado?
+Você: Tudo preparado? 
 Enfermeira: Sim!
 Você: Certo, vamos iniciar o procedimento.
 do SceneTransition.change_scene("res://Procedimento/cenas/procedure_game.tscn")

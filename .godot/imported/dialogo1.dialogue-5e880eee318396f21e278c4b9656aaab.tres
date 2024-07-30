@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_npoys"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_pg7vf"]
 
 [resource]
-script = ExtResource("1_npoys")
+script = ExtResource("1_pg7vf")
 using_states = PackedStringArray()
 titles = {
 "2539873536/caso1": "5",
@@ -24,7 +24,7 @@ titles = {
 "casos/caso7": "44",
 "casos/caso8": "49",
 "casos/respostas": "54",
-"cena3": "225",
+"cena3": "224",
 "chamada_mozu": "206",
 "chamada_papers_please": "198",
 "chamada_procedimento": "212",
@@ -34,7 +34,7 @@ titles = {
 "dialogo_picc": "103",
 "explicar_picc": "186",
 "explicar_riscos": "191",
-"fim": "220",
+"fim": "219",
 "inicio": "80",
 "mostrar_casos": "85",
 "responder_mae": "172"
@@ -1164,7 +1164,7 @@ lines = {
 "value": "character1"
 }]), Array[Dictionary]([{
 "type": "variable",
-"value": "false"
+"value": "true"
 }])])
 }]),
 "is_blocking": true
@@ -1340,42 +1340,10 @@ lines = {
 "type": &"title"
 },
 "212": {
-"id": "212",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "mudar_cenario",
-"type": &"function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "variable",
-"value": "Singleton"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "cena1_background"
-}]), Array[Dictionary]([{
-"type": "variable",
-"value": "Singleton"
-}, {
-"type": "dot"
-}, {
-"type": "variable",
-"value": "character1"
-}]), Array[Dictionary]([{
-"type": "variable",
-"value": "true"
-}])])
-}]),
-"is_blocking": true
-},
-"next_id": "213",
-"type": &"mutation"
-},
-"213": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "213",
-"next_id": "214",
+"id": "212",
+"next_id": "213",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Tudo preparado?",
@@ -1383,11 +1351,11 @@ lines = {
 "translation_key": "Tudo preparado?",
 "type": &"dialogue"
 },
-"214": {
+"213": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "214",
-"next_id": "215",
+"id": "213",
+"next_id": "214",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Sim!",
@@ -1395,11 +1363,11 @@ lines = {
 "translation_key": "Sim!",
 "type": &"dialogue"
 },
-"215": {
+"214": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "215",
-"next_id": "216",
+"id": "214",
+"next_id": "215",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Certo, vamos iniciar o procedimento.",
@@ -1407,8 +1375,8 @@ lines = {
 "translation_key": "Certo, vamos iniciar o procedimento.",
 "type": &"dialogue"
 },
-"216": {
-"id": "216",
+"215": {
+"id": "215",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1425,20 +1393,32 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "217",
+"next_id": "216",
 "type": &"mutation"
 },
-"217": {
-"id": "217",
+"216": {
+"id": "216",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"219": {
-"id": "219",
-"next_id": "220",
+"218": {
+"id": "218",
+"next_id": "219",
 "text": "fim",
 "type": &"title"
+},
+"219": {
+"character": "Você",
+"character_replacements": Array[Dictionary]([]),
+"id": "219",
+"next_id": "220",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
+"type": &"dialogue"
 },
 "22": {
 "id": "22",
@@ -1447,19 +1427,7 @@ lines = {
 "type": &"goto"
 },
 "220": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
 "id": "220",
-"next_id": "221",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "O procedimento foi um sucesso. Parabéns para toda a equipe!",
-"type": &"dialogue"
-},
-"221": {
-"id": "221",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "game_over",
@@ -1468,23 +1436,23 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "222",
+"next_id": "221",
 "type": &"mutation"
 },
-"222": {
-"id": "222",
+"221": {
+"id": "221",
 "is_snippet": false,
 "next_id": "end!",
 "type": &"goto"
 },
-"224": {
-"id": "224",
-"next_id": "225",
+"223": {
+"id": "223",
+"next_id": "224",
 "text": "cena3",
 "type": &"title"
 },
-"225": {
-"id": "225",
+"224": {
+"id": "224",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "mudar_cenario",
@@ -1512,14 +1480,14 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "226",
+"next_id": "225",
 "type": &"mutation"
 },
-"226": {
+"225": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "226",
-"next_id": "227",
+"id": "225",
+"next_id": "226",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
@@ -1533,11 +1501,11 @@ lines = {
 "translation_key": "Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}",
 "type": &"dialogue"
 },
-"227": {
+"226": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "227",
-"next_id": "228",
+"id": "226",
+"next_id": "227",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
@@ -1545,11 +1513,11 @@ lines = {
 "translation_key": "Ótimo! Irei mobilizar a equipe para iniciar o PICC.",
 "type": &"dialogue"
 },
-"228": {
+"227": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "228",
-"next_id": "229",
+"id": "227",
+"next_id": "228",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
@@ -1557,11 +1525,11 @@ lines = {
 "translation_key": "Vou checar a temperatura do bebê novamente para garantir que está adequada",
 "type": &"dialogue"
 },
-"229": {
+"228": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "229",
-"next_id": "230",
+"id": "228",
+"next_id": "229",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "O restante da equipe já está a caminho.",
@@ -1569,11 +1537,11 @@ lines = {
 "translation_key": "O restante da equipe já está a caminho.",
 "type": &"dialogue"
 },
-"230": {
+"229": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "230",
-"next_id": "231",
+"id": "229",
+"next_id": "230",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
@@ -1581,11 +1549,11 @@ lines = {
 "translation_key": "Entendido. Me auxilie a coletar a frequência cardíaca e respiratória, por favor.",
 "type": &"dialogue"
 },
-"231": {
+"230": {
 "character": "Enfermeira",
 "character_replacements": Array[Dictionary]([]),
-"id": "231",
-"next_id": "232",
+"id": "230",
+"next_id": "231",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Aqui está.",
@@ -1593,16 +1561,28 @@ lines = {
 "translation_key": "Aqui está.",
 "type": &"dialogue"
 },
-"232": {
+"231": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "232",
-"next_id": "233",
+"id": "231",
+"next_id": "232",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Frequência cardíaca em 136 bpm e respiratória em 44 imp.",
+"type": &"dialogue"
+},
+"232": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "232",
+"next_id": "233",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Ambas na faixa da normalidade.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Ambas na faixa da normalidade.",
 "type": &"dialogue"
 },
 "233": {
@@ -1612,33 +1592,33 @@ lines = {
 "next_id": "234",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Ambas na faixa da normalidade.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ambas na faixa da normalidade.",
-"type": &"dialogue"
-},
-"234": {
-"character": "Enfermeira",
-"character_replacements": Array[Dictionary]([]),
-"id": "234",
-"next_id": "235",
-"notes": "",
-"tags": PackedStringArray(),
 "text": "Devemos observar a saturação de oxigênio.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Devemos observar a saturação de oxigênio.",
 "type": &"dialogue"
 },
-"235": {
+"234": {
 "character": "Você",
 "character_replacements": Array[Dictionary]([]),
-"id": "235",
-"next_id": "236",
+"id": "234",
+"next_id": "235",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Saturação em 90%, vai necessitar de suporte de oxigenoterapia.",
+"type": &"dialogue"
+},
+"235": {
+"character": "Enfermeira",
+"character_replacements": Array[Dictionary]([]),
+"id": "235",
+"next_id": "236",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Equipamento está a postos.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Equipamento está a postos.",
 "type": &"dialogue"
 },
 "236": {
@@ -1648,21 +1628,21 @@ lines = {
 "next_id": "237",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Equipamento está a postos.",
+"text": "Qual estratégia analgésica será utilizada para esse paciente?",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Equipamento está a postos.",
+"translation_key": "Qual estratégia analgésica será utilizada para esse paciente?",
 "type": &"dialogue"
 },
 "237": {
-"character": "Enfermeira",
+"character": "Você",
 "character_replacements": Array[Dictionary]([]),
 "id": "237",
 "next_id": "238",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Qual estratégia analgésica será utilizada para esse paciente?",
+"text": "tal tal tal",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Qual estratégia analgésica será utilizada para esse paciente?",
+"translation_key": "tal tal tal",
 "type": &"dialogue"
 },
 "238": {
@@ -1672,22 +1652,23 @@ lines = {
 "next_id": "239",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "tal tal tal",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "tal tal tal",
-"type": &"dialogue"
-},
-"239": {
-"character": "Você",
-"character_replacements": Array[Dictionary]([]),
-"id": "239",
-"next_id": "240",
-"notes": "",
-"tags": PackedStringArray(),
 "text": "Iniciemos o procedimento.",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Iniciemos o procedimento.",
 "type": &"dialogue"
+},
+"239": {
+"id": "239",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "game_over",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "240",
+"type": &"mutation"
 },
 "24": {
 "id": "24",
@@ -1697,19 +1678,6 @@ lines = {
 },
 "240": {
 "id": "240",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "game_over",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
-"next_id": "241",
-"type": &"mutation"
-},
-"241": {
-"id": "241",
 "is_snippet": false,
 "next_id": "end!",
 "type": &"goto"
@@ -2670,7 +2638,7 @@ Você: Nossa equipe está muito preparada e seguiremos protocolos.
 
 
 ~ chamada_papers_please
-do mudar_cenario(Singleton.cena1_background, Singleton.character1, false)
+do mudar_cenario(Singleton.cena1_background, Singleton.character1, true)
 Você: Coletei a assinatura da responsável pelo paciente do caso {{caso_prioridade}}
 Enfermeira: Ótimo! Irei mobilizar a equipe para iniciar o PICC.
 do GameController.mode = 1
@@ -2684,8 +2652,7 @@ do SceneTransition.change_scene(\"res://Mozu/Cenas/CenasDasMãos/ligaTorneira.ts
 => END
 
 ~ chamada_procedimento
-do mudar_cenario(Singleton.cena1_background, Singleton.character1, true)
-Você: Tudo preparado?
+Você: Tudo preparado? 
 Enfermeira: Sim!
 Você: Certo, vamos iniciar o procedimento.
 do SceneTransition.change_scene(\"res://Procedimento/cenas/procedure_game.tscn\")

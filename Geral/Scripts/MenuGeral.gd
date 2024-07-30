@@ -3,6 +3,7 @@ extends Control
 
 
 func _on_button_button_down():
+	GameController.continuos_mode = 1
 	SceneTransition.change_scene("res://VisualNovel/cenas/visual_novel.tscn")
 	pass # Replace with function body.
 

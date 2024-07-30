@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Saude Arte e Vida"
-run/main_scene="res://PapersPleaseClone/Cenas/Menu/miniGameMenu.tscn"
+run/main_scene="res://Geral/Cenas/menu_geral.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

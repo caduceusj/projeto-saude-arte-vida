@@ -35,16 +35,27 @@ func _on_menu_pressed():
 
 
 func _on_game_over():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().paused = true
 	$BotaoPause.hide()
 	$Panel.hide()
 	$EndgameScreen.show()
+	$EndgameScreen/VBoxContainer/Continuar.hide()
 	if(pontuacao >= 30):
 		$EndgameScreen/Text.text = "Ótimo Trabalho !"
 		$EndgameScreen/Label.text = "Você executou corretamente a parte da Paramentação e obteve a pontuação de " +str(pontuacao)+ " pontos"
-		if(GameController.mode == 2):
-			Singleton.dialogue_checkpoint = "chamada_mozu"
-			SceneTransition.change_scene("res://VisualNovel/cenas/visual_novel.tscn")
+		if GameController.continuos_mode:
+			$EndgameScreen/VBoxContainer/Continuar.show()
 	elif(pontuacao < 30):
 		$EndgameScreen/Text.text = "Você Pode Melhorar!"
 		$EndgameScreen/Label.text = "Você pode fazer melhor! sua pontuação foi de apenas  " +str(pontuacao)+ " pontos, tente novamente!"
+
+
+func _on_endgame_continuar_pressed():
+	get_tree().paused = false
+	if GameController.mode == 1:
+		GameController.mode = 2
+		get_tree().reload_current_scene()
+	elif GameController.mode == 2:
+		Singleton.dialogue_checkpoint = "chamada_mozu"
+		get_tree().change_scene_to_file("res://VisualNovel/cenas/visual_novel.tscn")
