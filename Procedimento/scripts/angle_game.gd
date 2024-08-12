@@ -20,7 +20,6 @@ func _on_timer_timeout():
 
 func _on_button_pressed():
 	var current_rotation = bisel.rotation_degrees
-	print('current_rotation ', bisel.rotation_degrees)
 	
 	if current_rotation <= -10 and current_rotation >= -20:
 		angle_label.text = 'Angulação correta!'

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg1yucmuktndv"
-path="res://.godot/imported/bg-procedimento.png-676f7545f6cc766b676f6e9e333d5447.ctex"
+uid="uid://c58yyjepc0xhg"
+path="res://.godot/imported/bg_bege.png-f61dbb8d7cd2bd6f79e68c7d4b5df9b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Procedimento/sprites/bg-procedimento.png"
-dest_files=["res://.godot/imported/bg-procedimento.png-676f7545f6cc766b676f6e9e333d5447.ctex"]
+source_file="res://Procedimento/sprites/bg_bege.png"
+dest_files=["res://.godot/imported/bg_bege.png-f61dbb8d7cd2bd6f79e68c7d4b5df9b5.ctex"]
 
 [params]
 

@@ -1,57 +1,731 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxtbw3mb05lha"]
+[gd_scene load_steps=72 format=3 uid="uid://cxtbw3mb05lha"]
 
 [ext_resource type="Script" path="res://Procedimento/scripts/maze_game.gd" id="1_dcpf2"]
-[ext_resource type="Texture2D" uid="uid://cg1yucmuktndv" path="res://Procedimento/sprites/bg-procedimento.png" id="2_id4kw"]
+[ext_resource type="Texture2D" uid="uid://cukkvn172koku" path="res://Procedimento/sprites/bg1-procedimento.png" id="2_3gbwu"]
+[ext_resource type="Texture2D" uid="uid://cxb2vuvgrw3s2" path="res://Procedimento/sprites/cateter_animation/bg1_animation/tubo1-sheet.png" id="3_bfarn"]
 [ext_resource type="Theme" uid="uid://jaaphdr8d1pm" path="res://VisualNovel/fonts/theme/balloon_theme.tres" id="3_klr6c"]
+[ext_resource type="Texture2D" uid="uid://cik26nlvq4hmi" path="res://Procedimento/sprites/bg3-procedimento.png" id="4_3eccu"]
+[ext_resource type="Texture2D" uid="uid://dienxxf2bjptp" path="res://Procedimento/sprites/bg2-procedimento.png" id="4_81ywp"]
+[ext_resource type="Texture2D" uid="uid://c58yyjepc0xhg" path="res://Procedimento/sprites/bg_bege.png" id="4_im7sc"]
+[ext_resource type="Texture2D" uid="uid://dowtai73yyju1" path="res://Procedimento/sprites/cateter_animation/bg2_animation/tubo2-sheet.png" id="4_sv1bi"]
+[ext_resource type="Texture2D" uid="uid://b5r2vx4tyncoe" path="res://Procedimento/sprites/bg_white.png" id="5_w8rdl"]
+[ext_resource type="Texture2D" uid="uid://dl15jabj528v5" path="res://Procedimento/sprites/cateter_animation/bg3_animation/tubo3-sheet.png" id="9_jpqf8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47lt2"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj3sc"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjxpo"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nko41"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g010"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(2048, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p373a"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(2560, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew4ld"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(3072, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fllwv"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(3584, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ocr"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(4096, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hnqi"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(4608, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35if4"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(5120, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc34f"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(5632, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fi4f"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(6144, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxdbt"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(6656, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3d5q"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(7168, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agdcv"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(7680, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8nmq"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(8192, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qujqs"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(8704, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nndfm"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(9216, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pagc2"]
+atlas = ExtResource("3_bfarn")
+region = Rect2(9728, 0, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytbqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47lt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj3sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjxpo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nko41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g010")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p373a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew4ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fllwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ocr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hnqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35if4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc34f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fi4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxdbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3d5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agdcv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8nmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qujqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nndfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pagc2")
+}],
+"loop": false,
+"name": &"tubo-1",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ntxt"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry78f"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npu8c"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ktig"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq14d"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(2048, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xls4h"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(2560, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vexq"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(3072, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fag42"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(3584, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a8pj"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(4096, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfnn1"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(4608, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ypyw"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(5120, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oac8e"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(5632, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ug0t"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(6144, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh117"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(6656, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvaf8"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(7168, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvif5"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(7680, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8owi4"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(8192, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eobsd"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(8704, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1dgv"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(9216, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y61w"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(9728, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mokf6"]
+atlas = ExtResource("4_sv1bi")
+region = Rect2(10240, 0, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gpq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ntxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry78f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npu8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ktig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq14d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xls4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vexq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fag42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a8pj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfnn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ypyw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oac8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ug0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh117")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvaf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvif5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8owi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eobsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1dgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y61w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mokf6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpdp2"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(0, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa017"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(512, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hf88a"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(1024, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e22u2"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(1536, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lw3sf"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(2048, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8jrx"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(2560, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j661n"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(3072, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87j3m"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(3584, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m6vr"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(4096, 0, 512, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mycdr"]
+atlas = ExtResource("9_jpqf8")
+region = Rect2(4608, 0, 512, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8brfq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpdp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa017")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hf88a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e22u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lw3sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8jrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j661n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87j3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m6vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mycdr")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hn86f"]
-size = Vector2(20, 16)
+size = Vector2(12, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7wqa"]
+size = Vector2(17, 18.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_du6ib"]
+
+[sub_resource type="Animation" id="Animation_2xo2o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backgrounds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kajgk"]
+resource_name = "bg1_to_bg2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backgrounds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(512, 13)]
+}
+
+[sub_resource type="Animation" id="Animation_0wdj8"]
+resource_name = "bg2_to_bg3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Backgrounds:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(512, 13), Vector2(671, -275)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43wcl"]
+_data = {
+"RESET": SubResource("Animation_2xo2o"),
+"bg1_to_bg2": SubResource("Animation_kajgk"),
+"bg2_to_bg3": SubResource("Animation_0wdj8")
+}
 
 [node name="MazeGame" type="Node2D"]
 script = ExtResource("1_dcpf2")
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_id4kw")
-
-[node name="CateterLabel" type="Label" parent="."]
-offset_left = 387.0
-offset_top = 243.0
-offset_right = 506.0
-offset_bottom = 283.0
-theme = ExtResource("3_klr6c")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Cateter restante:
-00"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Maze" type="Node2D" parent="."]
+[node name="Backgrounds" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="LeftWall" type="Area2D" parent="Maze"]
+[node name="Background1" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(256, 144)
+texture = ExtResource("2_3gbwu")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/LeftWall"]
+[node name="Tubo1" type="AnimatedSprite2D" parent="Backgrounds/Background1"]
+sprite_frames = SubResource("SpriteFrames_ytbqs")
+animation = &"tubo-1"
+
+[node name="Background2" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-256, 131)
+texture = ExtResource("4_81ywp")
+
+[node name="Bege" type="Sprite2D" parent="Backgrounds/Background2"]
+position = Vector2(-511, 1)
+texture = ExtResource("4_im7sc")
+
+[node name="White" type="Sprite2D" parent="Backgrounds/Background2"]
+position = Vector2(326, 288)
+texture = ExtResource("5_w8rdl")
+
+[node name="White2" type="Sprite2D" parent="Backgrounds/Background2"]
+position = Vector2(490, -274)
+texture = ExtResource("5_w8rdl")
+
+[node name="Tubo2" type="AnimatedSprite2D" parent="Backgrounds/Background2"]
+sprite_frames = SubResource("SpriteFrames_3gpq6")
+
+[node name="Background3" type="Sprite2D" parent="Backgrounds"]
+position = Vector2(-415, 419)
+texture = ExtResource("4_3eccu")
+region_rect = Rect2(0, 0, 634.663, 288)
+
+[node name="Tubo3" type="AnimatedSprite2D" parent="Backgrounds/Background3"]
+sprite_frames = SubResource("SpriteFrames_8brfq")
+
+[node name="Maze" type="Node2D" parent="Backgrounds"]
+metadata/_edit_lock_ = true
+
+[node name="LeftWall" type="Area2D" parent="Backgrounds/Maze"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Backgrounds/Maze/LeftWall"]
 position = Vector2(2, -3)
-polygon = PackedVector2Array(-2, 3, 510, 3, 510, 135, 491, 135, 453, 137, 415, 140, 396, 142, 372, 142, 351, 140, 332, 137, 322, 135, 303, 133, 291, 131, 270, 131, 256, 133, 241, 135, 227, 137, 213, 140, 199, 142, 184, 142, 172, 140, 163, 137, 151, 135, 141, 133, 129, 131, 118, 129, 106, 126, 96, 124, 77, 122, 56, 120, 18, 117, -2, 117)
+polygon = PackedVector2Array(-673, 3, 510, 3, 510, 136, 492, 136, 454, 138, 416, 140, 396, 142, 381, 142, 362, 140, 343, 138, 325, 136, 306, 134, 271, 134, 256, 136, 242, 138, 228, 140, 213, 142, 199, 144, 175, 144, 165, 142, 154, 140, 142, 138, 132, 135, 120, 133, 108, 131, 97, 129, 79, 127, 56, 125, 20, 123, -2, 123, -16, 123, -25, 125, -34, 127, -44, 129, -56, 129, -71, 127, -87, 125, -101, 123, -111, 121, -124, 121, -131, 123, -136, 125, -141, 127, -149, 127, -153, 125, -159, 123, -171, 119, -177, 117, -189, 115, -205, 113, -229, 109, -240, 107, -247, 105, -252, 103, -266, 97, -271, 95, -288, 95, -309, 99, -328, 105, -336, 107, -344, 109, -357, 113, -361, 115, -365, 117, -369, 119, -375, 125, -377, 128, -379, 132, -385, 146, -387, 150, -391, 158, -393, 161, -407, 175, -409, 177, -411, 181, -413, 185, -415, 190, -417, 195, -419, 199, -421, 201, -425, 203, -432, 205, -439, 207, -448, 209, -467, 213, -473, 215, -477, 217, -485, 225, -487, 229, -489, 234, -491, 242, -493, 251, -495, 261, -497, 287, -499, 295, -501, 302, -503, 305, -507, 313, -511, 317, -514, 319, -519, 321, -528, 325, -532, 327, -550, 333, -555, 335, -558, 337, -568, 347, -570, 351, -572, 356, -576, 369, -580, 378, -582, 380, -586, 382, -594, 386, -606, 390, -614, 392, -638, 396, -648, 398, -663, 404, -673, 406)
 
-[node name="RightWall" type="Area2D" parent="Maze"]
+[node name="RightWall" type="Area2D" parent="Backgrounds/Maze"]
 position = Vector2(512, 288)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Maze/RightWall"]
-polygon = PackedVector2Array(0, 0, 0, -140, -19, -138, -57, -136, -95, -134, -114, -132, -138, -132, -159, -134, -178, -136, -188.205, -137.77, -207, -140, -219, -143, -240, -143, -254, -140, -269, -138, -283, -136, -297, -134, -311, -132, -326, -132, -338, -134, -347, -136, -359, -138, -371, -140, -381, -143, -392, -145, -404, -147, -414, -149, -433, -151, -454, -154, -492, -156, -512, -158, -512, 0)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Backgrounds/Maze/RightWall"]
+polygon = PackedVector2Array(-2, -4, 0, -141, -16, -139, -54, -137, -92, -135, -112, -133, -131, -133, -150, -135, -169, -137, -187, -139, -206, -141, -237, -141, -251, -139, -266, -137, -280, -135, -294, -133, -308, -131, -337, -131, -347, -133, -358, -135, -370, -137, -380, -139, -392, -141, -404, -144, -415, -146, -433, -148, -456, -150, -492, -152, -512, -154, -524, -152, -533, -150, -542, -148, -552, -146, -568, -146, -583, -148, -599, -150, -613, -152, -623, -154, -632, -154, -639, -152, -644, -150, -649, -148, -661, -148, -665, -150, -671, -152, -677, -154, -683, -156, -689, -158, -701, -160, -717, -162, -730, -164, -741, -166, -752, -168, -759, -170, -764, -172, -769, -174, -774, -176, -778, -178, -783, -180, -796, -180, -806, -178, -817, -176, -824, -174, -830, -172, -836, -170, -844, -168, -852, -166, -858, -164, -865, -162, -870, -158, -872, -154, -874, -150, -876, -145, -880, -136, -884, -128, -888, -122, -894, -116, -901, -110, -905, -105, -909, -97, -913, -87, -923, -77, -932, -73, -947, -69, -965, -65, -974, -63, -978, -61, -980, -59, -982, -54, -988, -27, -990, -2, -992, 7, -996, 17, -1002, 29, -1004, 32, -1012, 40, -1016, 42, -1024, 46, -1028, 48, -1038, 52, -1052, 56, -1059, 58, -1061, 61, -1063, 63, -1065, 67, -1073, 91, -1075, 94, -1085, 104, -1089, 106, -1099, 110, -1110, 114, -1120, 116, -1133, 118, -1145, 120, -1155, 122, -1165, 126, -1171, 128, -1183, 128, -1183, 197, -829, 197, -829, -4)
 
-[node name="FinishArea" type="Area2D" parent="Maze"]
-position = Vector2(512, 77)
+[node name="FinishArea" type="Area2D" parent="Backgrounds/Maze"]
+position = Vector2(-669, 409)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Maze/FinishArea"]
-position = Vector2(-502, 45)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Maze/FinishArea"]
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_hn86f")
+debug_color = Color(0.294534, 0.629177, 0, 0.42)
 
-[node name="SpawnPoint" type="Marker2D" parent="."]
+[node name="Checkpoints" type="Node2D" parent="Backgrounds"]
+
+[node name="Checkpoint1" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(455, 144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint1"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint2" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(397, 148)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint2"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint3" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(340, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint3"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint4" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(297, 140)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint4"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint5" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(254, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint5"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint6" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(206, 151)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint6"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint7" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(153, 146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint7"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint8" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(100, 135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint8"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint9" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(59, 132)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint9"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint11" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-43, 137)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint11"]
+position = Vector2(-5, -2)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint12" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-110, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint12"]
+position = Vector2(-5, -1.75)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint13" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-173, 124)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint13"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint14" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-222, 116)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint14"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint15" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-282, 103)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint15"]
+position = Vector2(-5, -2)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint16" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-352, 122)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint16"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint17" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-388, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint17"]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint18" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-413, 208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint18"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint19" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-463, 222)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint19"]
+position = Vector2(-5, -1)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint21" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-502, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint21"]
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint22" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-548, 341)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint22"]
+position = Vector2(-4.5, -1.5)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint23" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-575, 384)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint23"]
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Checkpoint24" type="Area2D" parent="Backgrounds/Checkpoints"]
+position = Vector2(-613, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Checkpoints/Checkpoint24"]
+position = Vector2(-4.5, -1.5)
+shape = SubResource("RectangleShape2D_a7wqa")
+
+[node name="Transitioners" type="Node2D" parent="Backgrounds"]
+
+[node name="Transition1" type="Area2D" parent="Backgrounds/Transitioners"]
+position = Vector2(4, 127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Transitioners/Transition1"]
+shape = SubResource("RectangleShape2D_du6ib")
+
+[node name="Transition2" type="Area2D" parent="Backgrounds/Transitioners"]
+position = Vector2(-486, 267)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Backgrounds/Transitioners/Transition2"]
+shape = SubResource("RectangleShape2D_du6ib")
+
+[node name="CateterLabel" type="Label" parent="."]
+offset_left = 189.0
+offset_right = 308.0
+offset_bottom = 43.0
+theme = ExtResource("3_klr6c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Cateter restante:"
+horizontal_alignment = 1
+
+[node name="FuelLeft" type="Label" parent="CateterLabel"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 119.0
+offset_bottom = 47.0
+theme = ExtResource("3_klr6c")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "00"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SpawnPoint1" type="Marker2D" parent="."]
 position = Vector2(504, 140)
 
-[connection signal="mouse_entered" from="Maze/LeftWall" to="." method="_on_left_wall_mouse_entered"]
-[connection signal="mouse_entered" from="Maze/RightWall" to="." method="_on_right_wall_mouse_entered"]
-[connection signal="mouse_entered" from="Maze/FinishArea" to="." method="_on_finish_area_mouse_entered"]
+[node name="SpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(504, 141)
+
+[node name="SpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(186, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_43wcl")
+}
+
+[node name="AnimationTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="mouse_entered" from="Backgrounds/Maze/LeftWall" to="." method="_on_left_wall_mouse_entered"]
+[connection signal="mouse_entered" from="Backgrounds/Maze/RightWall" to="." method="_on_right_wall_mouse_entered"]
+[connection signal="mouse_entered" from="Backgrounds/Maze/FinishArea" to="." method="_on_finish_area_mouse_entered"]
+[connection signal="mouse_entered" from="Backgrounds/Transitioners/Transition1" to="." method="_on_transition_1_mouse_entered"]
+[connection signal="mouse_entered" from="Backgrounds/Transitioners/Transition2" to="." method="_on_transition_2_mouse_entered"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]

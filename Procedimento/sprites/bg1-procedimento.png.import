@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca8cjwjd5ohc0"
-path="res://.godot/imported/maze_game_test.png-11f4194199d1a919862216b65d931258.ctex"
+uid="uid://cukkvn172koku"
+path="res://.godot/imported/bg1-procedimento.png-29751eff47f5336722dcd0a3b4ba0da8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Procedimento/sprites/maze_game_test.png"
-dest_files=["res://.godot/imported/maze_game_test.png-11f4194199d1a919862216b65d931258.ctex"]
+source_file="res://Procedimento/sprites/bg1-procedimento.png"
+dest_files=["res://.godot/imported/bg1-procedimento.png-29751eff47f5336722dcd0a3b4ba0da8.ctex"]
 
 [params]
 
