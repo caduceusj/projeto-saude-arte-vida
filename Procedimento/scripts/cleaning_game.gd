@@ -6,7 +6,7 @@ extends Node2D
 
 var cleaning = false
 var last_mouse_pos:Vector2
-var cleaning_left = 2
+var cleaning_left = 10
 var cleaining_speed = 2
 var finished = false
 

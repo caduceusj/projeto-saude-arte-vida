@@ -7,3 +7,5 @@ res://Procedimento/cenas/procedure_game.tscn
 res://Procedimento/cenas/maze_game.tscn
 res://Procedimento/cenas/measurement_game.tscn
 res://Procedimento/cenas/angle_game.tscn
+res://Procedimento/cenas/cleaning_game.tscn
+res://Procedimento/scripts/cleaning_game.gd

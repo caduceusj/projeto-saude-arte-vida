@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cmu6883au5hgg" path="res://Procedimento/sprites/circle_animation/circle_animation3.png" id="6_wsjsw"]
 [ext_resource type="Texture2D" uid="uid://cxmwanh4x6cvi" path="res://Procedimento/sprites/circle_animation/circle_animation4.png" id="7_oxudr"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1b3oj"]
 radius = 11.0
 
